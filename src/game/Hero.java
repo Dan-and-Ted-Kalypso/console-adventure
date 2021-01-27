@@ -16,7 +16,7 @@ public class Hero {
         this.healthPoints = 50;
         this.heroName = name;
         this.heroPotion = 2;
-        this.inv.add = "Nothing";
+        this.inv.add("Nothing");
     }
 
 
