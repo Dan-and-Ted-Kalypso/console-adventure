@@ -10,6 +10,4 @@ public class Hero {
         this.healthPoints = 50;
         this.heroName = name;
     }
-
-
 }

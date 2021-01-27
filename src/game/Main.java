@@ -26,10 +26,16 @@ public class Main {
                     System.out.println("You have died. Alas.");
                     break;
                 }
-                int attackValue = heroAttack();
-                System.out.printf("You attack the enemy, scoring a hit of %d points!%n", attackValue);
-                enemyHP -= attackValue;
-                System.out.printf("The enemy has %dHP remaining!%n", enemyHP);
+                System.out.println("Do you wish to attack or drink potion?");
+                String action = scanner.nextLine();
+                if (action.equalsIgnoreCase("attack")) {
+                    int attackValue = heroAttack();
+                    System.out.printf("You attack the enemy, scoring a hit of %d points!%n", attackValue);
+                    enemyHP -= attackValue;
+                    System.out.printf("The enemy has %dHP remaining!%n", enemyHP);
+                } else {
+                    usePotion();
+                }
                 if (enemyHP <= 0) {
                     System.out.println("Victory!");
                     break;
@@ -44,6 +50,10 @@ public class Main {
         }
     }
 
+    //attack
+    //run
+    //use potion
+
     public static int heroAttack() {
         return (int) ((Math.random() * (10 - 1)) + 1);
     }
@@ -52,10 +62,16 @@ public class Main {
         return (int) ((Math.random() * (5 - 1)) + 1);
     }
 
+    public static void usePotion() {
+        heroHP += 10;
+        System.out.printf("You now have %d HP remaining.%n", heroHP);
+    }
+
     public static void main(String[] args) {
         beginGame();
         Hero yourHero = new Hero(name);
         heroHP = yourHero.healthPoints;
+
         battle();
     }
 }
