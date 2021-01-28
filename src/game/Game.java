@@ -3,24 +3,31 @@ import java.util.Scanner;
 
 public class Game {
 
-    public Hero hero;
-    public Scanner scanner;
+    protected Hero hero;
+    protected Scanner scanner;
 
     public void beginGame() {
         this.scanner = new Scanner(System.in);
         System.out.println("Welcome to your adventure! What is your name?");
         Scanner nameScanner = new Scanner(System.in);
         String name = nameScanner.nextLine();
-        this.hero = new Hero(name);
-        System.out.printf("Hello, %s! You are about to embark on a wild journey of heroism and chivalry! Let's begin!%n", name);
-        while (!this.hero.isCoward && !this.hero.defeatedBoss) {
+        if (name.isEmpty()) {
+            System.out.println("Don't want to tell me your name? Ok then. I shall call you Bartholomew!");
+            System.out.println("Hello, Bartholomew! You are about to embark on a wild journey of heroism and chivalry! Let's begin!");
+        } else {
+            System.out.printf("Hello, %s! You are about to embark on a wild journey of heroism and chivalry! Let's begin!%n", name);
+        }
+
+
+        this.hero = new Hero();
+        while (!this.hero.isCoward() && !this.hero.isDefeatedBoss()) {
             battle();
         }
 
     }
 
     public void battle() {
-        if (this.hero.winCounter < 3) {
+        if (this.hero.getWinCounter() < 3) {
             System.out.println("A challenger approaches! fight/run?");
             while (true) {
                 String fightRun = scanner.nextLine();
@@ -29,7 +36,7 @@ public class Game {
                     battleLoop();
                     break;
                 } else if (fightRun.equalsIgnoreCase("run")) {
-                    this.hero.isCoward = true;
+                    this.hero.runAway();
                     System.out.println("You are a coward and unworthy of the title of hero. Game over!");
                     break;
                 } else {
@@ -45,7 +52,7 @@ public class Game {
     public void battleLoop() {
         Enemy enemy = new Enemy();
         while (true) {
-            if (this.hero.healthPoints <= 0) {
+            if (this.hero.getHealthPoints() <= 0) {
                 System.out.println("You have died. Alas.");
                 break;
             }
@@ -54,10 +61,10 @@ public class Game {
                 System.out.println("Do you wish to attack or drink potion?");
                 String action = scanner.nextLine();
                 if (action.equalsIgnoreCase("attack")) {
-                    int attackValue = this.hero.attack(this.hero.hasSword);
+                    int attackValue = this.hero.generateAttackValue();
                     System.out.printf("You attack the enemy, scoring a hit of %d points!%n", attackValue);
-                    enemy.healthPoints -= attackValue;
-                    System.out.printf("The enemy has %dHP remaining!%n", enemy.healthPoints);
+                    enemy.changeEnemyHP(attackValue * -1);
+                    System.out.printf("The enemy has %dHP remaining!%n", enemy.getEnemyHP());
                     break;
                 } else if (action.equalsIgnoreCase("drink potion")) {
                     this.hero.usePotion();
@@ -67,22 +74,22 @@ public class Game {
                 }
             }
 
-            if (enemy.healthPoints <= 0) {
+            if (enemy.getEnemyHP() <= 0) {
                 System.out.println("Victory!");
-                this.hero.winCounter++;
-                if (this.hero.winCounter == 3) {
+                this.hero.addWin();
+                if (this.hero.getWinCounter() == 3) {
                     System.out.println("You have found a sword! This will make your attacks a lot stronger!\n");
-                    this.hero.hasSword = true;
+                    this.hero.giveSword();
                 } else {
-                    this.hero.potionCount++;
-                    System.out.printf("You have found a potion! Number of potions: %d%n", this.hero.potionCount);
+                    this.hero.changePotionCount(1);
+                    System.out.printf("You have found a potion! Number of potions: %d%n", this.hero.getPotionCount());
                 }
                 break;
             }
-            int enemyAttackValue = enemy.attack();
+            int enemyAttackValue = enemy.generateAttackValue();
             System.out.printf("The enemy attacks you, scoring a hit of %d points!%n", enemyAttackValue);
-            this.hero.healthPoints -= enemyAttackValue;
-            System.out.printf("You have %dHP remaining!%n", this.hero.healthPoints);
+            this.hero.changeHealthPoints(enemyAttackValue * -1);
+            System.out.printf("You have %dHP remaining!%n", this.hero.getHealthPoints());
         }
     }
 
@@ -95,7 +102,7 @@ public class Game {
                 bossBattle();
                 break;
             } else if (action.equalsIgnoreCase("run")) {
-                hero.isCoward = true;
+                hero.runAway();
                 System.out.println("You are a coward and unworthy of the title of hero. Game over!");
                 break;
             } else {
@@ -108,7 +115,7 @@ public class Game {
         Boss boss = new Boss();
         while (true) {
 
-            if (this.hero.healthPoints <= 0) {
+            if (this.hero.getHealthPoints() <= 0) {
                 System.out.println("You have died. Alas.");
                 break;
             }
@@ -116,10 +123,10 @@ public class Game {
                 System.out.println("Do you wish to attack or drink potion?");
                 String action = scanner.nextLine();
                 if (action.equalsIgnoreCase("attack")) {
-                    int attackValue = this.hero.attack(hero.hasSword);
+                    int attackValue = this.hero.generateAttackValue();
                     System.out.printf("You attack the enemy, scoring a hit of %d points!%n", attackValue);
-                    boss.healthPoints -= attackValue;
-                    System.out.printf("The enemy has %dHP remaining!%n", boss.healthPoints);
+                    boss.changeBossHP(attackValue * -1);
+                    System.out.printf("The enemy has %dHP remaining!%n", boss.getBossHP());
                     break;
                 } else if (action.equalsIgnoreCase("drink potion")) {
                     this.hero.usePotion();
@@ -128,15 +135,15 @@ public class Game {
                     System.out.println("That is not a valid action.");
                 }
             }
-            if (boss.healthPoints <= 0) {
+            if (boss.getBossHP() <= 0) {
                 System.out.println("Congratulations! You have defeated the evil boss and restored peace to the lands. Your name will go down in the annals of history!");
-                this.hero.defeatedBoss = true;
+                this.hero.defeatBoss();
                 break;
             }
-            int bossAttackValue = boss.attack();
+            int bossAttackValue = boss.generateAttackValue();
             System.out.printf("The enemy attacks you, scoring a hit of %d points!%n", bossAttackValue);
-            this.hero.healthPoints -= bossAttackValue;
-            System.out.printf("You have %dHP remaining!%n", this.hero.healthPoints);
+            this.hero.changeHealthPoints(bossAttackValue * -1);
+            System.out.printf("You have %dHP remaining!%n", this.hero.getHealthPoints());
         }
     }
 
