@@ -2,18 +2,16 @@ package game;
 
 public class Hero {
 
-    public int potionCount;
-    public int healthPoints;
-    public String heroName;
-    public int winCounter;
-    public boolean isCoward;
-    public boolean hasSword;
-    public boolean defeatedBoss;
+    private int potionCount;
+    private int healthPoints;
+    private int winCounter;
+    private boolean isCoward;
+    private boolean hasSword;
+    private boolean defeatedBoss;
 
-    public Hero(String name) {
+    public Hero() {
 
         this.healthPoints = 50;
-        this.heroName = name;
         this.potionCount = 2;
         this.winCounter = 0;
         this.isCoward = false;
@@ -21,22 +19,71 @@ public class Hero {
         this.defeatedBoss = false;
     }
 
-    public int attack(boolean sword) {
-        hasSword = sword;
-        if (hasSword) {
+    public int getHealthPoints() {
+        return this.healthPoints;
+    }
+
+    public void changeHealthPoints(int amountToChange) {
+        //pass in positive value to add HP, negative to lower it
+        this.healthPoints += amountToChange;
+    }
+
+
+    public int getPotionCount() {
+        return this.potionCount;
+    }
+
+    public void changePotionCount(int amountToChange) {
+        this.potionCount += amountToChange;
+    }
+
+
+
+
+    public int generateAttackValue() {
+        if (this.hasSword) {
             return (int) ((Math.random() * (50 - 5)) + 5);
         }
         return (int) ((Math.random() * (100 - 50)) + 50);
     }
 
     public void usePotion() {
-        if (potionCount > 0) {
-            healthPoints += 10;
-            potionCount -= 1;
-            System.out.printf("You now have %d HP remaining. Potions remaining: %d%n", healthPoints, potionCount);
+        if (getPotionCount() > 0) {
+            changeHealthPoints(10);
+            changePotionCount(-1);
+            System.out.printf("You now have %d HP remaining. Potions remaining: %d%n", getHealthPoints(), getPotionCount());
         } else {
             System.out.println("You don't have any potions left!");
         }
     }
 
+
+
+    public void giveSword() {
+        this.hasSword = true;
+    }
+
+    public int getWinCounter() {
+        return this.winCounter;
+    }
+
+    public void addWin() {
+        this.winCounter++;
+    }
+
+    public boolean isCoward() {
+        return this.isCoward;
+    }
+
+    public void runAway() {
+        this.isCoward = true;
+    }
+
+    public boolean isDefeatedBoss() {
+        return this.defeatedBoss;
+    }
+
+    public void defeatBoss() {
+        this.defeatedBoss = true;
+    }
 }
