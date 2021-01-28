@@ -1,6 +1,4 @@
-ackage game;
-
-import java.util.Random;
+package game;
 
 import java.util.Random;
 
@@ -25,3 +23,4 @@ public class Enemy {
         return this.healthPoints;
     }
 }
+
