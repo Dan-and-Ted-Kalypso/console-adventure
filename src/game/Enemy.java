@@ -1,5 +1,7 @@
 package game;
 
+import java.util.Random;
+
 public class Enemy {
 
     private int healthPoints;
@@ -9,7 +11,8 @@ public class Enemy {
     }
 
     public int generateAttackValue() {
-        return (int) ((Math.random() * (5 - 1)) + 1);
+        Random random = new Random();
+        return random.nextInt(6);
     }
 
     public void changeEnemyHP(int amountToChange) {

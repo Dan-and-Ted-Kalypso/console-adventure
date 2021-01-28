@@ -1,5 +1,7 @@
 package game;
 
+import java.util.Random;
+
 public class Boss {
 
     private int healthPoints;
@@ -9,7 +11,8 @@ public class Boss {
     }
 
     public int generateAttackValue() {
-        return (int) ((Math.random() * (10 - 5)) + 5);
+        Random random = new Random();
+        return random.nextInt(11);
     }
 
     public int getBossHP() {
