@@ -1,5 +1,7 @@
 package game;
 
+import java.util.Random;
+
 public class Hero {
 
     private int potionCount;
@@ -41,10 +43,11 @@ public class Hero {
 
 
     public int generateAttackValue() {
+        Random random = new Random();
         if (this.hasSword) {
-            return (int) ((Math.random() * (50 - 5)) + 5);
+            return random.nextInt(26);
         }
-        return (int) ((Math.random() * (20 - 10)) + 5);
+        return random.nextInt(11);
     }
 
     public void usePotion() {

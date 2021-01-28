@@ -62,10 +62,19 @@ public class Game {
                 String action = scanner.nextLine();
                 if (action.equalsIgnoreCase("attack")) {
                     int attackValue = this.hero.generateAttackValue();
-                    System.out.printf("You attack the enemy, scoring a hit of %d points!%n", attackValue);
-                    enemy.changeEnemyHP(attackValue * -1);
-                    System.out.printf("The enemy has %dHP remaining!%n", enemy.getEnemyHP());
-                    break;
+                    if (attackValue == 0) {
+                        System.out.println("Your attack misses!");
+                    } else {
+                        System.out.printf("You attack the enemy, scoring a hit of %d points!%n", attackValue);
+                        enemy.changeEnemyHP(attackValue * -1);
+                        if (enemy.getEnemyHP() <= 0) {
+                            System.out.println("The enemy has been defeated!");
+                        } else {
+                            System.out.printf("The enemy has %dHP remaining!%n", enemy.getEnemyHP());
+                        }
+                        break;
+                    }
+
                 } else if (action.equalsIgnoreCase("drink potion")) {
                     this.hero.usePotion();
                     break;
@@ -87,9 +96,18 @@ public class Game {
                 break;
             }
             int enemyAttackValue = enemy.generateAttackValue();
-            System.out.printf("The enemy attacks you, scoring a hit of %d points!%n", enemyAttackValue);
-            this.hero.changeHealthPoints(enemyAttackValue * -1);
-            System.out.printf("You have %dHP remaining!%n", this.hero.getHealthPoints());
+            if (enemyAttackValue == 0) {
+                System.out.println("The enemy's attack misses!");
+            } else {
+                System.out.printf("The enemy attacks you, scoring a hit of %d points!%n", enemyAttackValue);
+                this.hero.changeHealthPoints(enemyAttackValue * -1);
+                if (hero.getHealthPoints() <= 0) {
+                    System.out.println("You have no health points remaining! Oh no!");
+                } else {
+                    System.out.printf("You have %dHP remaining!%n", this.hero.getHealthPoints());
+                }
+            }
+
         }
     }
 
@@ -124,51 +142,61 @@ public class Game {
                 String action = scanner.nextLine();
                 if (action.equalsIgnoreCase("attack")) {
                     int attackValue = this.hero.generateAttackValue();
-                    System.out.printf("You attack the enemy, scoring a hit of %d points!%n", attackValue);
-                    boss.changeBossHP(attackValue * -1);
-                    System.out.printf("The enemy has %dHP remaining!%n", boss.getBossHP());
-                    break;
+                    if (attackValue == 0) {
+                        System.out.println("Your attack misses!");
+                    } else {
+                        System.out.printf("You attack the enemy, scoring a hit of %d points!%n", attackValue);
+                        boss.changeBossHP(attackValue * -1);
+                        if (boss.getBossHP() <= 0) {
+                            System.out.println("The enemy has been defeated!");
+                        } else {
+                            System.out.printf("The enemy has %dHP remaining!%n", boss.getBossHP());
+                        }
+                    }
                 } else if (action.equalsIgnoreCase("drink potion")) {
                     this.hero.usePotion();
                     break;
                 } else {
                     System.out.println("That is not a valid action.");
                 }
-            }
-            if (boss.getBossHP() <= 0) {
-                System.out.println("Congratulations! You have defeated the evil boss and restored peace to the lands. Your name will go down in the annals of history!");
-                this.hero.defeatBoss();
-                break;
-            }
-            int bossAttackCounter = boss.getBossAttackCounter();
-            if (bossAttackCounter >= 5) {
-                 int bossSpecialValue =  boss.specialAttackValue();
-                 System.out.printf("The enemy unleashes his special attack! Oh no, it hit for %d points!%n", bossSpecialValue);
-                 System.out.println("The big bad looks drained! Now would be a great time to hit him extra hard!");
-                 this.hero.changeHealthPoints(bossSpecialValue * -1);
-                 boss.changeAttackCounter(-5);
-                 System.out.printf("You have %dHP remaining!%n", this.hero.getHealthPoints());
+
+                if (boss.getBossHP() <= 0) {
+                    System.out.println("Congratulations! You have defeated the evil boss and restored peace to the lands. Your name will go down in the annals of history!");
+                    this.hero.defeatBoss();
+                    break;
+                }
+                int bossAttackCounter = boss.getBossAttackCounter();
+                if (bossAttackCounter >= 5) {
+                    int bossSpecialValue = boss.specialAttackValue();
+                    System.out.printf("The enemy unleashes his special attack! Oh no, it hit for %d points!%n", bossSpecialValue);
+                    System.out.println("The big bad looks drained! Now would be a great time to hit him extra hard!%n");
+                    this.hero.changeHealthPoints(bossSpecialValue * -1);
+                    boss.changeAttackCounter(-5);
+                    System.out.printf("You have %dHP remaining!%n", this.hero.getHealthPoints());
 
 
-            }
-            else if (boss.getBossHP() < 20 && bossAttackCounter >= 3){
-                int bossHealValue = boss.bossHeal();
-                System.out.printf("The enemy uses his power to heal himself! Oh wow, he healed %d heal points!", bossHealValue);
-                System.out.println("The big bad looks drained! Now would be a great time to hit him extra hard!");
-                boss.changeBossHP(bossHealValue);
-                boss.changeAttackCounter(-3);
-                System.out.printf("You have %dHP remaining!%n", this.hero.getHealthPoints());
-                System.out.printf("The enemy has %dHP remaining!%n", boss.getBossHP());
-            }
-            else {
-                int bossAttackValue = boss.generateAttackValue();
-                System.out.printf("The enemy attacks you, scoring a hit of %d points!%n", bossAttackValue);
-                System.out.print("It looks like he's building his power - watch out for his special attack!");
-                this.hero.changeHealthPoints(bossAttackValue * -1);
-                boss.changeAttackCounter(1);
-                System.out.printf("You have %dHP remaining!%n", this.hero.getHealthPoints());
+                } else if (boss.getBossHP() < 20 && bossAttackCounter >= 3) {
+                    int bossHealValue = boss.bossHeal();
+                    System.out.printf("The enemy uses his power to heal himself! Oh wow, he healed %d points!%n", bossHealValue);
+                    System.out.println("The big bad looks drained! Now would be a great time to hit him extra hard!%n");
+                    boss.changeBossHP(bossHealValue);
+                    boss.changeAttackCounter(-3);
+                    System.out.printf("You have %dHP remaining!%n", this.hero.getHealthPoints());
+                    System.out.printf("The enemy has %dHP remaining!%n", boss.getBossHP());
+                } else {
+                    int bossAttackValue = boss.generateAttackValue();
+                    if (bossAttackValue == 0) {
+                        System.out.println("The enemy's attack misses!");
+                    } else {
+                        System.out.printf("The enemy attacks you, scoring a hit of %d points!%n", bossAttackValue);
+                        System.out.println("It looks like he's building his power - watch out for his special attack!");
+                        this.hero.changeHealthPoints(bossAttackValue * -1);
+                        boss.changeAttackCounter(1);
+                        System.out.printf("You have %dHP remaining!%n", this.hero.getHealthPoints());
+                    }
+                }
             }
         }
-    }
 
+    }
 }
