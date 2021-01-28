@@ -44,7 +44,7 @@ public class Hero {
         if (this.hasSword) {
             return (int) ((Math.random() * (50 - 5)) + 5);
         }
-        return (int) ((Math.random() * (100 - 50)) + 50);
+        return (int) ((Math.random() * (20 - 10)) + 5);
     }
 
     public void usePotion() {

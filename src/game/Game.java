@@ -140,10 +140,34 @@ public class Game {
                 this.hero.defeatBoss();
                 break;
             }
-            int bossAttackValue = boss.generateAttackValue();
-            System.out.printf("The enemy attacks you, scoring a hit of %d points!%n", bossAttackValue);
-            this.hero.changeHealthPoints(bossAttackValue * -1);
-            System.out.printf("You have %dHP remaining!%n", this.hero.getHealthPoints());
+            int bossAttackCounter = boss.getBossAttackCounter();
+            if (bossAttackCounter >= 5) {
+                 int bossSpecialValue =  boss.specialAttackValue();
+                 System.out.printf("The enemy unleashes his special attack! Oh no, it hit for %d points!%n", bossSpecialValue);
+                 System.out.println("The big bad looks drained! Now would be a great time to hit him extra hard!");
+                 this.hero.changeHealthPoints(bossSpecialValue * -1);
+                 boss.changeAttackCounter(-5);
+                 System.out.printf("You have %dHP remaining!%n", this.hero.getHealthPoints());
+
+
+            }
+            else if (boss.getBossHP() < 20 && bossAttackCounter >= 3){
+                int bossHealValue = boss.bossHeal();
+                System.out.printf("The enemy uses his power to heal himself! Oh wow, he healed %d heal points!", bossHealValue);
+                System.out.println("The big bad looks drained! Now would be a great time to hit him extra hard!");
+                boss.changeBossHP(bossHealValue);
+                boss.changeAttackCounter(-3);
+                System.out.printf("You have %dHP remaining!%n", this.hero.getHealthPoints());
+                System.out.printf("The enemy has %dHP remaining!%n", boss.getBossHP());
+            }
+            else {
+                int bossAttackValue = boss.generateAttackValue();
+                System.out.printf("The enemy attacks you, scoring a hit of %d points!%n", bossAttackValue);
+                System.out.print("It looks like he's building his power - watch out for his special attack!");
+                this.hero.changeHealthPoints(bossAttackValue * -1);
+                boss.changeAttackCounter(1);
+                System.out.printf("You have %dHP remaining!%n", this.hero.getHealthPoints());
+            }
         }
     }
 
