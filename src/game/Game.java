@@ -62,10 +62,19 @@ public class Game {
                 String action = scanner.nextLine();
                 if (action.equalsIgnoreCase("attack")) {
                     int attackValue = this.hero.generateAttackValue();
-                    System.out.printf("You attack the enemy, scoring a hit of %d points!%n", attackValue);
-                    enemy.changeEnemyHP(attackValue * -1);
-                    System.out.printf("The enemy has %dHP remaining!%n", enemy.getEnemyHP());
-                    break;
+                    if (attackValue == 0) {
+                        System.out.println("Your attack misses!");
+                    } else {
+                        System.out.printf("You attack the enemy, scoring a hit of %d points!%n", attackValue);
+                        enemy.changeEnemyHP(attackValue * -1);
+                        if (enemy.getEnemyHP() <= 0) {
+                            System.out.println("The enemy has been defeated!");
+                        } else {
+                            System.out.printf("The enemy has %dHP remaining!%n", enemy.getEnemyHP());
+                        }
+                        break;
+                    }
+
                 } else if (action.equalsIgnoreCase("drink potion")) {
                     this.hero.usePotion();
                     break;
@@ -87,9 +96,18 @@ public class Game {
                 break;
             }
             int enemyAttackValue = enemy.generateAttackValue();
-            System.out.printf("The enemy attacks you, scoring a hit of %d points!%n", enemyAttackValue);
-            this.hero.changeHealthPoints(enemyAttackValue * -1);
-            System.out.printf("You have %dHP remaining!%n", this.hero.getHealthPoints());
+            if (enemyAttackValue == 0) {
+                System.out.println("The enemy's attack misses!");
+            } else {
+                System.out.printf("The enemy attacks you, scoring a hit of %d points!%n", enemyAttackValue);
+                this.hero.changeHealthPoints(enemyAttackValue * -1);
+                if (hero.getHealthPoints() <= 0) {
+                    System.out.println("You have no health points remaining! Oh no!");
+                } else {
+                    System.out.printf("You have %dHP remaining!%n", this.hero.getHealthPoints());
+                }
+            }
+
         }
     }
 
