@@ -1,6 +1,7 @@
 package game;
 
-import java.util.Random;
+import java.util.*;
+
 
 public class Hero {
 
@@ -10,6 +11,52 @@ public class Hero {
     private boolean isCoward;
     private boolean hasSword;
     private boolean defeatedBoss;
+    private int forestWins;
+    private int desertWins;
+    private int mountainWins;
+    private int dagger;
+    private int scimitar;
+    private int battleAxe;
+    private int excalibur;
+
+
+    public Hero(int[] array) {
+        this.potionCount = array[0];
+        this.healthPoints = array[1];
+        this.forestWins = array[2];
+        this.desertWins = array[3];
+        this.mountainWins = array[4];
+        this.isCoward = array[5] == 1;
+        this.defeatedBoss = array[6] == 1;
+        this.dagger = array[7];
+        this.scimitar = array[8];
+        this.battleAxe = array[9];
+        this.excalibur = array[10];
+    }
+
+    public int[] getHero() {
+        int[] array = new int[11];
+        array[0] = this.potionCount;
+        array[1] = this.healthPoints;
+        array[2] = this.forestWins;
+        array[3] = this.desertWins;
+        array[4] = this.mountainWins;
+        if (this.isCoward) {
+            array[5] = 1;
+        } else {
+            array[5] = 0;
+        }
+        if (this.defeatedBoss) {
+            array[6] = 1;
+        } else {
+            array[6] = 0;
+        }
+        array[7] = this.dagger;
+        array[8] = this.scimitar;
+        array[9] = this.battleAxe;
+        array[10] = this.excalibur;
+        return array;
+    }
 
     public Hero() {
 
@@ -19,7 +66,15 @@ public class Hero {
         this.isCoward = false;
         this.hasSword = false;
         this.defeatedBoss = false;
+        this.forestWins = 0;
+        this.desertWins = 0;
+        this.mountainWins = 0;
+        this.dagger = 0;
+        this.scimitar = 0;
+        this.battleAxe = 0;
+        this.excalibur = 0;
     }
+
 
     public int getHealthPoints() {
         return this.healthPoints;
@@ -89,4 +144,6 @@ public class Hero {
     public void defeatBoss() {
         this.defeatedBoss = true;
     }
+
+
 }
