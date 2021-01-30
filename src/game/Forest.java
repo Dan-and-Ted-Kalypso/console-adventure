@@ -1,15 +1,15 @@
 package game;
 
-import java.util.*;
+import java.util.Scanner;
 
-public class Mountain {
+public class Forest {
 
     public void stayOrGo(int[] heroArray) {
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
 
-            System.out.println("Welcome to the mountains!");
+            System.out.println("Welcome to the forest!");
             System.out.printf("You have %d health points.%n", heroArray[1]);
             System.out.printf("You have %d potions.%n", heroArray[0]);
             System.out.println("What do you want to do?");
@@ -18,9 +18,9 @@ public class Mountain {
 
             String action = scanner.nextLine();
 
-            if (action.equals("1")) {
-                MountainBattle mountainBattle = new MountainBattle(heroArray);
-                mountainBattle.battle();
+            if (action.equals("1") && heroArray[2] < 3) {
+                ForestBattle forestBattle = new ForestBattle(heroArray);
+                forestBattle.battle();
                 break;
             } else if (action.equals("2")) {
                 Crossroads crossroads = new Crossroads(heroArray);

@@ -1,4 +1,5 @@
 package game;
+
 import java.util.Scanner;
 
 public class Game {
@@ -18,14 +19,130 @@ public class Game {
             System.out.printf("Hello, %s! You are about to embark on a wild journey of heroism and chivalry! Let's begin!%n", name);
         }
 
+        goToCrossroads();
 
-        this.hero = new Hero();
-        while (!this.hero.isCoward() && !this.hero.isDefeatedBoss()) {
-            battle();
+    }
+
+
+    public void goToCrossroads() {
+        Crossroads crossroads = new Crossroads();
+        crossroads.choosePath();
+    }
+
+
+
+    //every time you go back to main, choosePath gets run
+    //then,
+/*
+    public void confirmPath(String path) {
+        label:
+        while (true) {
+            String confirm = scanner.nextLine();
+            switch (path) {
+                case "4":
+                    System.out.println("Are you sure you wish to go to The Great Volcano? The evil boss lives there and you may be squashed like a tiny ant if you are not fully ready to face him. Type continue to go forward anyway or back to choose a different path.");
+                    if (confirm.equalsIgnoreCase("confirm")) {
+                        //method to go to Volcano
+                    } else if (confirm.equalsIgnoreCase("back")) {
+                        choosePath();
+                        break label;
+                    } else {
+                        System.out.println("That is not a valid choice. Please enter \"continue\" or \"back\". Let's try this again, shall we?");
+                        confirmPath("4");
+                    }
+                    break;
+                case "3":
+                    System.out.println("Are you sure you wish to travel to the mountains? The enemies there are very challenging. Type continue to go forward anyway or back to choose a different path.");
+                    if (confirm.equalsIgnoreCase("confirm")) {
+                        goToMountain();
+                        break label;
+                    } else if (confirm.equalsIgnoreCase("back")) {
+                        choosePath();
+                        break label;
+                    } else {
+                        System.out.println("That is not a valid choice. Please enter \"continue\" or \"back\". Let's try this again, shall we?");
+                        confirmPath("3");
+                    }
+                    break;
+                case "2":
+                    System.out.println("Are you sure you wish to travel to the desert? The enemies there are somewhat challenging. Type continue to go forward anyway or back to choose a different path.");
+                    if (confirm.equalsIgnoreCase("confirm")) {
+                        //method to go to desert
+                    } else if (confirm.equalsIgnoreCase("back")) {
+                        choosePath();
+                        break label;
+                    } else {
+                        System.out.println("That is not a valid choice. Please enter \"continue\" or \"back\". Let's try this again, shall we?");
+                        confirmPath("2");
+                    }
+                    break;
+                case "1":
+                    System.out.println("Are you sure you wish to travel to the forest? The enemies there are fairly easy and a good way for a novice adventurer to gain experience. Type continue to go forward anyway or back to choose a different path.");
+                    if (confirm.equalsIgnoreCase("confirm")) {
+                        //method to go to forest
+                    } else if (confirm.equalsIgnoreCase("back")) {
+                        choosePath();
+                        break label;
+                    } else {
+                        System.out.println("That is not a valid choice. Please enter \"continue\" or \"back\". Let's try this again, shall we?");
+                        confirmPath("1");
+                    }
+                    break;
+                default:
+                    System.out.println("Are you sure you wish to travel to The Inn? Here you can rest up and recharge your health points.");
+                    if (confirm.equalsIgnoreCase("confirm")) {
+                        //method to go to forest
+                    } else if (confirm.equalsIgnoreCase("back")) {
+                        choosePath();
+                        break label;
+                    } else {
+                        System.out.println("That is not a valid choice. Please enter \"continue\" or \"back\". Let's try this again, shall we?");
+                        confirmPath("0");
+                    }
+                    break;
+            }
         }
 
     }
 
+
+
+    public void playGame() {
+        choosePath();
+
+    }
+
+ */
+    /*
+    Choose a path:
+
+    Desert
+    Woods
+    Mountains
+
+    Desert:
+    Scorpion
+    Mummy
+    Snake
+
+    Woods:
+    Rodent of Unusual Size (ROUS)
+    Spider
+    Direwolf
+
+
+
+    Mountains:
+    Orc
+    Troll
+    Uruk-Hai
+
+
+
+
+     */
+
+    /*
     public void battle() {
         if (this.hero.getWinCounter() < 3) {
             System.out.println("A challenger approaches! fight/run?");
@@ -37,7 +154,7 @@ public class Game {
                     break;
                 } else if (fightRun.equalsIgnoreCase("run")) {
                     this.hero.runAway();
-                    System.out.println("You are a coward and unworthy of the title of hero. Game over!");
+                    System.out.println("You are a coward and unworthy of the title of hero. game.Game over!");
                     break;
                 } else {
                     System.out.println("That is not a valid action. Fight or run?");
@@ -50,7 +167,7 @@ public class Game {
     }
 
     public void battleLoop() {
-        Enemy enemy = new Enemy();
+        game.Enemy enemy = new game.Enemy();
         while (true) {
             if (this.hero.getHealthPoints() <= 0) {
                 System.out.println("You have died. Alas.");
@@ -121,7 +238,7 @@ public class Game {
                 break;
             } else if (action.equalsIgnoreCase("run")) {
                 hero.runAway();
-                System.out.println("You are a coward and unworthy of the title of hero. Game over!");
+                System.out.println("You are a coward and unworthy of the title of hero. game.Game over!");
                 break;
             } else {
                 System.out.println("That is not a valid action. Fight or run?");
@@ -130,7 +247,7 @@ public class Game {
     }
 
     public void bossBattle() {
-        Boss boss = new Boss();
+        game.Boss boss = new game.Boss();
         while (true) {
 
             if (this.hero.getHealthPoints() <= 0) {
@@ -164,5 +281,7 @@ public class Game {
             System.out.printf("You have %dHP remaining!%n", this.hero.getHealthPoints());
         }
     }
+
+     */
 
 }
