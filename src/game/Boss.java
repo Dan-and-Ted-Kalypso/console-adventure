@@ -13,14 +13,21 @@ public class Boss {
 
     public int generateAttackValue() {
         Random random = new Random();
-        return random.nextInt(11);
+        int initial = random.nextInt(10);
+        if (initial == 9) {
+            return 32;
+        } else if (initial > 3) {
+            int secondary = random.nextInt(6);
+            return (25 - secondary);
+        }
+        return random.nextInt(16);
     }
 
-    public int getBossHP() {
+    public int getEnemyHP() {
         return this.healthPoints;
     }
 
-    public void changeBossHP(int amountToChange) {
+    public void changeEnemyHP(int amountToChange) {
         this.healthPoints += amountToChange;
     }
 
@@ -30,6 +37,8 @@ public class Boss {
         while (true) {
 
             System.out.println("Welcome to the Great Volcano! It smells like sulfur.");
+            System.out.printf("Your health points: %d.%n", heroArray[1]);
+            System.out.printf("Your potion count: %d.%n", heroArray[0]);
             System.out.println("What do you want to do?");
             System.out.println("1: Challenge the Boss.");
             System.out.println("2: Leave.");

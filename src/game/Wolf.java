@@ -23,3 +23,20 @@ public class Wolf {
         return this.healthPoints;
     }
 }
+
+
+/*
+
+
+32 max -> 33
+
+20-25
+
+0-15
+
+
+
+
+
+
+ */

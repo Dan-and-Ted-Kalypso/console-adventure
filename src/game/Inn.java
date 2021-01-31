@@ -31,7 +31,6 @@ public class Inn {
             String input = scanner.nextLine();
             if (input.equals("1")) {
                 checkInn();
-                break;
             } else if (input.equals("2")) {
                 visitMerchant();
                 break;

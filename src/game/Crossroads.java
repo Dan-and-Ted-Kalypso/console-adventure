@@ -73,6 +73,7 @@ public class Crossroads {
                 break;
             } else {
                 choosePath();
+                break;
             }
         }
 
@@ -97,6 +98,7 @@ public class Crossroads {
                 break;
             } else {
                 choosePath();
+                break;
             }
         }
 
@@ -120,6 +122,7 @@ public class Crossroads {
                 break;
             } else {
                 choosePath();
+                break;
             }
         }
 
@@ -143,6 +146,7 @@ public class Crossroads {
                 break;
             } else {
                 choosePath();
+                break;
             }
         }
 
@@ -166,6 +170,7 @@ public class Crossroads {
                 break;
             } else {
                 choosePath();
+                break;
             }
         }
 
