@@ -189,7 +189,6 @@ public class Hero {
 
     public void addScimitar() {
         this.scimitar = 1;
-        System.out.println("Nice scimitar, dude.");
     }
 
     //BATTLEAXE
