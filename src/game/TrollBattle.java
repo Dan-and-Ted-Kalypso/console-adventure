@@ -33,18 +33,26 @@ public class TrollBattle {
 
             switch (action) {
                 case "1":
-                    int attackValue = 25;
-                    troll.changeEnemyHP(attackValue * -1);
-                    System.out.printf("You hit the troll for %d points!%n", attackValue);
+                    int attackValue = hero.generateAttackValue();
+                    if (attackValue == 0) {
+                        System.out.println("Your attack missed!");
+                    } else {
+                        troll.changeEnemyHP(attackValue * -1);
+                        System.out.printf("You hit the troll for %d points!%n", attackValue);
+                    }
                     if (troll.getEnemyHP() <= 0) {
                         System.out.println("The troll has 0 health points remaining!");
                         winTrollBattle();
                         break label;
                     } else {
                         System.out.printf("The troll has %d health points remaining.%n", troll.getEnemyHP());
-                        int enemyAttackValue = 1; //orc.generateAttackValue();
-                        hero.changeHealthPoints(enemyAttackValue * -1);
-                        System.out.printf("The troll hits you for %d points!%n", enemyAttackValue);
+                        int enemyAttackValue = troll.generateAttackValue();
+                        if (enemyAttackValue == 0) {
+                            System.out.println("The troll's attack missed!");
+                        } else {
+                            hero.changeHealthPoints(enemyAttackValue * -1);
+                            System.out.printf("The troll hits you for %d points!%n", enemyAttackValue);
+                        }
                         if (hero.getHealthPoints() <= 0) {
                             System.out.println("You have no health points remaining! Oh no!");
                             hero.die();
@@ -93,10 +101,10 @@ public class TrollBattle {
     }
 
     public void winTrollBattle() {
-        System.out.println("You beat the troll!");
-        System.out.println("You find a potion and 2 gold!");
+        System.out.println("You have defeated the troll!");
+        System.out.println("You find a potion and 10 gold!");
         hero.changePotionCount(1);
-        hero.changeGold(2);
+        hero.changeGold(10);
         hero.changeMountainWins();
         while (true) {
             System.out.println("Would you like to stay in the mountains?");

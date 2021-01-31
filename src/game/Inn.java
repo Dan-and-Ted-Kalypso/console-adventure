@@ -92,9 +92,6 @@ public class Inn {
         } else {
             merchantPotions();
         }
-
-
-
     }
 
     public void merchantDagger() {
