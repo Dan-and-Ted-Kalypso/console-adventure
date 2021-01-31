@@ -24,8 +24,8 @@ public class Crossroads {
         label:
         while (true) {
             System.out.println("You are standing at a crossroads.");
-            System.out.printf("You have %d health points.%n", heroArray[1]);
-            System.out.printf("You have %d potions.%n", heroArray[0]);
+            System.out.printf("Your health points: %d.%n", heroArray[1]);
+            System.out.printf("Your potion count: %d.%n", heroArray[0]);
             System.out.println("Choose a path by selecting a number: ");
             System.out.println("0: The Inn");
             System.out.println("1: Forest");
@@ -79,6 +79,7 @@ public class Crossroads {
     }
 
     public void goToInn(int[] heroArray) {
+        System.out.println("Welcome to The Inn! You can rest and recharge your health points here for 10 gold, or you can visit the merchant.");
         Inn inn = new Inn(heroArray);
         inn.stayOrGo();
     }
