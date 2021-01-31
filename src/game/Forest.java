@@ -7,6 +7,7 @@ public class Forest {
     public void stayOrGo(int[] heroArray) {
         Scanner scanner = new Scanner(System.in);
 
+        System.out.println("");
         System.out.println("                                       oxoxoo    ooxoo");
         System.out.println("                                      ooxoxo oo  oxoxooo");
         System.out.println("                                     oooo xxoxoo ooo ooox    ccee88oo");

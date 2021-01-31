@@ -24,6 +24,7 @@ public class Crossroads {
         label:
         while (true) {
 
+            System.out.println("");
             System.out.println("                                   ,'-',");
             System.out.println("                                   '___'");
             System.out.println("                                 ,-'   '-,");

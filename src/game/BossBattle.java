@@ -20,6 +20,7 @@ public class BossBattle {
 
     public void battle() {
 
+        System.out.println("");
         System.out.println("                                                           /\\");
         System.out.println("                                                          //\\\\");
         System.out.println("                                                         <<()>>     A");
@@ -138,8 +139,55 @@ public class BossBattle {
     }
 
     public void winBossBattle() {
-        System.out.println("You have defeated the great and powerful boss and ended his reign of tyranny o'er this land!");
+
+        System.out.println("");
+
+        System.out.println("                                 ____");
+        System.out.println("                              .-\"    `-.      ,");
+        System.out.println("                            .'          '.   /j\\");
+        System.out.println("                           /              \\,/:/#\\                /\\");
+        System.out.println("                          ;              ,//' '/#\\              //#\\");
+        System.out.println("                          |             /' :   '/#\\            /  /#\\");
+        System.out.println("                          :         ,  /' /'    '/#\\__..--\"\"\"\"/    /#\\__");
+        System.out.println("                           \\       /'\\'-._:__    '/#\\        ;      /#, \"\"\"---");
+        System.out.println("                            `-.   / ;#\\']\" ; \"\"\"--./#J       ':____...!");
+        System.out.println("                               `-/   /#\\  J  [;[;[;Y]         |      ;");
+        System.out.println("\"\"\"\"\"\"---....             __.--\"/    '/#\\ ;   \" \"  |     !    |   #! |");
+        System.out.println("             \"\"--.. _.--\"\"     /      ,/#\\'-..____.;_,   |    |   '  |");
+        System.out.println("                   \"-.        :_....___,/#} \"####\" | '_.-\",   | #['  |");
+        System.out.println("                      '-._      |[;[;[;[;|         |.;'  /;\\  |      |");
+        System.out.println("                      ,   `-.   |        :     _   .;'    /;\\ |   #\" |");
+        System.out.println("                      !      `._:      _  ;   ##' .;'      /;\\|  _,  |");
+        System.out.println("                     .#\\\"\"\"---..._    ';, |      .;{___     /;\\  ]#' |__....--");
+        System.out.println("          .--.      ;'/#\\         \\    ]! |       \"| , \"\"\"--./_J    /");
+        System.out.println("         /  '%;    /  '/#\\         \\   !' :        |!# #! #! #|    :`.__");
+        System.out.println("        i__..'%] _:_   ;##J         \\      :\"#...._!   '  \"  \"|__  |    `--.._");
+        System.out.println("         | .--\"\"\" !|\"\"\"\"  |\"\"\"----...J     | '##\"\" `-._       |  \"\"\"---.._");
+        System.out.println("     ____: |      #|      |         #|     |          \"]      ;   ___...-\"T,");
+        System.out.println("    /   :  :      !|      |   _______!_    |           |__..--;\"\"\"     ,;MM;");
+        System.out.println("   :____| :    .-.#|      |  /\\      /#\\   |          /'               ''MM;");
+        System.out.println("    |\"\"\": |   /   \\|   .----+  ;      /#\\  :___..--\"\";                  ,'MM;");
+        System.out.println("   _Y--:  |  ;     ;.-'      ;  \\______/#: /         ;                  ''MM;");
+        System.out.println("  /    |  | ;_______;     ____!  |\"##\"\"\"MM!         ;                    ,'MM;");
+System.out.println(" !_____|  |  |\"#\"#\"|____.'\"\"##\"  |       :         ;                     ''MM");
+System.out.println("  | \"\"\"\"--!._|     |##\"\"         !       !         :____.....-------\"\"\"\"\"\" |'");
+System.out.println("  |          :     |______                        ___!_ \"#\"\"#\"\"#\"\"\"#\"\"\"#\"\"\"|");
+        System.out.println("__|          ;     |MM\"MM\"\"\"\"\"---..._______...--\"\"MM\"MM]                   |");
+System.out.println("  \"\\-.      :      |#                                  :                   |");
+System.out.println("    /#'.    |      /##,                                !                   |");
+System.out.println("   .',/'\\   |       #:#,                                ;       .==.       |");
+System.out.println("  /\"\\'#\"\\',.|       ##;#,                               !     ,'||||',     |");
+System.out.println("        /;/`:       ######,          ____             _ :     M||||||M     |");
+System.out.println("       ###          /;\"\\.__\"-._   \"\"\"                   |===..M!!!!!!M_____|");
+        System.out.println("                           `--..`--.._____             _!_");
+        System.out.println("                                          `--...____,=\"_.'`-.____");
+
+        System.out.println("");
+
+        System.out.println("You have defeated the great and powerful boss and ended his reign of tyranny o'er the land!");
         System.out.println("Your name will surely go down in the annals of history!");
+        System.out.println("You win!");
+        System.out.println("Thanks for playing!");
     }
 }
 

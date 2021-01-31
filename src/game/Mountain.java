@@ -7,6 +7,7 @@ public class Mountain {
     public void stayOrGo(int[] heroArray) {
         Scanner scanner = new Scanner(System.in);
 
+        System.out.println("");
         System.out.println("                                 _");
         System.out.println("                       .-.      / \\        _");
         System.out.println("           ^^         /   \\    /^./\\__   _/ \\");

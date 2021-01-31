@@ -19,6 +19,53 @@ public class TrollBattle {
 
     public void battle() {
 
+        System.out.println("");
+
+        System.out.println("                           __.--|~|--.__                               ,,;/;");
+        System.out.println("                         /~     | |    ;~\\                          ,;;;/;;'");
+        System.out.println("                        /|      | |    ;~\\\\                      ,;;;;/;;;'");
+        System.out.println("                       |/|      \\_/   ;;;|\\                    ,;;;;/;;;;'");
+        System.out.println("                       |/ \\          ;;;/  )                 ,;;;;/;;;;;'");
+        System.out.println("                   ___ | ______     ;_____ |___....__      ,;;;;/;;;;;'");
+        System.out.println("             ___.-~ \\\\(| \\  \\.\\ \\__/ /./ /:|)~   ~   \\   ,;;;;/;;;;;'");
+        System.out.println("         /~~~    ~\\    |  ~-.     |   .-~: |//  _.-~~--,;;;;/;;;;;'");
+        System.out.println("        (.-~___     \\.'|    | /-.__.-\\|::::| //~     ,;;;;/;;;;;'");
+        System.out.println("        /      ~~--._ \\|   /          `\\:: |/      ,;;;;/;;;;;'");
+        System.out.println("     .-|             ~~|   |  /V\"\"\"\"V\\ |:  |     ,;;;;/;;;;;' \\");
+        System.out.println("    /                   \\  |  ~`^~~^'~ |  /    ,;;;;/;;;;;'    ;");
+        System.out.println("   (        \\             \\|`\\._____./'|/    ,;;;;/;;;;;'      '\\");
+        System.out.println("  / \\        \\                             ,;;;;/;;;;;'     /    |");
+        System.out.println(" |            |                          ,;;;;/;;;;;'      |     |");
+        System.out.println("|`-._          |                       ,;;;;/;;;;;'              \\");
+        System.out.println("|             /                      ,;;;;/;;;;;'  \\              \\__________");
+        System.out.println("(             )                 |  ,;;;;/;;;;;'      |        _.--~");
+        System.out.println(" \\          \\/ \\              ,  ;;;;;/;;;;;'       /(     .-~_..--~~~~~~~~~~");
+        System.out.println(" \\__         '  `       ,     ,;;;;;/;;;;;'    .   /  \\   / /~");
+        System.out.println(" /          \\'  |`._______ ,;;;;;;/;;;;;;'    /   :    \\/'/'       /|_/|   ``|");
+        System.out.println("| _.-~~~~-._ |   \\ __   .,;;;;;;/;;;;;;' ~~~~'   .'    | |       /~ (/\\/    ||");
+        System.out.println("/~ _.-~~~-._\\    /~/   ;;;;;;;/;;;;;;;'          |    | |       / ~/_-'|-   /|");
+        System.out.println("(/~         \\| /' |   ;;;;;;/;;;;;;;;            ;   | |       (.-~;  /-   / |");
+        System.out.println("|            /___ `-,;;;;;/;;;;;;;;'            |   | |      ,/)  /  /-   /  |");
+        System.out.println(" \\            \\  `-.`---/;;;;;;;;;' |          _'   | |    /'('  /  /|- _/  //");
+        System.out.println("   \\           /~~/ `-. |;;;;;''    ______.--~~ ~\\  | |  ,~)')  /   | \\~-==//");
+        System.out.println("     \\      /~(   `-\\  `-.`-;   /|    ))   __-####\\ | |   (,   /|    |  \\");
+        System.out.println("       \\  /~.  `-.   `-.( `-.`~~ /##############'~~)| |   '   / |    |   ~\\");
+        System.out.println("        \\(   \\    `-._ /~)_/|  /############'       | |      /  \\     \\_\\  `\\");
+        System.out.println("        ,~`\\  `-._  / )#####|/############'   /     | |  _--~ _/ | .-~~____--'");
+        System.out.println("       ,'\\  `-._  ~)~~ `################'           | | ((~>/~   \\ (((' -_");
+        System.out.println("     ,'   `-.___)~~      `#############             | |           ~-_     ~\\_");
+        System.out.println(" _.,'        ,'           `###########              | |            _-~-__    (");
+        System.out.println("|  `-.     ,'              `#########       \\       | |          ((.-~~~-~_--~");
+        System.out.println("`\\    `-.;'                  `#####\"                | |           \"     ((.-~~");
+        System.out.println("  `-._   )               \\     |   |        .       |  \\                 \"");
+        System.out.println("      `~~  _/                  |    \\               |   `---------------------");
+        System.out.println("        |/~                `.  |     \\        .     |       __.---------------");
+        System.out.println("         |                   \\ ;      \\             |   _.-~");
+        System.out.println("         |                    |        |            |  /  |");
+        System.out.println("          |                   |         |           |/'  |");
+
+        System.out.println("");
+
         System.out.println("It's a troll! He's huge and he smells terrible!");
 
         label:
@@ -124,6 +171,5 @@ public class TrollBattle {
                 System.out.println("That is not a valid action. Let's try this again.");
             }
         }
-
     }
 }

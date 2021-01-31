@@ -19,6 +19,33 @@ public class SnakeBattle {
 
     public void battle() {
 
+        System.out.println("");
+
+        System.out.println("                /||\\");
+        System.out.println("                ||||");
+        System.out.println("                ||||                      _____.-..-.");
+        System.out.println("                |||| /|\\               .-~@@/ / q  p \\");
+        System.out.println("           /|\\  |||| |||             .'@ _@/..\\-.__.-/");
+        System.out.println("           |||  |||| |||            /@.-~/|~~~`\\|__|/");
+        System.out.println("           |||  |||| |||            |'--<||     '~~'");
+        System.out.println("           |||  |||| d||            |>--<\\@\\");
+        System.out.println("           |||  |||||||/            \\>---<\\@`\\.");
+        System.out.println("           ||b._||||~~'              `\\>---<`\\@`\\.");
+        System.out.println("           \\||||||||                   `\\>----<`\\@`\\.");
+        System.out.println("            `~~~||||               _     `\\>-----<`\\@`\\.");
+        System.out.println("                ||||              (_)      `\\>-----<`\\.@`\\.");
+        System.out.println("                ||||              (_)        `\\>------<`\\.@`\\.");
+        System.out.println("~~~~~~~~~~~~~~~~||||~~~~~~~~~~~~~~(__)~~~~~~~~~`\\>-------<`\\.@`\\~~~~~~~~~~~~~");
+        System.out.println("  \\/..__..--  . |||| \\/  .  ..____( _)@@@--..____\\..--\\@@@/~`\\@@>-._   \\/ .");
+        System.out.println("\\/         \\/ \\/    \\/     / - -\\@@@@--@/- - \\@@@/ - - \\@/- -@@@@/- \\.   --._");
+        System.out.println("   .   \\/    _..\\/-...--.. |- - -\\@@/ - -\\@@@@/~~~~\\@@@@/- - \\@@/- - |   .\\/");
+        System.out.println("        .  \\/              | - - -@@ - - -\\@@/- - - \\@@/- - - @@- - -|      .");
+        System.out.println(". \\/             .   \\/     ~-.__ - - - - -@@- - - - @@- - - - -__.-~  . \\/");
+        System.out.println("   __...--..__..__       .  \\/   ~~~--..____- - - - -____..--~~~    \\/_..--..");
+        System.out.println("\\/  .   .    \\/     \\/    __..--... \\/      ~~~~~~~~~     \\/ . \\/  .");
+
+        System.out.println("");
+
         System.out.println("A giant snake explodes from out of the sand! Those fangs are massive!");
 
         label:
@@ -124,6 +151,5 @@ public class SnakeBattle {
                 System.out.println("That is not a valid action. Let's try this again.");
             }
         }
-
     }
 }

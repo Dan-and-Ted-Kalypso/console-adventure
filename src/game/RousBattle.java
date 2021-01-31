@@ -18,7 +18,33 @@ public class RousBattle {
 
     public void battle() {
 
-        System.out.println("What's that? Sprinting towards you through the trees? It's a Rodent of Unusual Size! Watch out for that bite!!");
+        System.out.println("");
+
+        System.out.println("             .-\"\"\"-.");
+        System.out.println("            /       \\");
+        System.out.println("            \\       /");
+        System.out.println("     .-\"\"\"-.-`.-.-.<  _");
+        System.out.println("    /      _,-\\ ()()_/:)");
+        System.out.println("    \\     / ,  `     `|");
+        System.out.println("     '-..-| \\-.,___,  /");
+        System.out.println("           \\ `-.__/  /");
+        System.out.println("          / `-.__.-\\`");
+        System.out.println("         / /|    ___\\");
+        System.out.println("        ( ( |.-\"`   `'\\");
+        System.out.println("         \\ \\/    {}{}  |");
+        System.out.println("          \\|           /");
+        System.out.println("           \\        , /");
+        System.out.println("           ( __`;-;'__`)");
+        System.out.println("           `//'`   `||`");
+        System.out.println("          _//       ||");
+        System.out.println("  .-\"-._,(__)     .(__).-\"\"-.");
+        System.out.println(" /          \\    /           \\");
+        System.out.println(" \\          /    \\           /");
+        System.out.println("  `'-------`      `--------'`");
+
+        System.out.println("");
+
+        System.out.println("What's that? Sprinting towards you through the trees? It's a Rodent of Unusual Size! I thought they didn't exist!");
 
         label:
         while (true) {

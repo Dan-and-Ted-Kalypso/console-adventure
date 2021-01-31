@@ -9,6 +9,46 @@ public class Game {
 
     public void beginGame() {
         this.scanner = new Scanner(System.in);
+
+        System.out.println("");
+        System.out.println("              {}");
+        System.out.println("             {{}}");
+        System.out.println("             {{}}");
+        System.out.println("              {}");
+        System.out.println("            .-''-.");
+        System.out.println("           /  __  \\");
+        System.out.println("          /.-'  '-.\\");
+        System.out.println("          \\::.  .::/");
+        System.out.println("           \\'    '/");
+        System.out.println("      __ ___)    (___ __");
+        System.out.println("    .'   \\\\        //   `.");
+        System.out.println("   /     | '-.__.-' |     \\");
+        System.out.println("   |     |  '::::'  |     |");
+        System.out.println("   |    /    '::'    \\    |");
+        System.out.println("   |_.-;\\     __     /;-._|");
+        System.out.println("   \\.'^`\\\\    \\/    //`^'./");
+        System.out.println("   /   _.-._ _||_ _.-._   \\");
+        System.out.println("  `\\___\\    '-..-'    /___/`");
+        System.out.println("       /'---.  `\\.---'\\");
+        System.out.println("      ||    |`\\\\\\|    ||");
+        System.out.println("      ||    | || |    ||");
+        System.out.println("      |;.__.' || '.__.;|");
+        System.out.println("      |       ||       |");
+        System.out.println("      {{{{{{{{||}}}}}}}}");
+        System.out.println("       |      ||      |");
+        System.out.println("       |.-==-.||.-==-.|");
+        System.out.println("       <.    .||.    .>");
+        System.out.println("        \\'=='/||\\'=='/");
+        System.out.println("        |   / || \\   |");
+        System.out.println("        |   | || |   |");
+        System.out.println("        |   | || |   |");
+        System.out.println("        /^^\\| || |/^^\\");
+        System.out.println("       /   .' || '.   \\");
+        System.out.println("      /   /   ||   \\   \\");
+        System.out.println("     (__.'    \\/    '.__)");
+
+        System.out.println("");
+
         System.out.println("Welcome to your adventure! What is your name?");
         Scanner nameScanner = new Scanner(System.in);
         String name = nameScanner.nextLine();
@@ -20,7 +60,6 @@ public class Game {
         }
 
         goToCrossroads();
-
     }
 
 
