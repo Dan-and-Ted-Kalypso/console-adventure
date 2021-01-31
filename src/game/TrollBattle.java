@@ -123,7 +123,6 @@ public class TrollBattle {
                 crossroads.choosePath();
             } else {
                 System.out.println("That is not a valid action. Let's try this again.");
-                System.out.println("What would you like to do?");
             }
         }
 

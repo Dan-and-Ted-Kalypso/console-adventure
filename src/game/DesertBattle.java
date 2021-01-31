@@ -12,9 +12,9 @@ public class DesertBattle {
 
     public void battle() {
         if (desertWins == 3) {
-            //snakeBattle
+            fightSnake();
         } else if (desertWins == 1) {
-            //scorpionBattle
+            fightScorpion();
         } else if (desertWins == 2) {
             //mummyBattle
         } else {
@@ -23,4 +23,17 @@ public class DesertBattle {
             crossroads.choosePath();
         }
     }
+
+    public void fightSnake() {
+        SnakeBattle snakeBattle = new SnakeBattle(heroArray);
+        snakeBattle.battle();
+    }
+
+    public void fightScorpion() {
+        ScorpionBattle scorpionBattle = new ScorpionBattle(heroArray);
+        scorpionBattle.battle();
+    }
+
+
+
 }
