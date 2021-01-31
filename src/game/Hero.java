@@ -82,16 +82,56 @@ public class Hero {
             System.out.println("You don't have any potions!");
         } else if (getMaxHP() == getHealthPoints()) {
             System.out.println("You are already at full health!");
-        } else if (getMaxHP() - getHealthPoints() <= 10) {
-            setHPtoMax();
-            changePotionCount(-1);
-            System.out.printf("You drink the potion. You now have full HP of %d points.%n", getHealthPoints());
-            System.out.printf("Potions remaining: %d.%n", getPotionCount());
+        }
+
+        if (getLevel() == 4) {
+            if (getMaxHP() - getHealthPoints() <= 20) {
+                setHPtoMax();
+                changePotionCount(-1);
+                System.out.printf("You drink the potion. You now have full HP of %d points.%n", getHealthPoints());
+                System.out.printf("Potions remaining: %d.%n", getPotionCount());
+            } else {
+                changeHealthPoints(20);
+                changePotionCount(-1);
+                System.out.printf("You drink the potion. You now have %d health points.%n", getHealthPoints());
+                System.out.printf("Potions remaining: %d.%n", getPotionCount());
+            }
+        } else if (getLevel() == 3) {
+            if (getMaxHP() - getHealthPoints() <= 15) {
+                setHPtoMax();
+                changePotionCount(-1);
+                System.out.printf("You drink the potion. You now have full HP of %d points.%n", getHealthPoints());
+                System.out.printf("Potions remaining: %d.%n", getPotionCount());
+            } else {
+                changeHealthPoints(15);
+                changePotionCount(-1);
+                System.out.printf("You drink the potion. You now have %d health points.%n", getHealthPoints());
+                System.out.printf("Potions remaining: %d.%n", getPotionCount());
+            }
+        } else if (getLevel() == 2) {
+            if (getMaxHP() - getHealthPoints() <= 10) {
+                setHPtoMax();
+                changePotionCount(-1);
+                System.out.printf("You drink the potion. You now have full HP of %d points.%n", getHealthPoints());
+                System.out.printf("Potions remaining: %d.%n", getPotionCount());
+            } else {
+                changeHealthPoints(10);
+                changePotionCount(-1);
+                System.out.printf("You drink the potion. You now have %d health points.%n", getHealthPoints());
+                System.out.printf("Potions remaining: %d.%n", getPotionCount());
+            }
         } else {
-            changeHealthPoints(10);
-            changePotionCount(-1);
-            System.out.printf("You drink the potion. You now have %d health points.%n", getHealthPoints());
-            System.out.printf("Potions remaining: %d.%n", getPotionCount());
+            if (getMaxHP() - getHealthPoints() <= 5) {
+                setHPtoMax();
+                changePotionCount(-1);
+                System.out.printf("You drink the potion. You now have full HP of %d points.%n", getHealthPoints());
+                System.out.printf("Potions remaining: %d.%n", getPotionCount());
+            } else {
+                changeHealthPoints(5);
+                changePotionCount(-1);
+                System.out.printf("You drink the potion. You now have %d health points.%n", getHealthPoints());
+                System.out.printf("Potions remaining: %d.%n", getPotionCount());
+            }
         }
     }
 
@@ -266,7 +306,7 @@ public class Hero {
     40  10  30    25 26     30 + 4
     45  10        30 31
 
-    50            50 51      40 + 5
+    50            45 46      40 + 5
      */
 
     public int attemptRun() {

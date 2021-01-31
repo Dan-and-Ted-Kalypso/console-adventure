@@ -3,22 +3,22 @@ package game;
 
 import java.util.Scanner;
 
-public class UrukBattle {
+public class RousBattle {
 
     private Hero hero;
-    private Uruk uruk;
+    private Rous rous;
     private Scanner scanner;
 
-    public UrukBattle(int[] heroArray) {
+    public RousBattle(int[] heroArray) {
 
         this.hero = new Hero(heroArray);
-        this.uruk = new Uruk();
+        this.rous = new Rous();
         this.scanner = new Scanner(System.in);
     }
 
     public void battle() {
 
-        System.out.println("It's an Uruk-Hai! He looks like he's hungry, and meat's back on the menu!");
+        System.out.println("What's that? Sprinting towards you through the trees? It's a Rodent of Unusual Size! Watch out for that bite!!");
 
         label:
         while (true) {
@@ -34,21 +34,21 @@ public class UrukBattle {
                     if (attackValue == 0) {
                         System.out.println("Your attack missed!");
                     } else {
-                        uruk.changeEnemyHP(attackValue * -1);
-                        System.out.printf("You hit the Uruk-Hai for %d points!%n", attackValue);
+                        rous.changeEnemyHP(attackValue * -1);
+                        System.out.printf("You hit the R.O.U.S. for %d points!%n", attackValue);
                     }
-                    if (uruk.getEnemyHP() <= 0) {
-                        System.out.println("The Uruk-Hai has 0 health points remaining!");
-                        winUrukBattle();
+                    if (rous.getEnemyHP() <= 0) {
+                        System.out.println("The R.O.U.S. has 0 health points remaining!");
+                        winRousBattle();
                         break label;
                     } else {
-                        System.out.printf("The Uruk-Hai has %d health points remaining.%n", uruk.getEnemyHP());
-                        int enemyAttackValue = uruk.generateAttackValue();
+                        System.out.printf("The R.O.U.S. has %d health points remaining.%n", rous.getEnemyHP());
+                        int enemyAttackValue = rous.generateAttackValue();
                         if (enemyAttackValue == 0) {
-                            System.out.println("The Uruk-Hai's attack missed!");
+                            System.out.println("The R.O.U.S.' attack missed!");
                         } else {
                             hero.changeHealthPoints(enemyAttackValue * -1);
-                            System.out.printf("The Uruk-Hai hits you for %d points!%n", enemyAttackValue);
+                            System.out.printf("The R.O.U.S. hits you for %d points!%n", enemyAttackValue);
                         }
                         if (hero.getHealthPoints() <= 0) {
                             System.out.println("You have no health points remaining! Oh no!");
@@ -81,7 +81,7 @@ public class UrukBattle {
                             Crossroads crossroads = new Crossroads(hero.getHero());
                             crossroads.choosePath();
                         } else {
-                            System.out.println("The Uruk-Hai manages to hit you as you run away! You have lost half of your remaining health points!");
+                            System.out.println("The R.O.U.S. manages to hit you as you run away! You have lost half of your remaining health points!");
                             hero.changeHealthPoints((hero.getHealthPoints() / 2) * -1);
                             System.out.printf("You now have %d health points remaining.%n", hero.getHealthPoints());
                             System.out.println("You return to the crossroads.");
@@ -97,21 +97,19 @@ public class UrukBattle {
         }
     }
 
-    public void winUrukBattle() {
-        System.out.println("You beat the Uruk-Hai!");
-        System.out.println("You find a potion and 10 gold!");
+    public void winRousBattle() {
+        System.out.println("You have defeated the Rodent of Unusual Size!");
+        System.out.println("You find a potion and 7 gold!");
         System.out.println("You feel yourself getting stronger! You have leveled up!");
         hero.levelUp();
-        System.out.println("You search the Uruk-Hai's cave and find a huge, glittering sword! It looks powerful.");
-        hero.addExcalibur();
+        System.out.println("You find a wicked sharp scimitar in the underbrush. This will undoubtedly make your monster-slaying efforts go much more smoothly!");
+        hero.addScimitar();
         hero.changePotionCount(1);
-        hero.changeGold(10);
-        hero.changeMountainWins();
-
-        System.out.println("You have conquered all of the evil foes in the mountains!");
+        hero.changeGold(7);
+        hero.changeForestWins();
+        System.out.println("You have conquered all of the evil foes in the forest!");
         System.out.println("You decide to return to the crossroads.");
         Crossroads crossroads = new Crossroads(hero.getHero());
         crossroads.choosePath();
-
     }
 }

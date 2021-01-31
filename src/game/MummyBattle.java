@@ -5,21 +5,18 @@ import java.util.Scanner;
 
 public class MummyBattle {
 
-    private int[] heroArray;
     private Hero hero;
     private Mummy mummy;
     private Scanner scanner;
 
     public MummyBattle(int[] heroArray) {
-        this.heroArray = heroArray;
+
         this.hero = new Hero(heroArray);
         this.mummy = new Mummy();
         this.scanner = new Scanner(System.in);
     }
 
     public void battle() {
-        int enemyHP = mummy.getEnemyHP();
-        int heroHP = hero.getHealthPoints();
 
         System.out.println("What's that? Behind the pyramid? Eek! It's a mummy!");
 

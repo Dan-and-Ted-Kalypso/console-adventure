@@ -18,8 +18,6 @@ public class SnakeBattle {
     }
 
     public void battle() {
-        int enemyHP = snake.getEnemyHP();
-        int heroHP = hero.getHealthPoints();
 
         System.out.println("A giant snake explodes from out of the sand! Those fangs are massive!");
 
@@ -121,6 +119,7 @@ public class SnakeBattle {
             } else if (action.equals("2")) {
                 Crossroads crossroads = new Crossroads(hero.getHero());
                 crossroads.choosePath();
+                break;
             } else {
                 System.out.println("That is not a valid action. Let's try this again.");
             }

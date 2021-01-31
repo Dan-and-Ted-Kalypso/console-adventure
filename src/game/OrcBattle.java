@@ -18,8 +18,6 @@ public class OrcBattle {
     }
 
     public void battle() {
-        int enemyHP = orc.getEnemyHP();
-        int heroHP = hero.getHealthPoints();
 
         System.out.println("It's an orc! He looks nasty!");
 
@@ -121,6 +119,7 @@ public class OrcBattle {
             } else if (action.equals("2")) {
                 Crossroads crossroads = new Crossroads(hero.getHero());
                 crossroads.choosePath();
+                break;
             } else {
                 System.out.println("That is not a valid action. Let's try this again.");
             }
