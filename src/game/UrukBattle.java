@@ -111,7 +111,7 @@ public class UrukBattle {
         hero.changeGold(10);
         hero.changeMountainWins();
 
-        System.out.println("You have conquered all of the evil foes in the mountains.");
+        System.out.println("You have conquered all of the evil foes in the mountains!");
         System.out.println("You decide to return to the crossroads.");
         Crossroads crossroads = new Crossroads(hero.getHero());
         crossroads.choosePath();

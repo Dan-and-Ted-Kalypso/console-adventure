@@ -10,15 +10,15 @@ public class Forest {
         while (true) {
 
             System.out.println("Welcome to the forest!");
-            System.out.printf("You have %d health points.%n", heroArray[1]);
-            System.out.printf("You have %d potions.%n", heroArray[0]);
+            System.out.printf("Your health points: %d.%n", heroArray[1]);
+            System.out.printf("Your potion count: %d.%n", heroArray[0]);
             System.out.println("What do you want to do?");
             System.out.println("1: Look for enemies.");
             System.out.println("2: Leave.");
 
             String action = scanner.nextLine();
 
-            if (action.equals("1") && heroArray[2] < 3) {
+            if (action.equals("1")) {
                 ForestBattle forestBattle = new ForestBattle(heroArray);
                 forestBattle.battle();
                 break;
