@@ -31,8 +31,10 @@ public class Inn {
             String input = scanner.nextLine();
             if (input.equals("1")) {
                 checkInn();
+                break;
             } else if (input.equals("2")) {
                 visitMerchant();
+                break;
             } else if (input.equals("3")) {
                 Crossroads crossroads = new Crossroads(heroArray);
                 crossroads.choosePath();

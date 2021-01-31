@@ -2,8 +2,8 @@ package game;
 
 public class DesertBattle {
 
-    private int[] heroArray;
-    private int desertWins;
+    private final int[] heroArray;
+    private final int desertWins;
 
     public DesertBattle(int[] heroArray) {
         this.heroArray = heroArray;
@@ -11,12 +11,12 @@ public class DesertBattle {
     }
 
     public void battle() {
-        if (desertWins == 3) {
+        if (desertWins == 0) {
             fightSnake();
         } else if (desertWins == 1) {
             fightScorpion();
         } else if (desertWins == 2) {
-            //mummyBattle
+            fightMummy();
         } else {
             System.out.println("Dude. You've already killed everything in the desert. Go somewhere else.");
             Crossroads crossroads = new Crossroads(heroArray);
@@ -34,6 +34,9 @@ public class DesertBattle {
         scorpionBattle.battle();
     }
 
-
+    public void fightMummy() {
+        MummyBattle mummyBattle = new MummyBattle(heroArray);
+        mummyBattle.battle();
+    }
 
 }

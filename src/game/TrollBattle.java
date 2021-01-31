@@ -18,8 +18,6 @@ public class TrollBattle {
     }
 
     public void battle() {
-        int enemyHP = troll.getEnemyHP();
-        int heroHP = hero.getHealthPoints();
 
         System.out.println("It's a troll! He's huge and he smells terrible!");
 
@@ -121,6 +119,7 @@ public class TrollBattle {
             } else if (action.equals("2")) {
                 Crossroads crossroads = new Crossroads(hero.getHero());
                 crossroads.choosePath();
+                break;
             } else {
                 System.out.println("That is not a valid action. Let's try this again.");
             }

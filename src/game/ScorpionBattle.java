@@ -18,8 +18,6 @@ public class ScorpionBattle {
     }
 
     public void battle() {
-        int enemyHP = scorpion.getEnemyHP();
-        int heroHP = hero.getHealthPoints();
 
         System.out.println("A giant scorpion scuttles toward you with alarming speed! The desert sure is full of giant venomous creatures!");
 
@@ -121,6 +119,7 @@ public class ScorpionBattle {
             } else if (action.equals("2")) {
                 Crossroads crossroads = new Crossroads(hero.getHero());
                 crossroads.choosePath();
+                break;
             } else {
                 System.out.println("That is not a valid action. Let's try this again.");
             }
