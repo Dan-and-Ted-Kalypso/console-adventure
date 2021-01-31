@@ -13,18 +13,19 @@ public class Game {
         Scanner nameScanner = new Scanner(System.in);
         String name = nameScanner.nextLine();
         if (name.isEmpty()) {
+            name = "Bartholomew";
             System.out.println("Don't want to tell me your name? Ok then. I shall call you Bartholomew!");
             System.out.println("Hello, Bartholomew! You are about to embark on a wild journey of heroism and chivalry! Let's begin!");
         } else {
             System.out.printf("Hello, %s! You are about to embark on a wild journey of heroism and chivalry! Let's begin!%n", name);
         }
 
-        goToCrossroads();
+        goToCrossroads(name);
 
     }
 
 
-    public void goToCrossroads() {
+    public void goToCrossroads(String name) {
         Crossroads crossroads = new Crossroads();
         crossroads.choosePath();
     }
