@@ -19,6 +19,33 @@ public class OrcBattle {
 
     public void battle() {
 
+
+
+
+       System.out.println("                 _,.---''```````'-.");
+       System.out.println("             ,-'`                  `-._");
+       System.out.println("          ,-`                   __,-``,\\");
+       System.out.println("         /             _       /,'  ,|/ \\");
+       System.out.println("       ,'         ,''-<_`'.    |  ,' |   \\");
+       System.out.println("      /          / _    `  `.  | / \\ |\\  |");
+       System.out.println("      |         (  |`'-,---, `'  \\_|/ |  |");
+       System.out.println("      |         |`  \\  \\|  /  __,    _ \\ |");
+       System.out.println("      |         |    `._\\,'  '    ,-`_\\ \\|");
+       System.out.println("      |         |        ,----      /|   )");
+       System.out.println("      \\         \\       / --.      {/   /|");
+       System.out.println("       \\         | |       `.\\         / |");
+       System.out.println("        \\        / `-.                 | /");
+       System.out.println("         `.     |     `-        _,--V`)\\/        _,-");
+       System.out.println("           `,   |           /``V_,.--`  \\.  _,-'`");
+       System.out.println("            /`--'`._        `-'`         )`'");
+       System.out.println("           /        `-.            _,.-'`");
+       System.out.println("                       `-.____,.-'`");
+
+
+        System.out.println("");
+
+
+
         System.out.println("It's an orc! He looks nasty!");
 
         label:

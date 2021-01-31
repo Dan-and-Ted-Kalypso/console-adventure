@@ -20,6 +20,10 @@ public class BossBattle {
 
     public void battle() {
 
+        hero.changeHealthPoints(500);
+
+        hero.addExcalibur();
+
         System.out.println("So it begins. The great battle of our time...");
         label:
         while (true) {
@@ -77,6 +81,7 @@ public class BossBattle {
     }
 
     public void winBossBattle() {
-        System.out.println("You have defeated the great and powerful boss and ended his reign of tyranny o'er this land! Your name will surely go down in the annals of history!");
+        System.out.println("You have defeated the great and powerful boss and ended his reign of tyranny o'er this land!");
+        System.out.println("Your name will surely go down in the annals of history!");
     }
 }

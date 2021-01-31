@@ -23,6 +23,29 @@ public class Crossroads {
     public void choosePath() {
         label:
         while (true) {
+
+            System.out.println("                                   ,'-',");
+            System.out.println("                                   '___'");
+            System.out.println("                                 ,-'   '-,");
+            System.out.println("                                /_       _\\");
+                    System.out.println("                                | |     | |");
+            System.out.println("  -,,___                        | |_____| |                         ___,,-");
+            System.out.println("  ,,___ ''---,,___              \\@|     |@/               ___,,---'' ___,,");
+            System.out.println("       ''---,,___ ''---,,___     ||  |  ||      ___,,---'' ___,,---''");
+            System.out.println("                 ''---,,__  '--,| |  |  | |,--'' ___,,---''");
+            System.out.println("     _____________________'--,    |__|__|    ,--'_____________________");
+            System.out.println("                                 ,'  '  ',");
+            System.out.println("  ________________________        '--'--'        _________________________");
+            System.out.println("                    __,--'    _,           ,_    '--,__");
+            System.out.println("              __,--'      _,-' |           | '-,_      '--,__");
+            System.out.println("        __,--'        _,-'    |             |    '-,_        '--,__");
+            System.out.println("  __,--'          _,-'       |               |       '-,_          '--,__");
+            System.out.println("              _,-'          |                 |          '-,_");
+            System.out.println("          _,-'             |                   |             '-,_");
+            System.out.println("      _,-'                |                     |                '-,_");
+
+            System.out.println("");
+
             System.out.println("You are standing at a crossroads.");
             System.out.printf("Your health points: %d.%n", heroArray[1]);
             System.out.printf("Your potion count: %d.%n", heroArray[0]);
@@ -182,3 +205,17 @@ public class Crossroads {
     }
 
 }
+
+
+/*
+
+
+
+
+
+
+
+
+
+
+ */
