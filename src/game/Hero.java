@@ -21,8 +21,8 @@ public class Hero {
 
     public Hero() {
 
-        this.potionCount = 2;
-        this.healthPoints = 50;
+        this.potionCount = 1;
+        this.healthPoints = 10;
         this.forestWins = 0;
         this.desertWins = 0;
         this.mountainWins = 0;
@@ -32,7 +32,7 @@ public class Hero {
         this.excalibur = 0;
         this.gold = 5;
         this.level = 1;
-        this.maxHP = 50;
+        this.maxHP = 10;
     }
 
     public Hero(int[] array) {
@@ -80,7 +80,7 @@ public class Hero {
     public void usePotion() {
         if (getPotionCount() == 0) {
             System.out.println("You don't have any potions!");
-        } else if (getMaxHP() == getHealthPoints()){
+        } else if (getMaxHP() == getHealthPoints()) {
             System.out.println("You are already at full health!");
         } else if (getMaxHP() - getHealthPoints() <= 10) {
             setHPtoMax();
@@ -200,23 +200,73 @@ public class Hero {
 
     public void changeMaxHP(int level) {
         if (level == 2) {
-            this.maxHP = 60;
+            this.maxHP = 25;
         } else if (level == 3) {
-            this.maxHP = 70;
+            this.maxHP = 40;
         } else {
-            this.maxHP = 80;
+            this.maxHP = 50;
         }
+    }
+
+
+    public int generateAttackValue() {
+        Random random = new Random();
+        int[] heroArray = getHero();
+        if(heroArray[8] == 1) {
+            int value = random.nextInt(41);
+            if (value > 0) {
+                value += 5;
+                return value;
+            } else {
+                return 0;
+            }
+        } else if (heroArray[7] == 1) {
+            int value = random.nextInt(31);
+            if (value > 0) {
+                value += 4;
+                return value;
+            } else {
+                return 0;
+            }
+        } else if (heroArray[6] == 1) {
+            int value = random.nextInt(16);
+            if (value > 0) {
+                value += 4;
+                return value;
+            } else {
+                return 0;
+            }
+        } else if (heroArray[5] == 1) {
+            int value = random.nextInt(8);
+            if (value > 0) {
+                value += 3;
+                return value;
+            } else {
+                return 0;
+            }
+        }
+        int value = random.nextInt(6);
+        if (value > 0) {
+            value += 2;
+            return value;
+        }
+        return 0;
     }
 
     /*
-    public int generateAttackValue() {
-        Random random = new Random();
-        if (this.hasSword) {
-            return random.nextInt(26);
-        }
-        return random.nextInt(11);
-    }
+    5   6         3  4                  7 + 3
+    10  6   20    5  6        5 + 2
+    15  7         7  8
 
+    20  8         10 11
+    25  8  25     15 16     15 + 4
+    30  9         18 19
+
+    35  10        23 24
+    40  10  30    25 26     30 + 4
+    45  10        30 31
+
+    50            50 51      40 + 5
      */
 
     public int attemptRun() {
@@ -224,17 +274,6 @@ public class Hero {
         return random.nextInt(2);
     }
 
-    public void winBattle(int wins) {
-        if (wins == 3) {
-            System.out.println("Nice job on killing everything!");
-            System.out.println("Sending you back to CR.");
-            int[] heroArray = getHero();
-            Crossroads crossroads = new Crossroads(heroArray);
-            crossroads.choosePath();
-        } else {
-
-        }
-    }
 
     public void die() {
         System.out.println("You're dead!");

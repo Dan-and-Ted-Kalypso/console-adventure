@@ -33,18 +33,26 @@ public class UrukBattle {
 
             switch (action) {
                 case "1":
-                    int attackValue = 25;
-                    uruk.changeEnemyHP(attackValue * -1);
-                    System.out.printf("You hit the Uruk-Hai for %d points!%n", attackValue);
+                    int attackValue = hero.generateAttackValue();
+                    if (attackValue == 0) {
+                        System.out.println("Your attack missed!");
+                    } else {
+                        uruk.changeEnemyHP(attackValue * -1);
+                        System.out.printf("You hit the Uruk-Hai for %d points!%n", attackValue);
+                    }
                     if (uruk.getEnemyHP() <= 0) {
                         System.out.println("The Uruk-Hai has 0 health points remaining!");
                         winUrukBattle();
                         break label;
                     } else {
                         System.out.printf("The Uruk-Hai has %d health points remaining.%n", uruk.getEnemyHP());
-                        int enemyAttackValue = 1; //orc.generateAttackValue();
-                        hero.changeHealthPoints(enemyAttackValue * -1);
-                        System.out.printf("The Uruk-Hai hits you for %d points!%n", enemyAttackValue);
+                        int enemyAttackValue = uruk.generateAttackValue();
+                        if (enemyAttackValue == 0) {
+                            System.out.println("The Uruk-Hai's attack missed!");
+                        } else {
+                            hero.changeHealthPoints(enemyAttackValue * -1);
+                            System.out.printf("The Uruk-Hai hits you for %d points!%n", enemyAttackValue);
+                        }
                         if (hero.getHealthPoints() <= 0) {
                             System.out.println("You have no health points remaining! Oh no!");
                             hero.die();
@@ -94,13 +102,13 @@ public class UrukBattle {
 
     public void winUrukBattle() {
         System.out.println("You beat the Uruk-Hai!");
-        System.out.println("You find a potion and 2 gold!");
+        System.out.println("You find a potion and 10 gold!");
         System.out.println("You feel yourself getting stronger! You have leveled up!");
         hero.levelUp();
-        System.out.println("You search the Uruk-Hai's cave and find a huge, glittering sword! It looks powerful");
+        System.out.println("You search the Uruk-Hai's cave and find a huge, glittering sword! It looks powerful.");
         hero.addExcalibur();
         hero.changePotionCount(1);
-        hero.changeGold(2);
+        hero.changeGold(10);
         hero.changeMountainWins();
 
         System.out.println("You have conquered all of the evil foes in the mountains.");

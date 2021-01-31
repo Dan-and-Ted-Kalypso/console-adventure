@@ -7,12 +7,12 @@ public class Orc {
     private int healthPoints;
 
     public Orc() {
-        this.healthPoints = 20;
+        this.healthPoints = 35;
     }
 
     public int generateAttackValue() {
         Random random = new Random();
-        return random.nextInt(6);
+        return random.nextInt(24);
     }
 
     public void changeEnemyHP(int amountToChange) {

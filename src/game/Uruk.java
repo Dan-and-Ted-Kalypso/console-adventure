@@ -7,12 +7,12 @@ public class Uruk {
     private int healthPoints;
 
     public Uruk() {
-        this.healthPoints = 20;
+        this.healthPoints = 45;
     }
 
     public int generateAttackValue() {
         Random random = new Random();
-        return random.nextInt(6);
+        return random.nextInt(31);
     }
 
     public void changeEnemyHP(int amountToChange) {

@@ -7,12 +7,12 @@ public class Troll {
     private int healthPoints;
 
     public Troll() {
-        this.healthPoints = 20;
+        this.healthPoints = 40;
     }
 
     public int generateAttackValue() {
         Random random = new Random();
-        return random.nextInt(6);
+        return random.nextInt(26);
     }
 
     public void changeEnemyHP(int amountToChange) {

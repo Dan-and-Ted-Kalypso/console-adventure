@@ -33,18 +33,26 @@ public class OrcBattle {
 
             switch (action) {
                 case "1":
-                    int attackValue = 25;
-                    orc.changeEnemyHP(attackValue * -1);
-                    System.out.printf("You hit the orc for %d points!%n", attackValue);
+                    int attackValue = hero.generateAttackValue();
+                    if (attackValue == 0) {
+                        System.out.println("Your attack missed!");
+                    } else {
+                        orc.changeEnemyHP(attackValue * -1);
+                        System.out.printf("You hit the orc for %d points!%n", attackValue);
+                    }
                     if (orc.getEnemyHP() <= 0) {
                         System.out.println("The orc has 0 health points remaining!");
                         winOrcBattle();
                         break label;
                     } else {
                         System.out.printf("The orc has %d health points remaining.%n", orc.getEnemyHP());
-                        int enemyAttackValue = 1; //orc.generateAttackValue();
-                        hero.changeHealthPoints(enemyAttackValue * -1);
-                        System.out.printf("The orc hits you for %d points!%n", enemyAttackValue);
+                        int enemyAttackValue = orc.generateAttackValue();
+                        if (enemyAttackValue == 0) {
+                            System.out.println("The orc's attack missed!");
+                        } else {
+                            hero.changeHealthPoints(enemyAttackValue * -1);
+                            System.out.printf("The orc hits you for %d points!%n", enemyAttackValue);
+                        }
                         if (hero.getHealthPoints() <= 0) {
                             System.out.println("You have no health points remaining! Oh no!");
                             hero.die();
@@ -93,16 +101,16 @@ public class OrcBattle {
     }
 
     public void winOrcBattle() {
-        System.out.println("You beat the orc!");
-        System.out.println("You find a potion and 2 gold!");
+        System.out.println("You have defeated the orc!");
+        System.out.println("You find a potion and 10 gold!");
         hero.changePotionCount(1);
-        hero.changeGold(2);
+        hero.changeGold(10);
         hero.changeMountainWins();
         while (true) {
             System.out.println("Would you like to stay in the mountains?");
             this.heroArray = hero.getHero();
-            System.out.printf("You have %d health points.%n", heroArray[1]);
-            System.out.printf("You have %d potions.%n", heroArray[0]);
+            System.out.printf("Current health points: %d.%n", heroArray[1]);
+            System.out.printf("Current potion count: %d.%n", heroArray[0]);
             System.out.println("1: Stay in the mountains.");
             System.out.println("2: Go back to the crossroads.");
             String action = scanner.nextLine();
