@@ -22,28 +22,31 @@ public class OrcBattle {
 
 
 
-       System.out.println("                 _,.---''```````'-.");
-       System.out.println("             ,-'`                  `-._");
-       System.out.println("          ,-`                   __,-``,\\");
-       System.out.println("         /             _       /,'  ,|/ \\");
-       System.out.println("       ,'         ,''-<_`'.    |  ,' |   \\");
-       System.out.println("      /          / _    `  `.  | / \\ |\\  |");
-       System.out.println("      |         (  |`'-,---, `'  \\_|/ |  |");
-       System.out.println("      |         |`  \\  \\|  /  __,    _ \\ |");
-       System.out.println("      |         |    `._\\,'  '    ,-`_\\ \\|");
-       System.out.println("      |         |        ,----      /|   )");
-       System.out.println("      \\         \\       / --.      {/   /|");
-       System.out.println("       \\         | |       `.\\         / |");
-       System.out.println("        \\        / `-.                 | /");
-       System.out.println("         `.     |     `-        _,--V`)\\/        _,-");
-       System.out.println("           `,   |           /``V_,.--`  \\.  _,-'`");
-       System.out.println("            /`--'`._        `-'`         )`'");
-       System.out.println("           /        `-.            _,.-'`");
-       System.out.println("                       `-.____,.-'`");
-
+        System.out.println("                   (    )");
+        System.out.println("                  ((((()))");
+        System.out.println("                  |o\\ /o)|");
+        System.out.println("                  ( (  _')");
+        System.out.println("                   (._.  /\\__");
+        System.out.println("                  ,\\___,/ '  ')");
+        System.out.println("    '.,_,,       (  .- .   .    )");
+        System.out.println("     \\   \\\\     ( '        )(    )");
+        System.out.println("      \\   \\\\    \\.  _.__ ____( .  |");
+        System.out.println("       \\  /\\\\   .(   .'  /\\  '.  )");
+        System.out.println("        \\(  \\\\.-' ( /    \\/    \\)");
+        System.out.println("         '  ()) _'.-|/\\/\\/\\/\\/\\|");
+        System.out.println("             '\\ .( |\\/\\/\\/\\/\\/|");
+        System.out.println("               '((  \\    /\\    /");
+        System.out.println("               ((((  '.__\\/__.')");
+        System.out.println("                ((,) /   ((()   )");
+        System.out.println("                 \"..-,  (()(\"   /");
+        System.out.println("                  _//.   ((() .\"");
+        System.out.println("          _____ //,/\" ___ ((( ', ___");
+        System.out.println("                           ((  )");
+        System.out.println("                            / /");
+        System.out.println("                          _/,/'");
+        System.out.println("                        /,/,\"");
 
         System.out.println("");
-
 
 
         System.out.println("It's an orc! He looks nasty!");
