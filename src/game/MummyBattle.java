@@ -18,6 +18,23 @@ public class MummyBattle {
 
     public void battle() {
 
+        System.out.println("");
+
+        System.out.println("             ,-===-.");
+        System.out.println("     ,-.    /=,(o).=\\");
+        System.out.println("        \\  /==|o_0|==\\");
+        System.out.println("         \\(===\\ - /===)");
+        System.out.println("          \\`=.=|J|=,=',-.");
+        System.out.println("           X `=' `=' X  |\\");
+        System.out.println("          / \\       / \\ | \\");
+        System.out.println("         /  /|\\`x'/|\\  \\`--'");
+        System.out.println("        ( `\"\"`-'_`-'\"\"' )");
+        System.out.println("         `--T\"\"\\  \"\"T--'");
+        System.out.println("            ]   \\   [");
+        System.out.println("            [\"\"-o\\\"\"]");
+
+        System.out.println("");
+
         System.out.println("What's that? Behind the pyramid? Eek! It's a mummy!");
 
         label:
@@ -107,10 +124,18 @@ public class MummyBattle {
         hero.changePotionCount(1);
         hero.changeGold(9);
         hero.changeDesertWins();
-
         System.out.println("You have conquered all of the evil foes in the desert!");
         System.out.println("You decide to return to the crossroads.");
         Crossroads crossroads = new Crossroads(hero.getHero());
         crossroads.choosePath();
     }
 }
+
+
+/*
+
+
+
+
+
+ */

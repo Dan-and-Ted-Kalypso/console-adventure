@@ -18,6 +18,31 @@ public class UrukBattle {
 
     public void battle() {
 
+        System.out.println("");
+
+        System.out.println("                 /\\");
+        System.out.println("                 ||");
+        System.out.println("                 ||");
+        System.out.println("                 ||");
+        System.out.println("                 ||");
+        System.out.println("               __||__");
+        System.out.println("                 \\/");
+        System.out.println("                 P3");
+        System.out.println("                 ||");
+        System.out.println(" @@@@      _T_  /\\;");
+        System.out.println("@||||@ .-.[:|:]^\\/");
+        System.out.println(" \\||/ /\\|  \"'\" \\/");
+        System.out.println("  E]_|\\/ \\--|--/");
+        System.out.println("  \"  `'  '=[:]='");
+        System.out.println("         /\"\"\"\"\"\\");
+        System.out.println("        /\"\"\"\"\"\"\"\\");
+        System.out.println("       []\"/\"\"\"\\\"[]");
+        System.out.println("       | \\     / |");
+        System.out.println("       | |     | | ");
+        System.out.println("     <\\\\\\)     (///>");
+
+        System.out.println("");
+
         System.out.println("It's an Uruk-Hai! He looks like he's hungry, and meat's back on the menu!");
 
         label:
@@ -98,7 +123,7 @@ public class UrukBattle {
     }
 
     public void winUrukBattle() {
-        System.out.println("You beat the Uruk-Hai!");
+        System.out.println("You have defeated the Uruk-Hai!");
         System.out.println("You find a potion and 10 gold!");
         System.out.println("You feel yourself getting stronger! You have leveled up!");
         hero.levelUp();
@@ -112,6 +137,5 @@ public class UrukBattle {
         System.out.println("You decide to return to the crossroads.");
         Crossroads crossroads = new Crossroads(hero.getHero());
         crossroads.choosePath();
-
     }
 }

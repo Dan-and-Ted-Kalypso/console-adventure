@@ -297,6 +297,34 @@ public class Hero {
 
 
     public void die() {
+
+        System.out.println("");
+
+        System.out.println("                                                               _");
+        System.out.println("                                                              _( (~\\");
+        System.out.println("       _ _                        /                          ( \\> > \\");
+        System.out.println("   -/~/ / ~\\                     :;                \\       _  > /(~\\/");
+        System.out.println("  || | | /\\ ;\\                   |l      _____     |;     ( \\/    > >");
+        System.out.println("  _\\\\)\\)\\)/ ;;;                  `8o __-~     ~\\   d|      \\      //");
+        System.out.println(" ///(())(__/~;;\\                  \"88p;.  -. _\\_;.oP        (_._/ /");
+        System.out.println("(((__   __ \\\\   \\                  `>,% (\\  (\\./)8\"         ;:'  i");
+        System.out.println(")))--`.'-- (( ;,8 \\               ,;%%%:  ./V^^^V'          ;.   ;.");
+        System.out.println("((\\   |   /)) .,88  `: ..,,;;;;,-::::::'_::\\   ||\\         ;[8:   ;");
+        System.out.println(" )|  ~-~  |(|(888; ..``'::::8888oooooo.  :\\`^^^/,,~--._    |88::  |");
+        System.out.println(" |\\ -===- /|  \\8;; ``:.      oo.8888888888:`((( o.ooo8888Oo;:;:'  |");
+        System.out.println(" |_~-___-~_|   `-\\.   `        `o`88888888b` )) 888b88888P\"\"'     ;");
+        System.out.println(" ; ~~~~;~~         \"`--_`.       b`888888888;(.,\"888b888\"  ..::;-'");
+        System.out.println("   ;      ;              ~\"-....  b`8888888:::::.`8888. .:;;;''");
+        System.out.println("      ;    ;                 `:::. `:::OOO:::::::.`OO' ;;;''");
+        System.out.println(" :       ;                     `.      \"``::::::''    .'");
+        System.out.println("    ;                           `.   \\_              /");
+        System.out.println("  ;       ;                       +:   ~~--  `:'  -';");
+        System.out.println("                                   `:         : .::/");
+        System.out.println("      ;                            ;;+_  :::. :..;;;");
+        System.out.println("                                   ;;;;;;,;;;;;;;;,;");
+
+        System.out.println("");
+
         System.out.println("You're dead!");
         System.out.println("Game Over!");
     }

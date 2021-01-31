@@ -21,6 +21,7 @@ public class OrcBattle {
 
 
 
+        System.out.println("");
 
         System.out.println("                   (    )");
         System.out.println("                  ((((()))");

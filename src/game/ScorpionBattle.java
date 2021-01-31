@@ -19,6 +19,22 @@ public class ScorpionBattle {
 
     public void battle() {
 
+        System.out.println("");
+
+        System.out.println("       ___ __");
+        System.out.println("     _{___{__}\\");
+        System.out.println("    {_}      `\\)");
+        System.out.println("   {_}        `            _.-''''--.._");
+        System.out.println("   {_}                    //'.--.  \\___`.");
+        System.out.println("    { }__,_.--~~~-~~~-~~-::.---. `-.\\  `.)");
+        System.out.println("     `-.{_{_{_{_{_{_{_{_//  -- 8;=- `");
+        System.out.println("        `-:,_.:,_:,_:,.`\\\\._ ..'=- ,");
+        System.out.println("            // // // //`-.`\\`   .-'/");
+        System.out.println("           << << << <<    \\ `--'  /----)");
+        System.out.println("            ^  ^  ^  ^     `-.....--'''");
+
+        System.out.println("");
+
         System.out.println("A giant scorpion scuttles toward you with alarming speed! The desert sure is full of giant venomous creatures!");
 
         label:

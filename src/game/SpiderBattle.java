@@ -19,6 +19,42 @@ public class SpiderBattle {
 
     public void battle() {
 
+        System.out.println("");
+
+        System.out.println("           ;               ,");
+        System.out.println("         ,;                 '.");
+        System.out.println("        ;:                   :;");
+        System.out.println("       ::                     ::");
+        System.out.println("       ::                     ::");
+        System.out.println("       ':                     :");
+        System.out.println("        :.                    :");
+        System.out.println("        ::                   ::");
+        System.out.println("    .'  ';                   ;'  '.");
+        System.out.println("   ::    :;                 ;:    ::");
+        System.out.println("   ;      :;.             ,;:     ::");
+        System.out.println("   :;      :;:           ,;\"      ::");
+        System.out.println("   ::.      ':;  :.,.:  ;:'     ,.;:");
+        System.out.println("    \"'\"...   '::,::::: ;:   .;.;\"\"'");
+        System.out.println("        '\"\"\"....;:::::;,;.;\"\"\"");
+        System.out.println("    .:::.....'\"':::::::'\",...;::::;.");
+        System.out.println("   ;:' '\"\"'\"\";.,;:::::;.'\"\"\"\"\"\"  ':;");
+        System.out.println("  ::'         ;::;:::;::..         :;");
+        System.out.println(" ::         ,;:::::::::::;:..       ::");
+        System.out.println(" ;'     ,;;:;::::::::::::::;\";..    ':.");
+        System.out.println("::     ;:\"  ::::::\"\"\"\"::::::  \":     ::");
+        System.out.println(" :.    ::   :::::::  :::::::   :     ;");
+        System.out.println("  ;    ::   :::::::  :::::::   :    ;");
+        System.out.println("   '   ::   ::::::....:::::'  ,:   '");
+        System.out.println("       ::    :::::::::::::\"   ::");
+        System.out.println("       ::     ':::::::::\"'    ::");
+        System.out.println("       ':       \"\"\"\"\"\"\"'      ::");
+        System.out.println("        ::                   ;:");
+        System.out.println("        ':;                 ;:\"");
+        System.out.println("         ';              ,;'");
+        System.out.println("           '            '");
+
+        System.out.println("");
+
         System.out.println("You hear a rustling in the undergrowth and turn to see a giant spider rushing towards you!");
 
         label:

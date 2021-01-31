@@ -34,6 +34,7 @@ public class Boss {
     public void stayOrGo(int[] heroArray) {
         Scanner scanner = new Scanner(System.in);
 
+        System.out.println("");
         System.out.println("               (   (( . : (    .)   ) :  )");
         System.out.println("                (   ( :  .  :    :  )  ))");
         System.out.println("                 ( ( ( (  .  :  . . ) )");

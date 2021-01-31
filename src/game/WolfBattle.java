@@ -19,6 +19,36 @@ public class WolfBattle {
 
     public void battle() {
 
+        System.out.println("");
+
+        System.out.println("                              __");
+        System.out.println("                            .d$$b");
+        System.out.println("                          .' TO$;\\");
+        System.out.println("                         /  : TP._;");
+        System.out.println("                        / _.;  :Tb|");
+        System.out.println("                       /   /   ;j$j");
+        System.out.println("                   _.-\"       d$$$$");
+        System.out.println("                 .' ..       d$$$$;");
+        System.out.println("                /  /P'      d$$$$P. |\\");
+        System.out.println("               /   \"      .d$$$P' |\\^\"l");
+        System.out.println("             .'           `T$P^\"\"\"\"\"  :");
+        System.out.println("         ._.'      _.'                ;");
+        System.out.println("      `-.-\".-'-' ._.       _.-\"    .-\"");
+        System.out.println("    `.-\" _____  ._              .-\"");
+        System.out.println("   -(.g$$$$$$$b.              .'");
+        System.out.println("     \"\"^^T$$$P^)            .(:");
+        System.out.println("       _/  -\"  /.'         /:/;");
+        System.out.println("    ._.'-'`-'  \")/         /;/;");
+        System.out.println(" `-.-\"..--\"\"   \" /         /  ;");
+        System.out.println(".-\" ..--\"\"        -'          :");
+        System.out.println("..--\"\"--.-\"         (\\      .-(\\");
+        System.out.println("  ..--\"\"              `-\\(\\/;`");
+        System.out.println("    _.                      :");
+        System.out.println("                            ;`-");
+        System.out.println("                           :\\");
+
+        System.out.println("");
+
         System.out.println("You hear a low howl and a snarl. A large, vicious wolf is bearing down on you!");
 
         label:
@@ -124,6 +154,5 @@ public class WolfBattle {
                 System.out.println("That is not a valid action. Let's try this again.");
             }
         }
-
     }
 }

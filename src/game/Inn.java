@@ -19,6 +19,7 @@ public class Inn {
 
     public void stayOrGo() {
 
+        System.out.println("");
         System.out.println("                           (   )");
         System.out.println("                          (    )");
         System.out.println("                           (    )");
