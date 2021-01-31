@@ -19,6 +19,26 @@ public class Inn {
 
     public void stayOrGo() {
 
+        System.out.println("                           (   )");
+        System.out.println("                          (    )");
+        System.out.println("                           (    )");
+        System.out.println("                          (    )");
+        System.out.println("                            )  )");
+        System.out.println("                           (  (                  /\\");
+                System.out.println("                            (_)                 /  \\  /\\");
+                        System.out.println("                    ________[_]________      /\\/    \\/  \\");
+                                System.out.println("           /\\      /\\        ______    \\    /   /\\/\\  /\\/\\");
+                                        System.out.println("          /  \\    //_\\       \\    /\\    \\  /\\/\\/    \\/    \\");
+                                                System.out.println("   /\\    / /\\/\\  //___\\       \\__/  \\    \\/");
+        System.out.println("  /  \\  /\\/    \\//_____\\       \\ |[]|     \\");
+                System.out.println(" /\\/\\/\\/       //_______\\       \\|__|      \\");
+                        System.out.println("/      \\      /XXXXXXXXXX\\                  \\");
+                                System.out.println("        \\    /_I_II  I__I_\\__________________\\");
+                                        System.out.println("               I_I|  I__I_____[]_|_[]_____I");
+        System.out.println("               I_II  I__I_____[]_|_[]_____I");
+        System.out.println("               I II__I  I     XXXXXXX     I");
+        System.out.println("            ~~~~~\"   \"~~~~~~~~~~~~~~~~~~~~~~~~");
+
         while (true) {
             System.out.printf("Your current health points: %d.%n", hero.getHealthPoints());
             System.out.printf("Your current gold: %d.%n", hero.getGold());
@@ -207,3 +227,15 @@ public class Inn {
 
     }
 }
+
+
+/*
+
+
+
+
+
+
+
+
+ */

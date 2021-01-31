@@ -289,21 +289,6 @@ public class Hero {
         return 0;
     }
 
-    /*
-    5   6         3  4                  7 + 3
-    10  6   20    5  6        5 + 2
-    15  7         7  8
-
-    20  8         10 11
-    25  8  25     15 16     15 + 4
-    30  9         18 19
-
-    35  10        23 24
-    40  10  30    25 26     30 + 4
-    45  10        30 31
-
-    50            45 46      40 + 5
-     */
 
     public int attemptRun() {
         Random random = new Random();
