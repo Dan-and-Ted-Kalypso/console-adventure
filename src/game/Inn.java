@@ -25,19 +25,21 @@ public class Inn {
         System.out.println("                          (    )");
         System.out.println("                            )  )");
         System.out.println("                           (  (                  /\\");
-                System.out.println("                            (_)                 /  \\  /\\");
-                        System.out.println("                    ________[_]________      /\\/    \\/  \\");
-                                System.out.println("           /\\      /\\        ______    \\    /   /\\/\\  /\\/\\");
-                                        System.out.println("          /  \\    //_\\       \\    /\\    \\  /\\/\\/    \\/    \\");
-                                                System.out.println("   /\\    / /\\/\\  //___\\       \\__/  \\    \\/");
+        System.out.println("                            (_)                 /  \\  /\\");
+        System.out.println("                    ________[_]________      /\\/    \\/  \\");
+        System.out.println("           /\\      /\\        ______    \\    /   /\\/\\  /\\/\\");
+        System.out.println("          /  \\    //_\\       \\    /\\    \\  /\\/\\/    \\/    \\");
+        System.out.println("   /\\    / /\\/\\  //___\\       \\__/  \\    \\/");
         System.out.println("  /  \\  /\\/    \\//_____\\       \\ |[]|     \\");
-                System.out.println(" /\\/\\/\\/       //_______\\       \\|__|      \\");
-                        System.out.println("/      \\      /XXXXXXXXXX\\                  \\");
-                                System.out.println("        \\    /_I_II  I__I_\\__________________\\");
-                                        System.out.println("               I_I|  I__I_____[]_|_[]_____I");
+        System.out.println(" /\\/\\/\\/       //_______\\       \\|__|      \\");
+        System.out.println("/      \\      /XXXXXXXXXX\\                  \\");
+        System.out.println("        \\    /_I_II  I__I_\\__________________\\");
+        System.out.println("               I_I|  I__I_____[]_|_[]_____I");
         System.out.println("               I_II  I__I_____[]_|_[]_____I");
         System.out.println("               I II__I  I     XXXXXXX     I");
         System.out.println("            ~~~~~\"   \"~~~~~~~~~~~~~~~~~~~~~~~~");
+
+        System.out.println("");
 
         while (true) {
             System.out.printf("Your current health points: %d.%n", hero.getHealthPoints());
@@ -59,7 +61,7 @@ public class Inn {
                 crossroads.choosePath();
                 break;
             } else {
-                System.out.println("That is not a valid input. Let's try this again.");
+                System.out.println("That is not a valid action. Let's try this again.");
             }
         }
 
@@ -227,15 +229,3 @@ public class Inn {
 
     }
 }
-
-
-/*
-
-
-
-
-
-
-
-
- */

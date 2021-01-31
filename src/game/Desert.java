@@ -7,9 +7,33 @@ public class Desert {
     public void stayOrGo(int[] heroArray) {
         Scanner scanner = new Scanner(System.in);
 
+        System.out.println("                /||\\");
+        System.out.println("                ||||");
+        System.out.println("                ||||");
+        System.out.println("                |||| /|\\");
+        System.out.println("           /|\\  |||| |||");
+        System.out.println("           |||  |||| |||");
+        System.out.println("           |||  |||| |||");
+        System.out.println("           |||  |||| d||");
+        System.out.println("           |||  |||||||/");
+        System.out.println("           ||b._||||~~'");
+        System.out.println("           \\||||||||");
+        System.out.println("            `~~~||||");
+        System.out.println("                ||||");
+        System.out.println("                ||||");
+        System.out.println("~~~~~~~~~~~~~~~~||||~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+        System.out.println("  \\/..__..--  . |||| \\/  .  ..       .  \\/     ..     .    \\/    .     ..  \\/   .");
+        System.out.println("\\/         \\/ \\/    \\/     .  ...         \\/     .    \\/ \\/    \\/   \\/         \\/");
+        System.out.println("        .  \\/              \\/    .        .  \\/              \\/    .     \\/..__. ");
+        System.out.println(". \\/             .   \\/     .      . \\/             .   \\/     .    \\/     \\/  . ");
+        System.out.println("   __...--..__..__       .     \\/     \\/  .   .    \\/     \\/    __..--..         ");
+        System.out.println("\\/  .   .    \\/     \\/    __..--..    .    . \\/   __...--..__..__       .     \\/ ");
+
+        System.out.println("");
+        System.out.println("Welcome to the desert!");
+
         while (true) {
 
-            System.out.println("Welcome to the desert!");
             System.out.printf("Your health points: %d.%n", heroArray[1]);
             System.out.printf("Your potion count: %d.%n", heroArray[0]);
             System.out.println("What do you want to do?");
@@ -30,6 +54,5 @@ public class Desert {
                 System.out.println("That is not a valid action. Let's try this again.");
             }
         }
-
     }
 }
