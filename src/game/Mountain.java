@@ -31,6 +31,8 @@ public class Mountain {
 
             System.out.printf("Your health points: %d.%n", heroArray[1]);
             System.out.printf("Your potion count: %d.%n", heroArray[0]);
+            System.out.println("Press enter to continue.");
+            scanner.nextLine();
             System.out.println("What do you want to do?");
             System.out.println("1: Look for enemies.");
             System.out.println("2: Leave.");
@@ -47,6 +49,7 @@ public class Mountain {
                 break;
             } else {
                 System.out.println("That is not a valid action. Let's try this again.");
+                System.out.println("");
             }
         }
 

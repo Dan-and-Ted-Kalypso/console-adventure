@@ -4,9 +4,9 @@ import java.util.*;
 
 public class Crossroads {
 
-    protected Hero hero;
-    protected Scanner scanner;
-    protected int[] heroArray;
+    private final Hero hero;
+    private final Scanner scanner;
+    private final int[] heroArray;
 
     public Crossroads() {
         this.hero = new Hero();
@@ -77,6 +77,8 @@ public class Crossroads {
                     break label;
                 default:
                     System.out.println("That is not a valid path. Please enter a number (0, 1, 2, 3, 4) to choose your path.");
+                    System.out.println("Press enter to continue.");
+                    scanner.nextLine();
                     break;
             }
 
@@ -92,6 +94,7 @@ public class Crossroads {
             String confirm = scanner.nextLine();
             if (!confirm.equals("1") && !confirm.equals("2")) {
                 System.out.println("That is not a valid choice. Let's try this again.");
+                System.out.println("");
             } else if (confirm.equals("1")) {
                 goToInn(heroArray);
                 break;
@@ -117,6 +120,7 @@ public class Crossroads {
             String confirm = scanner.nextLine();
             if (!confirm.equals("1") && !confirm.equals("2")) {
                 System.out.println("That is not a valid choice. Let's try this again.");
+                System.out.println("");
             } else if (confirm.equals("1")) {
                 goToForest(heroArray);
                 break;
@@ -141,6 +145,7 @@ public class Crossroads {
             String confirm = scanner.nextLine();
             if (!confirm.equals("1") && !confirm.equals("2")) {
                 System.out.println("That is not a valid choice. Let's try this again.");
+                System.out.println("");
             } else if (confirm.equals("1")) {
                 goToDesert(heroArray);
                 break;
@@ -165,6 +170,7 @@ public class Crossroads {
             String confirm = scanner.nextLine();
             if (!confirm.equals("1") && !confirm.equals("2")) {
                 System.out.println("That is not a valid choice. Let's try this again.");
+                System.out.println("");
             } else if (confirm.equals("1")) {
                 goToMountain(heroArray);
                 break;
@@ -189,6 +195,7 @@ public class Crossroads {
             String confirm = scanner.nextLine();
             if (!confirm.equals("1") && !confirm.equals("2")) {
                 System.out.println("That is not a valid choice. Let's try this again.");
+                System.out.println("");
             } else if (confirm.equals("1")) {
                 goToBoss(heroArray);
                 break;

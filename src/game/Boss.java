@@ -66,6 +66,8 @@ public class Boss {
 
             System.out.printf("Your health points: %d.%n", heroArray[1]);
             System.out.printf("Your potion count: %d.%n", heroArray[0]);
+            System.out.println("Press enter to continue.");
+            scanner.nextLine();
             System.out.println("What do you want to do?");
             System.out.println("1: Challenge the Boss.");
             System.out.println("2: Leave.");
@@ -73,15 +75,32 @@ public class Boss {
             String action = scanner.nextLine();
 
             if (action.equals("1")) {
-                BossBattle bossBattle = new BossBattle(heroArray);
-                bossBattle.battle();
-                break;
+                System.out.println("Are you absolutely sure you wish to challenge the evil and mighty Boss?");
+                System.out.println("1: Yes, I am sure! I am a great and mighty hero!");
+                System.out.println("2: Err... On second thought, maybe I'll just come back another time...");
+                String confirm = scanner.nextLine();
+                if (confirm.equals("1")) {
+                    System.out.println("Prepare for battle!");
+                    System.out.println("Press enter to continue.");
+                    scanner.nextLine();
+                    BossBattle bossBattle = new BossBattle(heroArray);
+                    bossBattle.battle();
+                    break;
+                } else if (confirm.equals("2")) {
+                    Crossroads crossroads = new Crossroads(heroArray);
+                    crossroads.choosePath();
+                    break;
+                } else {
+                    System.out.println("That is not a valid action. Let's try this again.");
+                    System.out.println("");
+                }
             } else if (action.equals("2")) {
                 Crossroads crossroads = new Crossroads(heroArray);
                 crossroads.choosePath();
                 break;
             } else {
                 System.out.println("That is not a valid action. Let's try this again.");
+                System.out.println("");
             }
         }
     }

@@ -1,13 +1,17 @@
 package game;
 
+import java.util.Scanner;
+
 public class DesertBattle {
 
     private final int[] heroArray;
     private final int desertWins;
+    private final Scanner scanner;
 
     public DesertBattle(int[] heroArray) {
         this.heroArray = heroArray;
         this.desertWins = heroArray[3];
+        this.scanner = new Scanner(System.in);
     }
 
     public void battle() {
@@ -19,6 +23,8 @@ public class DesertBattle {
             fightMummy();
         } else {
             System.out.println("Dude. You've already killed everything in the desert. Go somewhere else.");
+            System.out.println("Press enter to continue.");
+            scanner.nextLine();
             Crossroads crossroads = new Crossroads(heroArray);
             crossroads.choosePath();
         }
