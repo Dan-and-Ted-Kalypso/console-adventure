@@ -109,6 +109,28 @@ public class UrukBattle {
                 case "2":
 
                     hero.usePotion();
+                    int enemyAttackValue = uruk.generateAttackValue();
+                    if (enemyAttackValue == 0) {
+                        System.out.println("The Uruk-Hai's attack missed!");
+                        System.out.println("Press enter to continue.");
+                        scanner.nextLine();
+                    } else {
+                        hero.changeHealthPoints(enemyAttackValue * -1);
+                        System.out.printf("The Uruk-Hai hits you for %d points!%n", enemyAttackValue);
+                        System.out.println("Press enter to continue.");
+                        scanner.nextLine();
+                    }
+                    if (hero.getHealthPoints() <= 0) {
+                        System.out.println("You have no health points remaining! Oh no!");
+                        System.out.println("Press enter to continue.");
+                        scanner.nextLine();
+                        hero.die();
+                        break label;
+                    } else {
+                        System.out.printf("You have %d health points remaining.%n", hero.getHealthPoints());
+                        System.out.println("Press enter to continue.");
+                        scanner.nextLine();
+                    }
 
                     break;
                 case "3":
