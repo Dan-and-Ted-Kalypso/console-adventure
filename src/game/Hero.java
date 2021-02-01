@@ -23,14 +23,14 @@ public class Hero {
     public Hero() {
 
         this.potionCount = 1;
-        this.healthPoints = 100000000;
+        this.healthPoints = 10;
         this.forestWins = 0;
         this.desertWins = 0;
         this.mountainWins = 0;
         this.dagger = 0;
         this.scimitar = 0;
         this.battleAxe = 0;
-        this.excalibur = 1;
+        this.excalibur = 0;
         this.gold = 5;
         this.level = 1;
         this.maxHP = 10;
