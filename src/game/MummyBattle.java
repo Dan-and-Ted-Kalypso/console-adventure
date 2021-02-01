@@ -8,12 +8,14 @@ public class MummyBattle {
     private final Hero hero;
     private final Mummy mummy;
     private final Scanner scanner;
+    private final String name;
 
-    public MummyBattle(int[] heroArray) {
+    public MummyBattle(int[] heroArray, String name) {
 
-        this.hero = new Hero(heroArray);
+        this.hero = new Hero(heroArray, name);
         this.mummy = new Mummy();
         this.scanner = new Scanner(System.in);
+        this.name = name;
     }
 
     public void battle() {
@@ -108,7 +110,7 @@ public class MummyBattle {
                         System.out.println("You return to the crossroads.");
                         System.out.println("Press enter to continue.");
                         scanner.nextLine();
-                        Crossroads crossroads = new Crossroads(hero.getHero());
+                        Crossroads crossroads = new Crossroads(hero.getHero(), name);
                         crossroads.choosePath();
                     } else {
 
@@ -117,7 +119,7 @@ public class MummyBattle {
                             System.out.println("You return to the crossroads.");
                             System.out.println("Press enter to continue.");
                             scanner.nextLine();
-                            Crossroads crossroads = new Crossroads(hero.getHero());
+                            Crossroads crossroads = new Crossroads(hero.getHero(), name);
                             crossroads.choosePath();
                         } else {
                             System.out.println("The mummy manages to hit you as you run away! You have lost half of your remaining health points!");
@@ -126,7 +128,7 @@ public class MummyBattle {
                             System.out.println("You return to the crossroads.");
                             System.out.println("Press enter to continue.");
                             scanner.nextLine();
-                            Crossroads crossroads = new Crossroads(hero.getHero());
+                            Crossroads crossroads = new Crossroads(hero.getHero(), name);
                             crossroads.choosePath();
                         }
                     }
@@ -185,7 +187,7 @@ public class MummyBattle {
         System.out.println("You decide to return to the crossroads.");
         System.out.println("Press enter to continue.");
         scanner.nextLine();
-        Crossroads crossroads = new Crossroads(hero.getHero());
+        Crossroads crossroads = new Crossroads(hero.getHero(), name);
         crossroads.choosePath();
     }
 }

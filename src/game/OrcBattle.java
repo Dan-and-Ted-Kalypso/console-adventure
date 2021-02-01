@@ -9,12 +9,14 @@ public class OrcBattle {
     private final Hero hero;
     private final Orc orc;
     private final Scanner scanner;
+    private final String name;
 
-    public OrcBattle(int[] heroArray) {
+    public OrcBattle(int[] heroArray, String name) {
         this.heroArray = heroArray;
-        this.hero = new Hero(heroArray);
+        this.hero = new Hero(heroArray, name);
         this.orc = new Orc();
         this.scanner = new Scanner(System.in);
+        this.name = name;
     }
 
     public void battle() {
@@ -123,7 +125,7 @@ public class OrcBattle {
                         System.out.println("You return to the crossroads.");
                         System.out.println("Press enter to continue.");
                         scanner.nextLine();
-                        Crossroads crossroads = new Crossroads(hero.getHero());
+                        Crossroads crossroads = new Crossroads(hero.getHero(), name);
                         crossroads.choosePath();
                     } else {
 
@@ -132,7 +134,7 @@ public class OrcBattle {
                             System.out.println("You return to the crossroads.");
                             System.out.println("Press enter to continue.");
                             scanner.nextLine();
-                            Crossroads crossroads = new Crossroads(hero.getHero());
+                            Crossroads crossroads = new Crossroads(hero.getHero(), name);
                             crossroads.choosePath();
                         } else {
                             System.out.println("The orc manages to hit you as you run away! You have lost half of your remaining health points!");
@@ -141,7 +143,7 @@ public class OrcBattle {
                             System.out.println("You return to the crossroads.");
                             System.out.println("Press enter to continue.");
                             scanner.nextLine();
-                            Crossroads crossroads = new Crossroads(hero.getHero());
+                            Crossroads crossroads = new Crossroads(hero.getHero(), name);
                             crossroads.choosePath();
                         }
                     }
@@ -174,10 +176,10 @@ public class OrcBattle {
             String action = scanner.nextLine();
             if (action.equals("1")) {
                 Mountain mountain = new Mountain();
-                mountain.stayOrGo(hero.getHero());
+                mountain.stayOrGo(hero.getHero(), name);
                 break;
             } else if (action.equals("2")) {
-                Crossroads crossroads = new Crossroads(hero.getHero());
+                Crossroads crossroads = new Crossroads(hero.getHero(), name);
                 crossroads.choosePath();
                 break;
             } else {

@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Forest {
 
-    public void stayOrGo(int[] heroArray) {
+    public void stayOrGo(int[] heroArray, String name) {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("");
@@ -39,11 +39,11 @@ public class Forest {
             String action = scanner.nextLine();
 
             if (action.equals("1")) {
-                ForestBattle forestBattle = new ForestBattle(heroArray);
+                ForestBattle forestBattle = new ForestBattle(heroArray, name);
                 forestBattle.battle();
                 break;
             } else if (action.equals("2")) {
-                Crossroads crossroads = new Crossroads(heroArray);
+                Crossroads crossroads = new Crossroads(heroArray, name);
                 crossroads.choosePath();
                 break;
             } else {

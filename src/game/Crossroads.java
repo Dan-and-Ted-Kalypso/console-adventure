@@ -7,15 +7,18 @@ public class Crossroads {
     private final Hero hero;
     private final Scanner scanner;
     private final int[] heroArray;
+    private final String name;
 
-    public Crossroads() {
-        this.hero = new Hero();
+    public Crossroads(String name) {
+        this.name = name;
+        this.hero = new Hero(name);
         this.heroArray = this.hero.getHero();
         this.scanner = new Scanner(System.in);
     }
 
-    public Crossroads(int[] heroArray) {
-        this.hero = new Hero(heroArray);
+    public Crossroads(int[] heroArray, String name) {
+        this.name = name;
+        this.hero = new Hero(heroArray, name);
         this.heroArray = heroArray;
         this.scanner = new Scanner(System.in);
     }
@@ -61,19 +64,19 @@ public class Crossroads {
 
             switch (direction) {
                 case "0":
-                    confirmInn(heroArray);
+                    confirmInn(heroArray, name);
                     break label;
                 case "1":
-                    confirmForest(heroArray);
+                    confirmForest(heroArray, name);
                     break label;
                 case "2":
-                    confirmDesert(heroArray);
+                    confirmDesert(heroArray, name);
                     break label;
                 case "3":
-                    confirmMountain(heroArray);
+                    confirmMountain(heroArray, name);
                     break label;
                 case "4":
-                    confirmBoss(heroArray);
+                    confirmBoss(heroArray, name);
                     break label;
                 default:
                     System.out.println("That is not a valid path. Please enter a number (0, 1, 2, 3, 4) to choose your path.");
@@ -86,7 +89,7 @@ public class Crossroads {
 
     }
 
-    public void confirmInn(int[] heroArray) {
+    public void confirmInn(int[] heroArray, String name) {
         while (true) {
             System.out.println("Are you sure you wish to travel to The Inn?");
             System.out.println("1: Travel.");
@@ -96,7 +99,7 @@ public class Crossroads {
                 System.out.println("That is not a valid choice. Let's try this again.");
                 System.out.println("");
             } else if (confirm.equals("1")) {
-                goToInn(heroArray);
+                goToInn(heroArray, name);
                 break;
             } else {
                 choosePath();
@@ -106,13 +109,13 @@ public class Crossroads {
 
     }
 
-    public void goToInn(int[] heroArray) {
+    public void goToInn(int[] heroArray, String name) {
         System.out.println("Welcome to The Inn! You can rest and recharge your health points here for 10 gold, or you can visit the merchant.");
-        Inn inn = new Inn(heroArray);
+        Inn inn = new Inn(heroArray, name);
         inn.stayOrGo();
     }
 
-    public void confirmForest(int[] heroArray) {
+    public void confirmForest(int[] heroArray, String name) {
         while (true) {
             System.out.println("Are you sure you wish to travel to The Forest?");
             System.out.println("1: Travel.");
@@ -122,7 +125,7 @@ public class Crossroads {
                 System.out.println("That is not a valid choice. Let's try this again.");
                 System.out.println("");
             } else if (confirm.equals("1")) {
-                goToForest(heroArray);
+                goToForest(heroArray, name);
                 break;
             } else {
                 choosePath();
@@ -132,12 +135,12 @@ public class Crossroads {
 
     }
 
-    public void goToForest(int[] heroArray) {
+    public void goToForest(int[] heroArray, String name) {
         Forest forest = new Forest();
-        forest.stayOrGo(heroArray);
+        forest.stayOrGo(heroArray, name);
     }
 
-    public void confirmDesert(int[] heroArray) {
+    public void confirmDesert(int[] heroArray, String name) {
         while (true) {
             System.out.println("Are you sure you wish to travel to The Desert? The enemies there may pose somewhat of a challenge.");
             System.out.println("1: Travel.");
@@ -147,7 +150,7 @@ public class Crossroads {
                 System.out.println("That is not a valid choice. Let's try this again.");
                 System.out.println("");
             } else if (confirm.equals("1")) {
-                goToDesert(heroArray);
+                goToDesert(heroArray, name);
                 break;
             } else {
                 choosePath();
@@ -157,12 +160,12 @@ public class Crossroads {
 
     }
 
-    public void goToDesert(int[] heroArray) {
+    public void goToDesert(int[] heroArray, String name) {
         Desert desert = new Desert();
-        desert.stayOrGo(heroArray);
+        desert.stayOrGo(heroArray, name);
     }
 
-    public void confirmMountain(int[] heroArray) {
+    public void confirmMountain(int[] heroArray, String name) {
         while (true) {
             System.out.println("Are you sure you wish to travel to the mountains? The enemies there are very challenging.");
             System.out.println("1: Travel.");
@@ -172,7 +175,7 @@ public class Crossroads {
                 System.out.println("That is not a valid choice. Let's try this again.");
                 System.out.println("");
             } else if (confirm.equals("1")) {
-                goToMountain(heroArray);
+                goToMountain(heroArray, name);
                 break;
             } else {
                 choosePath();
@@ -182,12 +185,12 @@ public class Crossroads {
 
     }
 
-    public void goToMountain(int[] heroArray) {
+    public void goToMountain(int[] heroArray, String name) {
         Mountain mountain = new Mountain();
-        mountain.stayOrGo(heroArray);
+        mountain.stayOrGo(heroArray, name);
     }
 
-    public void confirmBoss(int[] heroArray) {
+    public void confirmBoss(int[] heroArray, String name) {
         while (true) {
             System.out.println("Are you sure you wish to travel to the Great Volcano? The big boss lives there and he can squash adventurers like a bug if they are unprepared.");
             System.out.println("1: Travel.");
@@ -197,7 +200,7 @@ public class Crossroads {
                 System.out.println("That is not a valid choice. Let's try this again.");
                 System.out.println("");
             } else if (confirm.equals("1")) {
-                goToBoss(heroArray);
+                goToBoss(heroArray, name);
                 break;
             } else {
                 choosePath();
@@ -207,9 +210,9 @@ public class Crossroads {
 
     }
 
-    public void goToBoss(int[] heroArray) {
+    public void goToBoss(int[] heroArray, String name) {
         Boss boss = new Boss();
-        boss.stayOrGo(heroArray);
+        boss.stayOrGo(heroArray, name);
     }
 
 }

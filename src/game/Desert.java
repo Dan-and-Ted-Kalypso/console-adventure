@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Desert {
 
-    public void stayOrGo(int[] heroArray) {
+    public void stayOrGo(int[] heroArray, String name) {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("");
@@ -46,11 +46,11 @@ public class Desert {
             String action = scanner.nextLine();
 
             if (action.equals("1")) {
-                DesertBattle desertBattle = new DesertBattle(heroArray);
+                DesertBattle desertBattle = new DesertBattle(heroArray, name);
                 desertBattle.battle();
                 break;
             } else if (action.equals("2")) {
-                Crossroads crossroads = new Crossroads(heroArray);
+                Crossroads crossroads = new Crossroads(heroArray, name);
                 crossroads.choosePath();
                 break;
             } else {

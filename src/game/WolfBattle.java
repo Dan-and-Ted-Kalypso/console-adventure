@@ -9,12 +9,14 @@ public class WolfBattle {
     private final Hero hero;
     private final Wolf wolf;
     private final Scanner scanner;
+    private final String name;
 
-    public WolfBattle(int[] heroArray) {
+    public WolfBattle(int[] heroArray, String name) {
         this.heroArray = heroArray;
-        this.hero = new Hero(heroArray);
+        this.hero = new Hero(heroArray, name);
         this.wolf = new Wolf();
         this.scanner = new Scanner(System.in);
+        this.name = name;
     }
 
     public void battle() {
@@ -122,7 +124,7 @@ public class WolfBattle {
                         System.out.println("You return to the crossroads.");
                         System.out.println("Press enter to continue.");
                         scanner.nextLine();
-                        Crossroads crossroads = new Crossroads(hero.getHero());
+                        Crossroads crossroads = new Crossroads(hero.getHero(), name);
                         crossroads.choosePath();
                     } else {
 
@@ -131,7 +133,7 @@ public class WolfBattle {
                             System.out.println("You return to the crossroads.");
                             System.out.println("Press enter to continue.");
                             scanner.nextLine();
-                            Crossroads crossroads = new Crossroads(hero.getHero());
+                            Crossroads crossroads = new Crossroads(hero.getHero(), name);
                             crossroads.choosePath();
                         } else {
                             System.out.println("The wolf manages to hit you as you run away! You have lost half of your remaining health points!");
@@ -140,7 +142,7 @@ public class WolfBattle {
                             System.out.println("You return to the crossroads.");
                             System.out.println("Press enter to continue.");
                             scanner.nextLine();
-                            Crossroads crossroads = new Crossroads(hero.getHero());
+                            Crossroads crossroads = new Crossroads(hero.getHero(), name);
                             crossroads.choosePath();
                         }
                     }
@@ -173,10 +175,10 @@ public class WolfBattle {
             String action = scanner.nextLine();
             if (action.equals("1")) {
                 Forest forest = new Forest();
-                forest.stayOrGo(hero.getHero());
+                forest.stayOrGo(hero.getHero(), name);
                 break;
             } else if (action.equals("2")) {
-                Crossroads crossroads = new Crossroads(hero.getHero());
+                Crossroads crossroads = new Crossroads(hero.getHero(), name);
                 crossroads.choosePath();
                 break;
             } else {

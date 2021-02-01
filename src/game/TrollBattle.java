@@ -9,12 +9,14 @@ public class TrollBattle {
     private final Hero hero;
     private final Troll troll;
     private final Scanner scanner;
+    private final String name;
 
-    public TrollBattle(int[] heroArray) {
+    public TrollBattle(int[] heroArray, String name) {
         this.heroArray = heroArray;
-        this.hero = new Hero(heroArray);
+        this.hero = new Hero(heroArray, name);
         this.troll = new Troll();
         this.scanner = new Scanner(System.in);
+        this.name = name;
     }
 
     public void battle() {
@@ -139,7 +141,7 @@ public class TrollBattle {
                         System.out.println("You return to the crossroads.");
                         System.out.println("Press enter to continue.");
                         scanner.nextLine();
-                        Crossroads crossroads = new Crossroads(hero.getHero());
+                        Crossroads crossroads = new Crossroads(hero.getHero(), name);
                         crossroads.choosePath();
                     } else {
 
@@ -148,7 +150,7 @@ public class TrollBattle {
                             System.out.println("You return to the crossroads.");
                             System.out.println("Press enter to continue.");
                             scanner.nextLine();
-                            Crossroads crossroads = new Crossroads(hero.getHero());
+                            Crossroads crossroads = new Crossroads(hero.getHero(), name);
                             crossroads.choosePath();
                         } else {
                             System.out.println("The troll manages to hit you as you run away! You have lost half of your remaining health points!");
@@ -157,7 +159,7 @@ public class TrollBattle {
                             System.out.println("You return to the crossroads.");
                             System.out.println("Press enter to continue.");
                             scanner.nextLine();
-                            Crossroads crossroads = new Crossroads(hero.getHero());
+                            Crossroads crossroads = new Crossroads(hero.getHero(), name);
                             crossroads.choosePath();
                         }
                     }
@@ -190,10 +192,10 @@ public class TrollBattle {
             String action = scanner.nextLine();
             if (action.equals("1")) {
                 Mountain mountain = new Mountain();
-                mountain.stayOrGo(hero.getHero());
+                mountain.stayOrGo(hero.getHero(), name);
                 break;
             } else if (action.equals("2")) {
-                Crossroads crossroads = new Crossroads(hero.getHero());
+                Crossroads crossroads = new Crossroads(hero.getHero(), name);
                 crossroads.choosePath();
                 break;
             } else {

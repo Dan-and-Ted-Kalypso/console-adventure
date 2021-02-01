@@ -55,6 +55,7 @@ public class Game {
         Scanner nameScanner = new Scanner(System.in);
         String name = nameScanner.nextLine();
         if (name.isEmpty()) {
+            name = "Bartholomew";
             System.out.println("Don't want to tell me your name? Ok then. I shall call you Bartholomew!");
             System.out.println("Hello, Bartholomew! You are about to embark on a wild journey of heroism and chivalry! Let's begin!");
         } else {
@@ -62,12 +63,12 @@ public class Game {
         }
         System.out.println("Press enter to continue.");
         nameScanner.nextLine();
-        goToCrossroads();
+        goToCrossroads(name);
     }
 
 
-    public void goToCrossroads() {
-        Crossroads crossroads = new Crossroads();
+    public void goToCrossroads(String name) {
+        Crossroads crossroads = new Crossroads(name);
         crossroads.choosePath();
     }
 }
