@@ -7,8 +7,10 @@ public class DesertBattle {
     private final int[] heroArray;
     private final int desertWins;
     private final Scanner scanner;
+    private final String name;
 
-    public DesertBattle(int[] heroArray) {
+    public DesertBattle(int[] heroArray, String name) {
+        this.name = name;
         this.heroArray = heroArray;
         this.desertWins = heroArray[3];
         this.scanner = new Scanner(System.in);
@@ -25,23 +27,23 @@ public class DesertBattle {
             System.out.println("Dude. You've already killed everything in the desert. Go somewhere else.");
             System.out.println("Press enter to continue.");
             scanner.nextLine();
-            Crossroads crossroads = new Crossroads(heroArray);
+            Crossroads crossroads = new Crossroads(heroArray, name);
             crossroads.choosePath();
         }
     }
 
     public void fightSnake() {
-        SnakeBattle snakeBattle = new SnakeBattle(heroArray);
+        SnakeBattle snakeBattle = new SnakeBattle(heroArray, name);
         snakeBattle.battle();
     }
 
     public void fightScorpion() {
-        ScorpionBattle scorpionBattle = new ScorpionBattle(heroArray);
+        ScorpionBattle scorpionBattle = new ScorpionBattle(heroArray, name);
         scorpionBattle.battle();
     }
 
     public void fightMummy() {
-        MummyBattle mummyBattle = new MummyBattle(heroArray);
+        MummyBattle mummyBattle = new MummyBattle(heroArray, name);
         mummyBattle.battle();
     }
 

@@ -9,12 +9,14 @@ public class SpiderBattle {
     private final Hero hero;
     private final Spider spider;
     private final Scanner scanner;
+    private final String name;
 
-    public SpiderBattle(int[] heroArray) {
+    public SpiderBattle(int[] heroArray, String name) {
         this.heroArray = heroArray;
-        this.hero = new Hero(heroArray);
+        this.hero = new Hero(heroArray, name);
         this.spider = new Spider();
         this.scanner = new Scanner(System.in);
+        this.name = name;
     }
 
     public void battle() {
@@ -128,14 +130,14 @@ public class SpiderBattle {
                         System.out.println("You return to the crossroads.");
                         System.out.println("Press enter to continue.");
                         scanner.nextLine();
-                        Crossroads crossroads = new Crossroads(hero.getHero());
+                        Crossroads crossroads = new Crossroads(hero.getHero(), name);
                         crossroads.choosePath();
                     } else {
 
                         if (hero.getHealthPoints() == 1) {
                             System.out.println("You got away safely!");
                             System.out.println("You return to the crossroads.");
-                            Crossroads crossroads = new Crossroads(hero.getHero());
+                            Crossroads crossroads = new Crossroads(hero.getHero(), name);
                             System.out.println("Press enter to continue.");
                             scanner.nextLine();
                             crossroads.choosePath();
@@ -146,7 +148,7 @@ public class SpiderBattle {
                             System.out.println("You return to the crossroads.");
                             System.out.println("Press enter to continue.");
                             scanner.nextLine();
-                            Crossroads crossroads = new Crossroads(hero.getHero());
+                            Crossroads crossroads = new Crossroads(hero.getHero(), name);
                             crossroads.choosePath();
                         }
                     }
@@ -179,10 +181,10 @@ public class SpiderBattle {
             String action = scanner.nextLine();
             if (action.equals("1")) {
                 Forest forest = new Forest();
-                forest.stayOrGo(hero.getHero());
+                forest.stayOrGo(hero.getHero(), name);
                 break;
             } else if (action.equals("2")) {
-                Crossroads crossroads = new Crossroads(hero.getHero());
+                Crossroads crossroads = new Crossroads(hero.getHero(), name);
                 crossroads.choosePath();
                 break;
             } else {

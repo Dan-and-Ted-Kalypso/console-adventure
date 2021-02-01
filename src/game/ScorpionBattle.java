@@ -9,12 +9,14 @@ public class ScorpionBattle {
     private final Hero hero;
     private final Scorpion scorpion;
     private final Scanner scanner;
+    private final String name;
 
-    public ScorpionBattle(int[] heroArray) {
+    public ScorpionBattle(int[] heroArray, String name) {
         this.heroArray = heroArray;
-        this.hero = new Hero(heroArray);
+        this.hero = new Hero(heroArray, name);
         this.scorpion = new Scorpion();
         this.scanner = new Scanner(System.in);
+        this.name = name;
     }
 
     public void battle() {
@@ -108,7 +110,7 @@ public class ScorpionBattle {
                         System.out.println("You return to the crossroads.");
                         System.out.println("Press enter to continue.");
                         scanner.nextLine();
-                        Crossroads crossroads = new Crossroads(hero.getHero());
+                        Crossroads crossroads = new Crossroads(hero.getHero(), name);
                         crossroads.choosePath();
                     } else {
 
@@ -117,7 +119,7 @@ public class ScorpionBattle {
                             System.out.println("You return to the crossroads.");
                             System.out.println("Press enter to continue.");
                             scanner.nextLine();
-                            Crossroads crossroads = new Crossroads(hero.getHero());
+                            Crossroads crossroads = new Crossroads(hero.getHero(), name);
                             crossroads.choosePath();
                         } else {
                             System.out.println("The scorpion manages to hit you as you run away! You have lost half of your remaining health points!");
@@ -126,7 +128,7 @@ public class ScorpionBattle {
                             System.out.println("You return to the crossroads.");
                             System.out.println("Press enter to continue.");
                             scanner.nextLine();
-                            Crossroads crossroads = new Crossroads(hero.getHero());
+                            Crossroads crossroads = new Crossroads(hero.getHero(), name);
                             crossroads.choosePath();
                         }
                     }
@@ -159,10 +161,10 @@ public class ScorpionBattle {
             String action = scanner.nextLine();
             if (action.equals("1")) {
                 Desert desert = new Desert();
-                desert.stayOrGo(hero.getHero());
+                desert.stayOrGo(hero.getHero(), name);
                 break;
             } else if (action.equals("2")) {
-                Crossroads crossroads = new Crossroads(hero.getHero());
+                Crossroads crossroads = new Crossroads(hero.getHero(), name);
                 crossroads.choosePath();
                 break;
             } else {

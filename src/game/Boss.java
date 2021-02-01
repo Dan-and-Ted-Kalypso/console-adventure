@@ -31,7 +31,7 @@ public class Boss {
         this.healthPoints += amountToChange;
     }
 
-    public void stayOrGo(int[] heroArray) {
+    public void stayOrGo(int[] heroArray, String name) {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("");
@@ -83,11 +83,11 @@ public class Boss {
                     System.out.println("Prepare for battle!");
                     System.out.println("Press enter to continue.");
                     scanner.nextLine();
-                    BossBattle bossBattle = new BossBattle(heroArray);
+                    BossBattle bossBattle = new BossBattle(heroArray, name);
                     bossBattle.battle();
                     break;
                 } else if (confirm.equals("2")) {
-                    Crossroads crossroads = new Crossroads(heroArray);
+                    Crossroads crossroads = new Crossroads(heroArray, name);
                     crossroads.choosePath();
                     break;
                 } else {
@@ -95,7 +95,7 @@ public class Boss {
                     System.out.println("");
                 }
             } else if (action.equals("2")) {
-                Crossroads crossroads = new Crossroads(heroArray);
+                Crossroads crossroads = new Crossroads(heroArray, name);
                 crossroads.choosePath();
                 break;
             } else {

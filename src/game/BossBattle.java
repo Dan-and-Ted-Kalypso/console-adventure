@@ -7,13 +7,15 @@ public class BossBattle {
     private final Hero hero;
     private final Boss boss;
     private final Scanner scanner;
+    private final String name;
 
 
-    public BossBattle(int[] heroArray) {
+    public BossBattle(int[] heroArray, String name) {
 
-        this.hero = new Hero(heroArray);
+        this.hero = new Hero(heroArray, name);
         this.boss = new Boss();
         this.scanner = new Scanner(System.in);
+        this.name = name;
 
     }
 
@@ -108,7 +110,7 @@ public class BossBattle {
                         System.out.println("The boss has 0 health points remaining!");
                         System.out.println("Press enter to continue.");
                         scanner.nextLine();
-                        winBossBattle();
+                        winBossBattle(name);
                         break label;
                     } else {
                         System.out.printf("The boss has %d health points remaining.%n", boss.getEnemyHP());
@@ -158,7 +160,7 @@ public class BossBattle {
         }
     }
 
-    public void winBossBattle() {
+    public void winBossBattle(String name) {
 
         System.out.println("");
 
@@ -205,7 +207,7 @@ System.out.println("       ###          /;\"\\.__\"-._   \"\"\"                 
         System.out.println("");
 
         System.out.println("You have defeated the evil Boss and ended his reign of tyranny o'er the land!");
-        System.out.println("Your name will surely go down in the annals of history!");
+        System.out.printf("The name %s will surely go down in the annals of history!%n", name);
         System.out.println("You win!");
         System.out.println("Thanks for playing!");
     }

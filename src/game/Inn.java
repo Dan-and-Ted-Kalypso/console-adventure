@@ -6,12 +6,14 @@ public class Inn {
 
     private final Hero hero;
     private final Scanner scanner;
+    private final String name;
 
 
-    public Inn(int[] heroArray) {
+    public Inn(int[] heroArray, String name) {
 
-        this.hero = new Hero(heroArray);
+        this.hero = new Hero(heroArray, name);
         this.scanner = new Scanner(System.in);
+        this.name = name;
     }
 
 
@@ -62,7 +64,7 @@ public class Inn {
                     visitMerchant();
                     break label;
                 case "3":
-                    Crossroads crossroads = new Crossroads(hero.getHero());
+                    Crossroads crossroads = new Crossroads(hero.getHero(), name);
                     crossroads.choosePath();
                     break label;
                 default:
@@ -154,7 +156,7 @@ public class Inn {
                     confirmDagger();
                     break label;
                 case "3":
-                    Inn inn = new Inn(hero.getHero());
+                    Inn inn = new Inn(hero.getHero(), name);
                     System.out.println("You leave the merchant and head back to the main part of The Inn.");
                     System.out.println("Press enter to continue.");
                     scanner.nextLine();
@@ -183,7 +185,7 @@ public class Inn {
                 confirmPotion();
                 break;
             } else if (input.equals("2")) {
-                Inn inn = new Inn(hero.getHero());
+                Inn inn = new Inn(hero.getHero(), name);
                 System.out.println("You leave the merchant and head back to the main part of The Inn.");
                 System.out.println("Press enter to continue.");
                 scanner.nextLine();
