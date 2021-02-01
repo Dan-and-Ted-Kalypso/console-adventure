@@ -331,7 +331,7 @@ public class Hero {
 
         System.out.println("");
 
-        System.out.println("                                                               _");
+        System.out.println(ConsoleColors.RED + "                                                               _");
         System.out.println("                                                              _( (~\\");
         System.out.println("       _ _                        /                          ( \\> > \\");
         System.out.println("   -/~/ / ~\\                     :;                \\       _  > /(~\\/");
@@ -352,11 +352,11 @@ public class Hero {
         System.out.println("  ;       ;                       +:   ~~--  `:'  -';");
         System.out.println("                                   `:         : .::/");
         System.out.println("      ;                            ;;+_  :::. :..;;;");
-        System.out.println("                                   ;;;;;;,;;;;;;;;,;");
+        System.out.println("                                   ;;;;;;,;;;;;;;;,;" + ConsoleColors.RESET);
 
-        System.out.println("");
+        System.out.println(ConsoleColors.RED + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
 
-        System.out.println("You're dead!");
-        System.out.printf("Game Over %s!%n", name);
+        System.out.println(ConsoleColors.YELLOW + "You're dead!" + ConsoleColors.RESET);
+        System.out.printf(ConsoleColors.RED + "Game Over %s!%n" + ConsoleColors.RESET, name);
     }
 }
