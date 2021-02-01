@@ -49,19 +49,20 @@ public class Game {
         System.out.println("                  \\ |/");
         System.out.println("                   \\/");
 
-        System.out.println("");
+        System.out.println(ConsoleColors.PURPLE + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
 
-        System.out.println("Welcome to your adventure! What is your name?");
+        System.out.println(ConsoleColors.PURPLE + "Welcome to your adventure! What is your name?" + ConsoleColors.RESET);
         Scanner nameScanner = new Scanner(System.in);
         String name = nameScanner.nextLine();
         if (name.isEmpty()) {
             name = "Bartholomew";
-            System.out.println("Don't want to tell me your name? Ok then. I shall call you Bartholomew!");
-            System.out.println("Hello, Bartholomew! You are about to embark on a wild journey of heroism and chivalry! Let's begin!");
+            System.out.println(ConsoleColors.PURPLE + "Don't want to tell me your name? Ok then. I shall call you Bartholomew!" + ConsoleColors.RESET);
+            System.out.println(ConsoleColors.PURPLE + "Hello, Bartholomew! You are about to embark on a wild journey of heroism and chivalry! Let's begin!" + ConsoleColors.RESET);
         } else {
-            System.out.printf("Hello, %s! You are about to embark on a wild journey of heroism and chivalry! Let's begin!%n", name);
+            System.out.printf(ConsoleColors.PURPLE + "Hello, %s! You are about to embark on a wild journey of heroism and chivalry! Let's begin!%n" + ConsoleColors.RESET, name);
         }
         System.out.println("Press enter to continue.");
+        System.out.println(ConsoleColors.PURPLE + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
         nameScanner.nextLine();
         goToCrossroads(name);
     }
@@ -72,3 +73,5 @@ public class Game {
         crossroads.choosePath();
     }
 }
+
+
