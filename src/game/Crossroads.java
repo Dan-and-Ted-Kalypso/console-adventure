@@ -48,17 +48,31 @@ public class Crossroads {
             System.out.println("          _,-'             |                   |             '-,_");
             System.out.println("      _,-'                |                     |                '-,_");
 
-            System.out.println("");
+            System.out.println(ConsoleColors.PURPLE + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
 
-            System.out.println("You are standing at a crossroads.");
-            System.out.printf("Your health points: %d.%n", heroArray[1]);
-            System.out.printf("Your potion count: %d.%n", heroArray[0]);
-            System.out.println("Choose a path by selecting a number: ");
-            System.out.println("0: The Inn");
-            System.out.println("1: Forest");
-            System.out.println("2: Desert");
-            System.out.println("3: Mountains");
-            System.out.println("4: The Great Volcano");
+            System.out.println(ConsoleColors.PURPLE + "You are standing at a crossroads." + ConsoleColors.RESET);
+            if (heroArray[1] > (heroArray[11] / 3) + (heroArray[11] / 3)) {
+                System.out.printf(ConsoleColors.GREEN + "Your health points: %d.%n" + ConsoleColors.RESET, heroArray[1]);
+            } else if (heroArray[1] < (heroArray[11] / 3) + 1) {
+                System.out.printf(ConsoleColors.RED + "Your health points: %d.%n" + ConsoleColors.RESET, heroArray[1]);
+            } else {
+                System.out.printf(ConsoleColors.YELLOW + "Your health points: %d.%n" + ConsoleColors.RESET, heroArray[1]);
+            }
+
+            if (heroArray[0] == 0) {
+                System.out.printf(ConsoleColors.RED + "Your potion count: %d.%n" + ConsoleColors.RESET, heroArray[0]);
+            } else if (heroArray[0] < 3) {
+                System.out.printf(ConsoleColors.YELLOW + "Your potion count: %d.%n" + ConsoleColors.RESET, heroArray[0]);
+            } else {
+                System.out.printf(ConsoleColors.GREEN + "Your potion count: %d.%n" + ConsoleColors.RESET, heroArray[0]);
+            }
+
+            System.out.println(ConsoleColors.PURPLE + "Choose a path by selecting a number: " + ConsoleColors.RESET);
+            System.out.println(ConsoleColors.CYAN + "0: The Inn" + ConsoleColors.RESET);
+            System.out.println(ConsoleColors.GREEN + "1: Forest" + ConsoleColors.RESET);
+            System.out.println(ConsoleColors.YELLOW + "2: Desert" + ConsoleColors.RESET);
+            System.out.println(ConsoleColors.BLUE + "3: Mountains" + ConsoleColors.RESET);
+            System.out.println(ConsoleColors.RED + "4: The Great Volcano" + ConsoleColors.RESET);
 
             String direction = scanner.nextLine();
 
@@ -82,6 +96,7 @@ public class Crossroads {
                     System.out.println("That is not a valid path. Please enter a number (0, 1, 2, 3, 4) to choose your path.");
                     System.out.println("Press enter to continue.");
                     scanner.nextLine();
+                    System.out.println(ConsoleColors.PURPLE + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
                     break;
             }
 
@@ -91,17 +106,19 @@ public class Crossroads {
 
     public void confirmInn(int[] heroArray, String name) {
         while (true) {
-            System.out.println("Are you sure you wish to travel to The Inn?");
-            System.out.println("1: Travel.");
-            System.out.println("2: Cancel.");
+            System.out.println(ConsoleColors.CYAN + "Are you sure you wish to travel to The Inn?" + ConsoleColors.RESET);
+            System.out.println(ConsoleColors.GREEN + "1: Travel." + ConsoleColors.RESET);
+            System.out.println(ConsoleColors.YELLOW + "2: Cancel." + ConsoleColors.RESET);
             String confirm = scanner.nextLine();
             if (!confirm.equals("1") && !confirm.equals("2")) {
                 System.out.println("That is not a valid choice. Let's try this again.");
-                System.out.println("");
+                System.out.println(ConsoleColors.PURPLE + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
             } else if (confirm.equals("1")) {
+                System.out.println(ConsoleColors.PURPLE + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
                 goToInn(heroArray, name);
                 break;
             } else {
+                System.out.println(ConsoleColors.PURPLE + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
                 choosePath();
                 break;
             }
@@ -117,17 +134,19 @@ public class Crossroads {
 
     public void confirmForest(int[] heroArray, String name) {
         while (true) {
-            System.out.println("Are you sure you wish to travel to The Forest?");
-            System.out.println("1: Travel.");
-            System.out.println("2: Cancel.");
+            System.out.println(ConsoleColors.CYAN + "Are you sure you wish to travel to The Forest?" + ConsoleColors.RESET);
+            System.out.println(ConsoleColors.GREEN + "1: Travel." + ConsoleColors.RESET);
+            System.out.println(ConsoleColors.YELLOW + "2: Cancel." + ConsoleColors.RESET);
             String confirm = scanner.nextLine();
             if (!confirm.equals("1") && !confirm.equals("2")) {
                 System.out.println("That is not a valid choice. Let's try this again.");
-                System.out.println("");
+                System.out.println(ConsoleColors.PURPLE + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
             } else if (confirm.equals("1")) {
+                System.out.println(ConsoleColors.PURPLE + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
                 goToForest(heroArray, name);
                 break;
             } else {
+                System.out.println(ConsoleColors.PURPLE + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
                 choosePath();
                 break;
             }
@@ -142,17 +161,19 @@ public class Crossroads {
 
     public void confirmDesert(int[] heroArray, String name) {
         while (true) {
-            System.out.println("Are you sure you wish to travel to The Desert? The enemies there may pose somewhat of a challenge.");
-            System.out.println("1: Travel.");
-            System.out.println("2: Cancel.");
+            System.out.println(ConsoleColors.CYAN + "Are you sure you wish to travel to The Desert? The enemies there may pose somewhat of a challenge." + ConsoleColors.RESET);
+            System.out.println(ConsoleColors.GREEN + "1: Travel." + ConsoleColors.RESET);
+            System.out.println(ConsoleColors.YELLOW + "2: Cancel." + ConsoleColors.RESET);
             String confirm = scanner.nextLine();
             if (!confirm.equals("1") && !confirm.equals("2")) {
                 System.out.println("That is not a valid choice. Let's try this again.");
-                System.out.println("");
+                System.out.println(ConsoleColors.PURPLE + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
             } else if (confirm.equals("1")) {
+                System.out.println(ConsoleColors.PURPLE + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
                 goToDesert(heroArray, name);
                 break;
             } else {
+                System.out.println(ConsoleColors.PURPLE + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
                 choosePath();
                 break;
             }
@@ -167,17 +188,19 @@ public class Crossroads {
 
     public void confirmMountain(int[] heroArray, String name) {
         while (true) {
-            System.out.println("Are you sure you wish to travel to the mountains? The enemies there are very challenging.");
-            System.out.println("1: Travel.");
-            System.out.println("2: Cancel.");
+            System.out.println(ConsoleColors.CYAN + "Are you sure you wish to travel to the mountains? The enemies there are very challenging." + ConsoleColors.RESET);
+            System.out.println(ConsoleColors.GREEN + "1: Travel." + ConsoleColors.RESET);
+            System.out.println(ConsoleColors.YELLOW + "2: Cancel." + ConsoleColors.RESET);
             String confirm = scanner.nextLine();
             if (!confirm.equals("1") && !confirm.equals("2")) {
                 System.out.println("That is not a valid choice. Let's try this again.");
-                System.out.println("");
+                System.out.println(ConsoleColors.PURPLE + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
             } else if (confirm.equals("1")) {
+                System.out.println(ConsoleColors.PURPLE + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
                 goToMountain(heroArray, name);
                 break;
             } else {
+                System.out.println(ConsoleColors.PURPLE + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
                 choosePath();
                 break;
             }
@@ -192,17 +215,19 @@ public class Crossroads {
 
     public void confirmBoss(int[] heroArray, String name) {
         while (true) {
-            System.out.println("Are you sure you wish to travel to the Great Volcano? The big boss lives there and he can squash adventurers like a bug if they are unprepared.");
-            System.out.println("1: Travel.");
-            System.out.println("2: Cancel.");
+            System.out.println(ConsoleColors.YELLOW + "Are you sure you wish to travel to the Great Volcano? The Big Boss lives there and he can squash adventurers like a bug if they are unprepared!" + ConsoleColors.RESET);
+            System.out.println(ConsoleColors.RED + "1: Travel." + ConsoleColors.RESET);
+            System.out.println(ConsoleColors.GREEN + "2: Cancel." + ConsoleColors.RESET);
             String confirm = scanner.nextLine();
             if (!confirm.equals("1") && !confirm.equals("2")) {
                 System.out.println("That is not a valid choice. Let's try this again.");
-                System.out.println("");
+                System.out.println(ConsoleColors.PURPLE + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
             } else if (confirm.equals("1")) {
+                System.out.println(ConsoleColors.PURPLE + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
                 goToBoss(heroArray, name);
                 break;
             } else {
+                System.out.println(ConsoleColors.PURPLE + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
                 choosePath();
                 break;
             }

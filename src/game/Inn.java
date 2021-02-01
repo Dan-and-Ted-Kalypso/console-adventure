@@ -41,7 +41,7 @@ public class Inn {
         System.out.println("               I II__I  I     XXXXXXX     I");
         System.out.println("            ~~~~~\"   \"~~~~~~~~~~~~~~~~~~~~~~~~");
 
-        System.out.println("");
+        System.out.println(ConsoleColors.CYAN + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
 
         label:
         while (true) {
