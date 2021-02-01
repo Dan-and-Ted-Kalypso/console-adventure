@@ -7,6 +7,8 @@ public class Hero {
     private int potionCount;
     private int healthPoints;
     private int winCounter;
+    private boolean offBalance;
+    private boolean isPrepared;
     private boolean isCoward;
     private boolean hasSword;
     private boolean defeatedBoss;
@@ -16,6 +18,8 @@ public class Hero {
         this.healthPoints = 50;
         this.potionCount = 2;
         this.winCounter = 0;
+        this.offBalance = false;
+        this.isPrepared = false;
         this.isCoward = false;
         this.hasSword = false;
         this.defeatedBoss = false;
@@ -50,6 +54,8 @@ public class Hero {
         return random.nextInt(11);
     }
 
+
+
     public void usePotion() {
         if (getPotionCount() > 0) {
             changeHealthPoints(10);
@@ -76,6 +82,34 @@ public class Hero {
 
     public boolean isCoward() {
         return this.isCoward;
+    }
+
+    public boolean isOffBalance() {return this.offBalance;}
+
+    public void setOffBalance(boolean state) {this.offBalance = state;}
+
+    public void setPrepared(boolean state) {this.isPrepared = state;}
+
+    public boolean isPrepared() {return this.isPrepared;}
+
+    public int generateRecklessAttack() {
+        Random random = new Random();
+        int chanceOfOffBalance = random.nextInt(2);
+        if (chanceOfOffBalance == 0) {this.setOffBalance(true);}
+        return (int)Math.round(generateAttackValue() * 1.5);
+        }
+
+
+    public int generateCarefulAttack() {
+        this.setPrepared(true);
+        return (int)Math.round(generateAttackValue()*.5);
+    }
+
+    public double damageModifier() {
+        if (this.isPrepared() && this.isOffBalance()) {return 1;}
+        if (this.isPrepared()) {return .5;}
+        else if (this.isOffBalance()) {return 1.5;}
+        else {return 1;}
     }
 
     public void runAway() {

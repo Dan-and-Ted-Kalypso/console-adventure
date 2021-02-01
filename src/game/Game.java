@@ -58,9 +58,14 @@ public class Game {
             }
 
             while (true) {
-                System.out.println("Do you wish to attack or drink potion?");
+                System.out.println("What would you like to do?");
+                System.out.println("a) Use my normal attack.");
+                System.out.println("b) Attack recklessly! (more damage but leave yourself vulnerable)");
+                System.out.println("c) Attack carefully. (do less damage but prevent the enemy from damaging you as much)");
+                System.out.println("d) Use a potion (heals for 10 points of health)");
+
                 String action = scanner.nextLine();
-                if (action.equalsIgnoreCase("attack")) {
+                if (action.equalsIgnoreCase("attack") | action.equalsIgnoreCase("a")) {
                     int attackValue = this.hero.generateAttackValue();
                     if (attackValue == 0) {
                         System.out.println("Your attack misses!");
@@ -69,45 +74,92 @@ public class Game {
                         enemy.changeEnemyHP(attackValue * -1);
                         if (enemy.getEnemyHP() <= 0) {
                             System.out.println("The enemy has been defeated!");
+                            break;
                         } else {
                             System.out.printf("The enemy has %dHP remaining!%n", enemy.getEnemyHP());
                         }
-                        break;
                     }
 
-                } else if (action.equalsIgnoreCase("drink potion")) {
+                } else if (action.equalsIgnoreCase("b") | action.equalsIgnoreCase("attack recklessly") | action.equalsIgnoreCase("recklessly")) {
+                    int attackValue = this.hero.generateRecklessAttack();
+                    if (attackValue == 0) {
+                        System.out.println("Your lunge towards the enemy wildly, but your attack misses!");
+                    } else {
+                        System.out.printf("You lunge towards the enemy, scoring a hit of %d points!%n", attackValue);
+                        enemy.changeEnemyHP(attackValue * -1);
+                        if (enemy.getEnemyHP() <= 0) {
+                            System.out.println("The enemy has been defeated!");
+                            break;
+                        } else {
+                            System.out.printf("The enemy has %dHP remaining!%n", enemy.getEnemyHP());
+                            if (this.hero.isOffBalance()) {
+                                System.out.println("Oh no! You were so focused on trying to hit your opponent you've thrown yourself off balance!");
+
+                            }
+                        }
+                    }
+                } else if (action.equalsIgnoreCase("c") | action.equalsIgnoreCase("careful") | action.equalsIgnoreCase("careful attack")) {
+                    int attackValue = this.hero.generateCarefulAttack();
+                    if (attackValue == 0) {
+                        System.out.println("You approach the enemy carefully, but your attack misses!");
+                    } else {
+                        System.out.printf("You approach the enemy carefully, and, striking cautiously, score a hit of %d points!%n", attackValue);
+                        enemy.changeEnemyHP(attackValue * -1);
+                        if (enemy.getEnemyHP() <= 0) {
+                            System.out.println("The enemy has been defeated!");
+                            break;
+                        } else {
+                            System.out.printf("The enemy has %dHP remaining!%n", enemy.getEnemyHP());
+                            if (this.hero.isPrepared()) {
+                                System.out.println("Fortunately your careful approach has left you in an excellent position to defend yourself!");
+                            }
+                        }
+                    }
+                } else if (action.equalsIgnoreCase("drink potion") | action.equalsIgnoreCase("d")) {
                     this.hero.usePotion();
                     break;
                 } else {
                     System.out.println("That is not a valid action.");
                 }
-            }
 
-            if (enemy.getEnemyHP() <= 0) {
-                System.out.println("Victory!");
-                this.hero.addWin();
-                if (this.hero.getWinCounter() == 3) {
-                    System.out.println("You have found a sword! This will make your attacks a lot stronger!\n");
-                    this.hero.giveSword();
-                } else {
-                    this.hero.changePotionCount(1);
-                    System.out.printf("You have found a potion! Number of potions: %d%n", this.hero.getPotionCount());
-                }
-                break;
-            }
-            int enemyAttackValue = enemy.generateAttackValue();
-            if (enemyAttackValue == 0) {
-                System.out.println("The enemy's attack misses!");
-            } else {
-                System.out.printf("The enemy attacks you, scoring a hit of %d points!%n", enemyAttackValue);
-                this.hero.changeHealthPoints(enemyAttackValue * -1);
-                if (hero.getHealthPoints() <= 0) {
-                    System.out.println("You have no health points remaining! Oh no!");
-                } else {
-                    System.out.printf("You have %dHP remaining!%n", this.hero.getHealthPoints());
-                }
-            }
 
+                if (enemy.getEnemyHP() <= 0) {
+                    System.out.println("Victory!");
+                    this.hero.addWin();
+                    if (this.hero.getWinCounter() == 3) {
+                        System.out.println("You have found a sword! This will make your attacks a lot stronger!\n");
+                        this.hero.giveSword();
+                    } else {
+                        this.hero.changePotionCount(1);
+                        System.out.printf("You have found a potion! Number of potions: %d%n", this.hero.getPotionCount());
+                    }
+                    break;
+                }
+                int enemyAttackValue = (int) Math.round(enemy.generateAttackValue() * this.hero.damageModifier());
+                if (enemyAttackValue == 0) {
+                    System.out.println("The enemy's attack misses!");
+
+                } else {
+                    if (this.hero.damageModifier() > 1) {
+                        System.out.printf("The enemy senses your vulnerability and drives home his attack, scoring a hit of %d points of damage!%n", enemyAttackValue);
+                        this.hero.changeHealthPoints(enemyAttackValue * -1);
+                    } else if (this.hero.damageModifier() < 1) {
+                        System.out.printf("The enemy strikes at you, but you're prepared for their attack, and they do only %d points of damage!%n", enemyAttackValue);
+                        this.hero.changeHealthPoints(enemyAttackValue * -1);
+                    } else {
+                        System.out.printf("The enemy attacks you, scoring a hit of %d points!%n", enemyAttackValue);
+                        this.hero.changeHealthPoints(enemyAttackValue * -1);
+                    }
+                    if (hero.getHealthPoints() <= 0) {
+                        System.out.println("You have no health points remaining! Oh no!");
+                    } else {
+                        System.out.printf("You have %dHP remaining!%n", this.hero.getHealthPoints());
+                        this.hero.setPrepared(false);
+                        this.hero.setOffBalance(false);
+                    }
+                }
+
+            }
         }
     }
 

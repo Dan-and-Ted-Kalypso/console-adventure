@@ -1,4 +1,4 @@
-ackage game;
+package game;
 
 import java.util.Random;
 
