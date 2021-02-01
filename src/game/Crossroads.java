@@ -28,7 +28,7 @@ public class Crossroads {
         while (true) {
 
             System.out.println("");
-            System.out.println("                                   ,'-',");
+            System.out.println(ConsoleColors.PURPLE + "                                   ,'-',");
             System.out.println("                                   '___'");
             System.out.println("                                 ,-'   '-,");
             System.out.println("                                /_       _\\");
@@ -46,7 +46,7 @@ public class Crossroads {
             System.out.println("  __,--'          _,-'       |               |       '-,_          '--,__");
             System.out.println("              _,-'          |                 |          '-,_");
             System.out.println("          _,-'             |                   |             '-,_");
-            System.out.println("      _,-'                |                     |                '-,_");
+            System.out.println("      _,-'                |                     |                '-,_" + ConsoleColors.RESET);
 
             System.out.println(ConsoleColors.PURPLE + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
 
@@ -114,7 +114,7 @@ public class Crossroads {
                 System.out.println("That is not a valid choice. Let's try this again.");
                 System.out.println(ConsoleColors.PURPLE + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
             } else if (confirm.equals("1")) {
-                System.out.println(ConsoleColors.PURPLE + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
+                System.out.println(ConsoleColors.CYAN + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
                 goToInn(heroArray, name);
                 break;
             } else {
@@ -127,7 +127,7 @@ public class Crossroads {
     }
 
     public void goToInn(int[] heroArray, String name) {
-        System.out.println("Welcome to The Inn! You can rest and recharge your health points here for 10 gold, or you can visit the merchant.");
+        System.out.println(ConsoleColors.CYAN + "Welcome to The Inn! You can rest and recharge your health points here for 10 gold, or you can visit the merchant." + ConsoleColors.RESET);
         Inn inn = new Inn(heroArray, name);
         inn.stayOrGo();
     }
@@ -142,7 +142,7 @@ public class Crossroads {
                 System.out.println("That is not a valid choice. Let's try this again.");
                 System.out.println(ConsoleColors.PURPLE + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
             } else if (confirm.equals("1")) {
-                System.out.println(ConsoleColors.PURPLE + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
+                System.out.println(ConsoleColors.GREEN + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
                 goToForest(heroArray, name);
                 break;
             } else {
@@ -169,7 +169,7 @@ public class Crossroads {
                 System.out.println("That is not a valid choice. Let's try this again.");
                 System.out.println(ConsoleColors.PURPLE + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
             } else if (confirm.equals("1")) {
-                System.out.println(ConsoleColors.PURPLE + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
+                System.out.println(ConsoleColors.YELLOW + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
                 goToDesert(heroArray, name);
                 break;
             } else {
@@ -196,7 +196,7 @@ public class Crossroads {
                 System.out.println("That is not a valid choice. Let's try this again.");
                 System.out.println(ConsoleColors.PURPLE + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
             } else if (confirm.equals("1")) {
-                System.out.println(ConsoleColors.PURPLE + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
+                System.out.println(ConsoleColors.BLUE + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
                 goToMountain(heroArray, name);
                 break;
             } else {
@@ -223,7 +223,7 @@ public class Crossroads {
                 System.out.println("That is not a valid choice. Let's try this again.");
                 System.out.println(ConsoleColors.PURPLE + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
             } else if (confirm.equals("1")) {
-                System.out.println(ConsoleColors.PURPLE + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
+                System.out.println(ConsoleColors.RED + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
                 goToBoss(heroArray, name);
                 break;
             } else {

@@ -8,7 +8,7 @@ public class Forest {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("");
-        System.out.println("                                       oxoxoo    ooxoo");
+        System.out.println(ConsoleColors.GREEN + "                                       oxoxoo    ooxoo");
         System.out.println("                                      ooxoxo oo  oxoxooo");
         System.out.println("                                     oooo xxoxoo ooo ooox    ccee88oo");
         System.out.println("               ,@@@@@@@,             oxo o oxoxo  xoxxoxo C8O8O8Q8PoOb o8oo");
@@ -20,35 +20,54 @@ public class Forest {
         System.out.println("   `&%\\ ` /%&'    |.|        \\ '|8'          | D|               |||/\\");
         System.out.println("       |o|        | |         | |            |  |               |||\\/");
         System.out.println("       |.|        | |         | |            |  |               |||||");
-        System.out.println("    \\\\/ ._\\//_/__/  ,\\_//__\\\\/.  \\_//__/____/    \\____// \\_/___//||||\\___");
+        System.out.println("    \\\\/ ._\\//_/__/  ,\\_//__\\\\/.  \\_//__/____/    \\____// \\_/___//||||\\___" + ConsoleColors.RESET);
 
-        System.out.println("");
-        System.out.println("Welcome to the forest!");
+        System.out.println(ConsoleColors.GREEN + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
+        System.out.println(ConsoleColors.GREEN + "Welcome to the forest!" + ConsoleColors.RESET);
 
         while (true) {
 
 
-            System.out.printf("Your health points: %d.%n", heroArray[1]);
-            System.out.printf("Your potion count: %d.%n", heroArray[0]);
+            if (heroArray[1] > (heroArray[11] / 3) + (heroArray[11] / 3)) {
+                System.out.printf(ConsoleColors.GREEN + "Your health points: %d.%n" + ConsoleColors.RESET, heroArray[1]);
+            } else if (heroArray[1] < (heroArray[11] / 3) + 1) {
+                System.out.printf(ConsoleColors.RED + "Your health points: %d.%n" + ConsoleColors.RESET, heroArray[1]);
+            } else {
+                System.out.printf(ConsoleColors.YELLOW + "Your health points: %d.%n" + ConsoleColors.RESET, heroArray[1]);
+            }
+
+            if (heroArray[0] == 0) {
+                System.out.printf(ConsoleColors.RED + "Your potion count: %d.%n" + ConsoleColors.RESET, heroArray[0]);
+            } else if (heroArray[0] < 3) {
+                System.out.printf(ConsoleColors.YELLOW + "Your potion count: %d.%n" + ConsoleColors.RESET, heroArray[0]);
+            } else {
+                System.out.printf(ConsoleColors.GREEN + "Your potion count: %d.%n" + ConsoleColors.RESET, heroArray[0]);
+            }
+
             System.out.println("Press enter to continue.");
+
+            System.out.println(ConsoleColors.GREEN + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
             scanner.nextLine();
-            System.out.println("What do you want to do?");
-            System.out.println("1: Look for enemies.");
-            System.out.println("2: Leave.");
+            System.out.println(ConsoleColors.YELLOW + "What do you want to do?" + ConsoleColors.RESET);
+            System.out.println(ConsoleColors.RED + "1: Look for enemies." + ConsoleColors.RESET);
+            System.out.println(ConsoleColors.GREEN + "2: Leave." + ConsoleColors.RESET);
 
             String action = scanner.nextLine();
 
             if (action.equals("1")) {
+                System.out.println(ConsoleColors.GREEN + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
                 ForestBattle forestBattle = new ForestBattle(heroArray, name);
                 forestBattle.battle();
                 break;
             } else if (action.equals("2")) {
+                System.out.println(ConsoleColors.PURPLE + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
                 Crossroads crossroads = new Crossroads(heroArray, name);
                 crossroads.choosePath();
                 break;
             } else {
+                System.out.println(ConsoleColors.GREEN + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
                 System.out.println("That is not a valid action. Let's try this again.");
-                System.out.println("");
+                System.out.println(ConsoleColors.GREEN + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
             }
         }
     }

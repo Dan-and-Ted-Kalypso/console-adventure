@@ -22,7 +22,7 @@ public class BossBattle {
     public void battle() {
 
         System.out.println("");
-        System.out.println("                                                           /\\");
+        System.out.println(ConsoleColors.RED + "                                                           /\\");
         System.out.println("                                                          //\\\\");
         System.out.println("                                                         <<()>>     A");
         System.out.println("                                                          |==|     /\\\\");
@@ -78,65 +78,98 @@ public class BossBattle {
         System.out.println("         '?o===o   ~-=8oo888888oo.__                      |  |");
         System.out.println("         8888888     `~~~' `==~~~=-,'                   _ |__| _");
         System.out.println("         ?8P?88P");
-        System.out.println("          V''V'");
+        System.out.println("          V''V'" + ConsoleColors.RESET);
 
-        System.out.println("");
+        System.out.println(ConsoleColors.RED + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
 
-        System.out.println("So it begins. The great battle of our time...");
+        System.out.println(ConsoleColors.CYAN + "So it begins. The great battle of our time..." + ConsoleColors.RESET);
         System.out.println("Press enter to continue.");
+        System.out.println(ConsoleColors.RED + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
         scanner.nextLine();
         label:
         while (true) {
-            System.out.println("What would you like to do?");
-            System.out.println("1: Attack.");
-            System.out.println("2: Drink potion.");
-            System.out.println("3: Run.");
+            System.out.println(ConsoleColors.PURPLE + "What would you like to do?" + ConsoleColors.RESET);
+            System.out.println(ConsoleColors.CYAN + "1: Attack." + ConsoleColors.RESET);
+            System.out.println(ConsoleColors.GREEN + "2: Drink potion." + ConsoleColors.RESET);
+            System.out.println(ConsoleColors.YELLOW + "3: Run." + ConsoleColors.RESET);
             String action = scanner.nextLine();
 
             switch (action) {
                 case "1":
                     int attackValue = hero.generateAttackValue();
                     if (attackValue == 0) {
-                        System.out.println("Your attack missed!");
+                        System.out.println(ConsoleColors.RED + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
+                        System.out.println(ConsoleColors.RED + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
+                        System.out.println(ConsoleColors.RED + "Your attack missed!" + ConsoleColors.RESET);
                         System.out.println("Press enter to continue.");
                         scanner.nextLine();
+                        System.out.println(ConsoleColors.RED + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
                     } else {
+                        System.out.println(ConsoleColors.RED + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
+                        System.out.println(ConsoleColors.GREEN + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
                         boss.changeEnemyHP(attackValue * -1);
-                        System.out.printf("You hit the boss for %d points!%n", attackValue);
+                        System.out.printf(ConsoleColors.GREEN + "You hit the boss for %d points!%n" + ConsoleColors.RESET, attackValue);
                         System.out.println("Press enter to continue.");
                         scanner.nextLine();
+                        System.out.println(ConsoleColors.GREEN + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
                     }
                     if (boss.getEnemyHP() <= 0) {
-                        System.out.println("The boss has 0 health points remaining!");
+                        System.out.println(ConsoleColors.GREEN + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
+                        System.out.println(ConsoleColors.GREEN + "The boss has 0 health points remaining!" + ConsoleColors.RESET);
                         System.out.println("Press enter to continue.");
                         scanner.nextLine();
+                        System.out.println(ConsoleColors.GREEN + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
                         winBossBattle(name);
                         break label;
                     } else {
-                        System.out.printf("The boss has %d health points remaining.%n", boss.getEnemyHP());
+                        System.out.println(ConsoleColors.YELLOW + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
+                        System.out.printf(ConsoleColors.YELLOW + "The boss has %d health points remaining.%n" + ConsoleColors.RESET, boss.getEnemyHP());
                         System.out.println("Press enter to continue.");
                         scanner.nextLine();
+                        System.out.println(ConsoleColors.YELLOW + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
                         int enemyAttackValue = boss.generateAttackValue();
                         if (enemyAttackValue == 0) {
+                            System.out.println(ConsoleColors.GREEN + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
                             System.out.println("The boss' attack missed! Whew!");
                             System.out.println("Press enter to continue.");
                             scanner.nextLine();
+                            System.out.println(ConsoleColors.GREEN + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
                         } else {
                             hero.changeHealthPoints(enemyAttackValue * -1);
-                            System.out.printf("The boss hits you for %d points! Ouch!%n", enemyAttackValue);
+                            System.out.println(ConsoleColors.RED + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
+                            System.out.printf(ConsoleColors.RED + "The boss hits you for %d points! Ouch!%n" + ConsoleColors.RESET, enemyAttackValue);
                             System.out.println("Press enter to continue.");
                             scanner.nextLine();
+                            System.out.println(ConsoleColors.RED + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
                         }
                         if (hero.getHealthPoints() <= 0) {
-                            System.out.println("You have no health points remaining! Oh no!");
+                            System.out.println(ConsoleColors.RED + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
+                            System.out.println(ConsoleColors.RED + "You have no health points remaining! Oh no!" + ConsoleColors.RESET);
                             System.out.println("Press enter to continue.");
                             scanner.nextLine();
+                            System.out.println(ConsoleColors.RED + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
                             hero.die();
                             break label;
                         } else {
-                            System.out.printf("You have %d health points remaining.%n", hero.getHealthPoints());
-                            System.out.println("Press enter to continue.");
-                            scanner.nextLine();
+                            if (hero.getHealthPoints() > (hero.getMaxHP() / 3) + (hero.getMaxHP() / 3)) {
+                                System.out.println(ConsoleColors.GREEN + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
+                                System.out.printf(ConsoleColors.GREEN + "You have %d health points remaining.%n" + ConsoleColors.RESET, hero.getHealthPoints());
+                                System.out.println("Press enter to continue.");
+                                scanner.nextLine();
+                                System.out.println(ConsoleColors.GREEN + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
+                            } else if (hero.getHealthPoints() < (hero.getMaxHP() / 3) + 1) {
+                                System.out.println(ConsoleColors.RED + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
+                                System.out.printf(ConsoleColors.RED + "You have %d health points remaining.%n" + ConsoleColors.RESET, hero.getHealthPoints());
+                                System.out.println("Press enter to continue.");
+                                scanner.nextLine();
+                                System.out.println(ConsoleColors.RED + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
+                            } else {
+                                System.out.println(ConsoleColors.YELLOW + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
+                                System.out.printf(ConsoleColors.YELLOW + "You have %d health points remaining.%n" + ConsoleColors.RESET, hero.getHealthPoints());
+                                System.out.println("Press enter to continue.");
+                                scanner.nextLine();
+                                System.out.println(ConsoleColors.YELLOW + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
+                            }
                         }
                     }
 
@@ -145,38 +178,64 @@ public class BossBattle {
                 case "2":
 
                     hero.usePotion();
+
                     int enemyAttackValue = boss.generateAttackValue();
                     if (enemyAttackValue == 0) {
+                        System.out.println(ConsoleColors.GREEN + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
                         System.out.println("The boss' attack missed! Whew!");
                         System.out.println("Press enter to continue.");
                         scanner.nextLine();
+                        System.out.println(ConsoleColors.GREEN + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
                     } else {
                         hero.changeHealthPoints(enemyAttackValue * -1);
-                        System.out.printf("The boss hits you for %d points! Ouch!%n", enemyAttackValue);
+                        System.out.println(ConsoleColors.RED + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
+                        System.out.printf(ConsoleColors.RED + "The boss hits you for %d points! Ouch!%n" + ConsoleColors.RESET, enemyAttackValue);
                         System.out.println("Press enter to continue.");
                         scanner.nextLine();
+                        System.out.println(ConsoleColors.RED + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
                     }
                     if (hero.getHealthPoints() <= 0) {
-                        System.out.println("You have no health points remaining! Oh no!");
+                        System.out.println(ConsoleColors.RED + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
+                        System.out.println(ConsoleColors.RED + "You have no health points remaining! Oh no!" + ConsoleColors.RESET);
                         System.out.println("Press enter to continue.");
                         scanner.nextLine();
+                        System.out.println(ConsoleColors.RED + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
                         hero.die();
                         break label;
                     } else {
-                        System.out.printf("You have %d health points remaining.%n", hero.getHealthPoints());
-                        System.out.println("Press enter to continue.");
-                        scanner.nextLine();
+                        if (hero.getHealthPoints() > (hero.getMaxHP() / 3) + (hero.getMaxHP() / 3)) {
+                            System.out.println(ConsoleColors.GREEN + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
+                            System.out.printf(ConsoleColors.GREEN + "You have %d health points remaining.%n" + ConsoleColors.RESET, hero.getHealthPoints());
+                            System.out.println("Press enter to continue.");
+                            scanner.nextLine();
+                            System.out.println(ConsoleColors.GREEN + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
+                        } else if (hero.getHealthPoints() < (hero.getMaxHP() / 3) + 1) {
+                            System.out.println(ConsoleColors.RED + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
+                            System.out.printf(ConsoleColors.RED + "You have %d health points remaining.%n" + ConsoleColors.RESET, hero.getHealthPoints());
+                            System.out.println("Press enter to continue.");
+                            scanner.nextLine();
+                            System.out.println(ConsoleColors.RED + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
+                        } else {
+                            System.out.println(ConsoleColors.YELLOW + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
+                            System.out.printf(ConsoleColors.YELLOW + "You have %d health points remaining.%n" + ConsoleColors.RESET, hero.getHealthPoints());
+                            System.out.println("Press enter to continue.");
+                            scanner.nextLine();
+                            System.out.println(ConsoleColors.YELLOW + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
+                        }
                     }
 
                     break;
                 case "3":
-                    System.out.println("You can't run away! This is the BOSS BATTLE, ya dingus!");
+                    System.out.println(ConsoleColors.PURPLE + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
+                    System.out.println(ConsoleColors.PURPLE + "You can't run away! This is the BOSS BATTLE, ya dingus!" + ConsoleColors.RESET);
                     System.out.println("Press enter to continue.");
                     scanner.nextLine();
+                    System.out.println(ConsoleColors.PURPLE + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
                     break;
                 default:
+                    System.out.println(ConsoleColors.PURPLE + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
                     System.out.println("That is not a valid action. Let's try this again.");
-                    System.out.println("");
+                    System.out.println(ConsoleColors.PURPLE + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
                     break;
             }
         }
@@ -186,7 +245,7 @@ public class BossBattle {
 
         System.out.println("");
 
-        System.out.println("                                 ____");
+        System.out.println(ConsoleColors.GREEN + "                                 ____");
         System.out.println("                              .-\"    `-.      ,");
         System.out.println("                            .'          '.   /j\\");
         System.out.println("                           /              \\,/:/#\\                /\\");
@@ -224,13 +283,13 @@ System.out.println("  /\"\\'#\"\\',.|       ##;#,                               
 System.out.println("        /;/`:       ######,          ____             _ :     M||||||M     |");
 System.out.println("       ###          /;\"\\.__\"-._   \"\"\"                   |===..M!!!!!!M_____|");
         System.out.println("                           `--..`--.._____             _!_");
-        System.out.println("                                          `--...____,=\"_.'`-.____");
+        System.out.println("                                          `--...____,=\"_.'`-.____" + ConsoleColors.RESET);
 
-        System.out.println("");
+        System.out.println(ConsoleColors.GREEN + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
 
-        System.out.println("You have defeated the evil Boss and ended his reign of tyranny o'er the land!");
-        System.out.printf("The name %s will surely go down in the annals of history!%n", name);
-        System.out.println("You win!");
-        System.out.println("Thanks for playing!");
+        System.out.println(ConsoleColors.PURPLE + "You have defeated the evil Boss and ended his reign of tyranny o'er the land!" + ConsoleColors.RESET);
+        System.out.printf(ConsoleColors.CYAN + "The name %s will surely go down in the annals of history!%n" + ConsoleColors.RESET, name);
+        System.out.println(ConsoleColors.GREEN + "You win!" + ConsoleColors.RESET);
+        System.out.println(ConsoleColors.BLUE + "Thanks for playing!" + ConsoleColors.RESET);
     }
 }
