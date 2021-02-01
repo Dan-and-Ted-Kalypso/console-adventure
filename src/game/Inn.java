@@ -4,14 +4,13 @@ import java.util.Scanner;
 
 public class Inn {
 
-    protected Hero hero;
-    protected Scanner scanner;
-    protected int[] heroArray;
+    private final Hero hero;
+    private final Scanner scanner;
+
 
     public Inn(int[] heroArray) {
 
         this.hero = new Hero(heroArray);
-        this.heroArray = hero.getHero();
         this.scanner = new Scanner(System.in);
     }
 
@@ -42,27 +41,34 @@ public class Inn {
 
         System.out.println("");
 
+        label:
         while (true) {
             System.out.printf("Your current health points: %d.%n", hero.getHealthPoints());
             System.out.printf("Your current gold: %d.%n", hero.getGold());
             System.out.printf("Your current potion count: %d.%n", hero.getPotionCount());
+            System.out.println("Press enter to continue.");
+            scanner.nextLine();
             System.out.println("What do you want to do?");
             System.out.println("1: Stay for the night and recharge your health points (10 gold).");
             System.out.println("2: Visit the merchant.");
             System.out.println("3: Leave.");
 
             String input = scanner.nextLine();
-            if (input.equals("1")) {
-                checkInn();
-            } else if (input.equals("2")) {
-                visitMerchant();
-                break;
-            } else if (input.equals("3")) {
-                Crossroads crossroads = new Crossroads(heroArray);
-                crossroads.choosePath();
-                break;
-            } else {
-                System.out.println("That is not a valid action. Let's try this again.");
+            switch (input) {
+                case "1":
+                    checkInn();
+                    break label;
+                case "2":
+                    visitMerchant();
+                    break label;
+                case "3":
+                    Crossroads crossroads = new Crossroads(hero.getHero());
+                    crossroads.choosePath();
+                    break label;
+                default:
+                    System.out.println("That is not a valid action. Let's try this again.");
+                    System.out.println("");
+                    break;
             }
         }
 
@@ -73,8 +79,14 @@ public class Inn {
 
         if (hero.getHealthPoints() == hero.getMaxHP()) {
             System.out.println("You are already at maximum health!");
+            System.out.println("Press enter to continue.");
+            scanner.nextLine();
+            stayOrGo();
         } else if (hero.getGold() < 10) {
             System.out.println("You don't have enough gold to stay at The Inn!");
+            System.out.println("Press enter to continue.");
+            scanner.nextLine();
+            stayOrGo();
         } else {
             confirmInn();
         }
@@ -96,6 +108,7 @@ public class Inn {
                 break;
             } else {
                 System.out.println("That is not a valid action. Let's try this again.");
+                System.out.println("");
             }
         }
 
@@ -104,8 +117,11 @@ public class Inn {
     public void stayAtInn() {
         int amountToGive = hero.getMaxHP() - hero.getHealthPoints();
         hero.changeHealthPoints(amountToGive);
+        hero.changeGold(-10);
         System.out.println("After a night at the inn, you feel fully refreshed.");
         System.out.println("You head downstairs to the main floor of The Inn.");
+        System.out.println("Press enter to continue.");
+        scanner.nextLine();
         stayOrGo();
     }
 
@@ -120,6 +136,7 @@ public class Inn {
 
     public void merchantDagger() {
 
+        label:
         while (true) {
             System.out.println("The merchant has potions for sale, as well as a dagger.");
             System.out.printf("You have %d gold.%n", hero.getGold());
@@ -129,19 +146,24 @@ public class Inn {
             System.out.println("3: Leave merchant.");
 
             String input = scanner.nextLine();
-            if (input.equals("1")) {
-                confirmPotion();
-                break;
-            } else if (input.equals("2")) {
-                confirmDagger();
-                break;
-            } else if (input.equals("3")) {
-                Inn inn = new Inn(hero.getHero());
-                System.out.println("You leave the merchant and head back to the main part of The Inn.");
-                inn.stayOrGo();
-                break;
-            } else {
-                System.out.println("That is not a valid action. Let's try this again.");
+            switch (input) {
+                case "1":
+                    confirmPotion();
+                    break label;
+                case "2":
+                    confirmDagger();
+                    break label;
+                case "3":
+                    Inn inn = new Inn(hero.getHero());
+                    System.out.println("You leave the merchant and head back to the main part of The Inn.");
+                    System.out.println("Press enter to continue.");
+                    scanner.nextLine();
+                    inn.stayOrGo();
+                    break label;
+                default:
+                    System.out.println("That is not a valid action. Let's try this again.");
+                    System.out.println("");
+                    break;
             }
         }
 
@@ -163,10 +185,13 @@ public class Inn {
             } else if (input.equals("2")) {
                 Inn inn = new Inn(hero.getHero());
                 System.out.println("You leave the merchant and head back to the main part of The Inn.");
+                System.out.println("Press enter to continue.");
+                scanner.nextLine();
                 inn.stayOrGo();
                 break;
             } else {
                 System.out.println("That is not a valid action. Let's try this again.");
+                System.out.println("");
             }
         }
     }
@@ -174,6 +199,9 @@ public class Inn {
     public void confirmPotion() {
         if (hero.getGold() < 4) {
             System.out.println("You don't have enough gold to buy a potion!");
+            System.out.println("Press enter to continue.");
+            scanner.nextLine();
+            visitMerchant();
         } else {
             while (true) {
                 System.out.println("Are you sure you wish to buy a potion? It costs 4 gold.");
@@ -185,6 +213,8 @@ public class Inn {
                     hero.changePotionCount(1);
                     System.out.println("You bought a potion!");
                     System.out.printf("Your total potion count is: %d.%n", hero.getPotionCount());
+                    System.out.println("Press enter to continue.");
+                    scanner.nextLine();
                     visitMerchant();
                     break;
                 } else if (input.equals("2")) {
@@ -192,6 +222,7 @@ public class Inn {
                     break;
                 } else {
                     System.out.println("That is not a valid action. Let's try this again.");
+                    System.out.println("");
                 }
             }
 
@@ -204,6 +235,9 @@ public class Inn {
     public void confirmDagger() {
         if (hero.getGold() < 5) {
             System.out.println("You don't have enough gold to buy a dagger!");
+            System.out.println("Press enter to continue.");
+            scanner.nextLine();
+            visitMerchant();
         } else {
             while (true) {
                 System.out.println("Are you sure you wish to buy a dagger? It costs 5 gold.");
@@ -213,7 +247,28 @@ public class Inn {
                 if (input.equals("1")) {
                     hero.changeGold(-5);
                     hero.addDagger();
+                    System.out.println("");
+                    System.out.println("       .---.");
+                    System.out.println("       |---|");
+                    System.out.println("       |---|");
+                    System.out.println("       |---|");
+                    System.out.println("   .---^ - ^---.");
+                    System.out.println("   :___________:");
+                    System.out.println("      |  |//|");
+                    System.out.println("      |  |//|");
+                    System.out.println("      |  |//|");
+                    System.out.println("      |  |//|");
+                    System.out.println("      |  |//|");
+                    System.out.println("      |  |//|");
+                    System.out.println("      |  |.-|");
+                    System.out.println("      |.-'**|");
+                    System.out.println("       \\***/");
+                    System.out.println("        \\*/");
+                    System.out.println("         V");
+                    System.out.println("");
                     System.out.println("You bought a dagger!");
+                    System.out.println("Press enter to continue.");
+                    scanner.nextLine();
                     visitMerchant();
                     break;
                 } else if (input.equals("2")) {
@@ -221,12 +276,11 @@ public class Inn {
                     break;
                 } else {
                     System.out.println("That is not a valid action. Let's try this again.");
+                    System.out.println("");
                 }
             }
 
 
         }
-
-
     }
 }

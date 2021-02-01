@@ -17,22 +17,24 @@ public class Hero {
     private int gold;
     private int level;
     private int maxHP;
+    private final Scanner scanner;
 
 
     public Hero() {
 
         this.potionCount = 1;
-        this.healthPoints = 10;
+        this.healthPoints = 100000000;
         this.forestWins = 0;
         this.desertWins = 0;
         this.mountainWins = 0;
         this.dagger = 0;
         this.scimitar = 0;
         this.battleAxe = 0;
-        this.excalibur = 0;
+        this.excalibur = 1;
         this.gold = 5;
         this.level = 1;
         this.maxHP = 10;
+        this.scanner = new Scanner(System.in);
     }
 
     public Hero(int[] array) {
@@ -48,6 +50,7 @@ public class Hero {
         this.gold = array[9];
         this.level = array[10];
         this.maxHP = array[11];
+        this.scanner = new Scanner(System.in);
     }
 
     public int[] getHero() {
@@ -80,8 +83,12 @@ public class Hero {
     public void usePotion() {
         if (getPotionCount() == 0) {
             System.out.println("You don't have any potions!");
+            System.out.println("Press enter to continue.");
+            scanner.nextLine();
         } else if (getMaxHP() == getHealthPoints()) {
             System.out.println("You are already at full health!");
+            System.out.println("Press enter to continue.");
+            scanner.nextLine();
         }
 
         if (getLevel() == 4) {
@@ -89,10 +96,14 @@ public class Hero {
                 setHPtoMax();
                 changePotionCount(-1);
                 System.out.printf("You drink the potion. You now have full HP of %d points.%n", getHealthPoints());
+                System.out.println("Press enter to continue.");
+                scanner.nextLine();
             } else {
                 changeHealthPoints(20);
                 changePotionCount(-1);
                 System.out.printf("You drink the potion. You now have %d health points.%n", getHealthPoints());
+                System.out.println("Press enter to continue.");
+                scanner.nextLine();
             }
             System.out.printf("Potions remaining: %d.%n", getPotionCount());
         } else if (getLevel() == 3) {
@@ -100,10 +111,14 @@ public class Hero {
                 setHPtoMax();
                 changePotionCount(-1);
                 System.out.printf("You drink the potion. You now have full HP of %d points.%n", getHealthPoints());
+                System.out.println("Press enter to continue.");
+                scanner.nextLine();
             } else {
                 changeHealthPoints(15);
                 changePotionCount(-1);
                 System.out.printf("You drink the potion. You now have %d health points.%n", getHealthPoints());
+                System.out.println("Press enter to continue.");
+                scanner.nextLine();
             }
             System.out.printf("Potions remaining: %d.%n", getPotionCount());
         } else if (getLevel() == 2) {
@@ -111,23 +126,35 @@ public class Hero {
                 setHPtoMax();
                 changePotionCount(-1);
                 System.out.printf("You drink the potion. You now have full HP of %d points.%n", getHealthPoints());
+                System.out.println("Press enter to continue.");
+                scanner.nextLine();
             } else {
                 changeHealthPoints(10);
                 changePotionCount(-1);
                 System.out.printf("You drink the potion. You now have %d health points.%n", getHealthPoints());
+                System.out.println("Press enter to continue.");
+                scanner.nextLine();
             }
             System.out.printf("Potions remaining: %d.%n", getPotionCount());
+            System.out.println("Press enter to continue.");
+            scanner.nextLine();
         } else {
             if (getMaxHP() - getHealthPoints() <= 5) {
                 setHPtoMax();
                 changePotionCount(-1);
                 System.out.printf("You drink the potion. You now have full HP of %d points.%n", getHealthPoints());
+                System.out.println("Press enter to continue.");
+                scanner.nextLine();
             } else {
                 changeHealthPoints(5);
                 changePotionCount(-1);
                 System.out.printf("You drink the potion. You now have %d health points.%n", getHealthPoints());
+                System.out.println("Press enter to continue.");
+                scanner.nextLine();
             }
             System.out.printf("Potions remaining: %d.%n", getPotionCount());
+            System.out.println("Press enter to continue.");
+            scanner.nextLine();
         }
     }
 
@@ -327,5 +354,4 @@ public class Hero {
         System.out.println("You're dead!");
         System.out.println("Game Over!");
     }
-
 }

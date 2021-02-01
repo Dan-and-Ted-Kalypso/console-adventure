@@ -6,10 +6,12 @@ public class ForestBattle {
 
     private final int[] heroArray;
     private final int forestWins;
+    private final Scanner scanner;
 
     public ForestBattle(int[] heroArray) {
         this.heroArray = heroArray;
         this.forestWins = heroArray[2];
+        this.scanner = new Scanner(System.in);
     }
 
     public void battle() {
@@ -21,6 +23,8 @@ public class ForestBattle {
             fightRous();
         } else {
             System.out.println("Dude. You've already killed everything in the forest. Go somewhere else.");
+            System.out.println("Press enter to continue.");
+            scanner.nextLine();
             Crossroads crossroads = new Crossroads(heroArray);
             crossroads.choosePath();
         }

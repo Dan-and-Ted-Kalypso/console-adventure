@@ -4,14 +4,13 @@ import java.util.Scanner;
 
 public class BossBattle {
 
-    private int[] heroArray;
-    private Hero hero;
-    private Boss boss;
-    private Scanner scanner;
+    private final Hero hero;
+    private final Boss boss;
+    private final Scanner scanner;
 
 
     public BossBattle(int[] heroArray) {
-        this.heroArray = heroArray;
+
         this.hero = new Hero(heroArray);
         this.boss = new Boss();
         this.scanner = new Scanner(System.in);
@@ -82,6 +81,8 @@ public class BossBattle {
         System.out.println("");
 
         System.out.println("So it begins. The great battle of our time...");
+        System.out.println("Press enter to continue.");
+        scanner.nextLine();
         label:
         while (true) {
             System.out.println("What would you like to do?");
@@ -95,29 +96,45 @@ public class BossBattle {
                     int attackValue = hero.generateAttackValue();
                     if (attackValue == 0) {
                         System.out.println("Your attack missed!");
+                        System.out.println("Press enter to continue.");
+                        scanner.nextLine();
                     } else {
                         boss.changeEnemyHP(attackValue * -1);
                         System.out.printf("You hit the boss for %d points!%n", attackValue);
+                        System.out.println("Press enter to continue.");
+                        scanner.nextLine();
                     }
                     if (boss.getEnemyHP() <= 0) {
                         System.out.println("The boss has 0 health points remaining!");
+                        System.out.println("Press enter to continue.");
+                        scanner.nextLine();
                         winBossBattle();
                         break label;
                     } else {
                         System.out.printf("The boss has %d health points remaining.%n", boss.getEnemyHP());
+                        System.out.println("Press enter to continue.");
+                        scanner.nextLine();
                         int enemyAttackValue = boss.generateAttackValue();
                         if (enemyAttackValue == 0) {
                             System.out.println("The boss' attack missed! Whew!");
+                            System.out.println("Press enter to continue.");
+                            scanner.nextLine();
                         } else {
                             hero.changeHealthPoints(enemyAttackValue * -1);
                             System.out.printf("The boss hits you for %d points! Ouch!%n", enemyAttackValue);
+                            System.out.println("Press enter to continue.");
+                            scanner.nextLine();
                         }
                         if (hero.getHealthPoints() <= 0) {
                             System.out.println("You have no health points remaining! Oh no!");
+                            System.out.println("Press enter to continue.");
+                            scanner.nextLine();
                             hero.die();
                             break label;
                         } else {
                             System.out.printf("You have %d health points remaining.%n", hero.getHealthPoints());
+                            System.out.println("Press enter to continue.");
+                            scanner.nextLine();
                         }
                     }
 
@@ -130,9 +147,12 @@ public class BossBattle {
                     break;
                 case "3":
                     System.out.println("You can't run away! This is the BOSS BATTLE, ya dingus!");
+                    System.out.println("Press enter to continue.");
+                    scanner.nextLine();
                     break;
                 default:
                     System.out.println("That is not a valid action. Let's try this again.");
+                    System.out.println("");
                     break;
             }
         }
@@ -184,18 +204,9 @@ System.out.println("       ###          /;\"\\.__\"-._   \"\"\"                 
 
         System.out.println("");
 
-        System.out.println("You have defeated the great and powerful boss and ended his reign of tyranny o'er the land!");
+        System.out.println("You have defeated the evil Boss and ended his reign of tyranny o'er the land!");
         System.out.println("Your name will surely go down in the annals of history!");
         System.out.println("You win!");
         System.out.println("Thanks for playing!");
     }
 }
-
-
-/*
-
-
-
-
-
- */

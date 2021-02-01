@@ -6,9 +6,9 @@ import java.util.Scanner;
 public class OrcBattle {
 
     private int[] heroArray;
-    private Hero hero;
-    private Orc orc;
-    private Scanner scanner;
+    private final Hero hero;
+    private final Orc orc;
+    private final Scanner scanner;
 
     public OrcBattle(int[] heroArray) {
         this.heroArray = heroArray;
@@ -51,6 +51,8 @@ public class OrcBattle {
 
 
         System.out.println("It's an orc! He looks nasty!");
+        System.out.println("Press enter to continue.");
+        scanner.nextLine();
 
         label:
         while (true) {
@@ -65,29 +67,45 @@ public class OrcBattle {
                     int attackValue = hero.generateAttackValue();
                     if (attackValue == 0) {
                         System.out.println("Your attack missed!");
+                        System.out.println("Press enter to continue.");
+                        scanner.nextLine();
                     } else {
                         orc.changeEnemyHP(attackValue * -1);
                         System.out.printf("You hit the orc for %d points!%n", attackValue);
+                        System.out.println("Press enter to continue.");
+                        scanner.nextLine();
                     }
                     if (orc.getEnemyHP() <= 0) {
                         System.out.println("The orc has 0 health points remaining!");
+                        System.out.println("Press enter to continue.");
+                        scanner.nextLine();
                         winOrcBattle();
                         break label;
                     } else {
                         System.out.printf("The orc has %d health points remaining.%n", orc.getEnemyHP());
+                        System.out.println("Press enter to continue.");
+                        scanner.nextLine();
                         int enemyAttackValue = orc.generateAttackValue();
                         if (enemyAttackValue == 0) {
                             System.out.println("The orc's attack missed!");
+                            System.out.println("Press enter to continue.");
+                            scanner.nextLine();
                         } else {
                             hero.changeHealthPoints(enemyAttackValue * -1);
                             System.out.printf("The orc hits you for %d points!%n", enemyAttackValue);
+                            System.out.println("Press enter to continue.");
+                            scanner.nextLine();
                         }
                         if (hero.getHealthPoints() <= 0) {
                             System.out.println("You have no health points remaining! Oh no!");
+                            System.out.println("Press enter to continue.");
+                            scanner.nextLine();
                             hero.die();
                             break label;
                         } else {
                             System.out.printf("You have %d health points remaining.%n", hero.getHealthPoints());
+                            System.out.println("Press enter to continue.");
+                            scanner.nextLine();
                         }
                     }
 
@@ -103,6 +121,8 @@ public class OrcBattle {
                     if (runSuccess == 1) {
                         System.out.println("You got away safely!");
                         System.out.println("You return to the crossroads.");
+                        System.out.println("Press enter to continue.");
+                        scanner.nextLine();
                         Crossroads crossroads = new Crossroads(hero.getHero());
                         crossroads.choosePath();
                     } else {
@@ -110,6 +130,8 @@ public class OrcBattle {
                         if (hero.getHealthPoints() == 1) {
                             System.out.println("You got away safely!");
                             System.out.println("You return to the crossroads.");
+                            System.out.println("Press enter to continue.");
+                            scanner.nextLine();
                             Crossroads crossroads = new Crossroads(hero.getHero());
                             crossroads.choosePath();
                         } else {
@@ -117,6 +139,8 @@ public class OrcBattle {
                             hero.changeHealthPoints((hero.getHealthPoints() / 2) * -1);
                             System.out.printf("You now have %d health points remaining.%n", hero.getHealthPoints());
                             System.out.println("You return to the crossroads.");
+                            System.out.println("Press enter to continue.");
+                            scanner.nextLine();
                             Crossroads crossroads = new Crossroads(hero.getHero());
                             crossroads.choosePath();
                         }
@@ -124,6 +148,7 @@ public class OrcBattle {
                     break label;
                 default:
                     System.out.println("That is not a valid action. Let's try this again.");
+                    System.out.println("");
                     break;
             }
         }
@@ -131,7 +156,11 @@ public class OrcBattle {
 
     public void winOrcBattle() {
         System.out.println("You have defeated the orc!");
+        System.out.println("Press enter to continue.");
+        scanner.nextLine();
         System.out.println("You find a potion and 10 gold!");
+        System.out.println("Press enter to continue.");
+        scanner.nextLine();
         hero.changePotionCount(1);
         hero.changeGold(10);
         hero.changeMountainWins();
@@ -153,6 +182,7 @@ public class OrcBattle {
                 break;
             } else {
                 System.out.println("That is not a valid action. Let's try this again.");
+                System.out.println("");
             }
         }
 

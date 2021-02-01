@@ -6,9 +6,9 @@ import java.util.Scanner;
 public class SnakeBattle {
 
     private int[] heroArray;
-    private Hero hero;
-    private Snake snake;
-    private Scanner scanner;
+    private final Hero hero;
+    private final Snake snake;
+    private final Scanner scanner;
 
     public SnakeBattle(int[] heroArray) {
         this.heroArray = heroArray;
@@ -47,6 +47,8 @@ public class SnakeBattle {
         System.out.println("");
 
         System.out.println("A giant snake explodes from out of the sand! Those fangs are massive!");
+        System.out.println("Press enter to continue.");
+        scanner.nextLine();
 
         label:
         while (true) {
@@ -61,29 +63,45 @@ public class SnakeBattle {
                     int attackValue = hero.generateAttackValue();
                     if (attackValue == 0) {
                         System.out.println("Your attack missed!");
+                        System.out.println("Press enter to continue.");
+                        scanner.nextLine();
                     } else {
                         snake.changeEnemyHP(attackValue * -1);
                         System.out.printf("You hit the snake for %d points!%n", attackValue);
+                        System.out.println("Press enter to continue.");
+                        scanner.nextLine();
                     }
                     if (snake.getEnemyHP() <= 0) {
                         System.out.println("The snake has 0 health points remaining!");
+                        System.out.println("Press enter to continue.");
+                        scanner.nextLine();
                         winSnakeBattle();
                         break label;
                     } else {
                         System.out.printf("The snake has %d health points remaining.%n", snake.getEnemyHP());
+                        System.out.println("Press enter to continue.");
+                        scanner.nextLine();
                         int enemyAttackValue = snake.generateAttackValue();
                         if (enemyAttackValue == 0) {
                             System.out.println("The snake's attack missed!");
+                            System.out.println("Press enter to continue.");
+                            scanner.nextLine();
                         } else {
                             hero.changeHealthPoints(enemyAttackValue * -1);
                             System.out.printf("The snake hits you for %d points!%n", enemyAttackValue);
+                            System.out.println("Press enter to continue.");
+                            scanner.nextLine();
                         }
                         if (hero.getHealthPoints() <= 0) {
                             System.out.println("You have no health points remaining! Oh no!");
+                            System.out.println("Press enter to continue.");
+                            scanner.nextLine();
                             hero.die();
                             break label;
                         } else {
                             System.out.printf("You have %d health points remaining.%n", hero.getHealthPoints());
+                            System.out.println("Press enter to continue.");
+                            scanner.nextLine();
                         }
                     }
 
@@ -99,6 +117,8 @@ public class SnakeBattle {
                     if (runSuccess == 1) {
                         System.out.println("You got away safely!");
                         System.out.println("You return to the crossroads.");
+                        System.out.println("Press enter to continue.");
+                        scanner.nextLine();
                         Crossroads crossroads = new Crossroads(hero.getHero());
                         crossroads.choosePath();
                     } else {
@@ -106,6 +126,8 @@ public class SnakeBattle {
                         if (hero.getHealthPoints() == 1) {
                             System.out.println("You got away safely!");
                             System.out.println("You return to the crossroads.");
+                            System.out.println("Press enter to continue.");
+                            scanner.nextLine();
                             Crossroads crossroads = new Crossroads(hero.getHero());
                             crossroads.choosePath();
                         } else {
@@ -113,6 +135,8 @@ public class SnakeBattle {
                             hero.changeHealthPoints((hero.getHealthPoints() / 2) * -1);
                             System.out.printf("You now have %d health points remaining.%n", hero.getHealthPoints());
                             System.out.println("You return to the crossroads.");
+                            System.out.println("Press enter to continue.");
+                            scanner.nextLine();
                             Crossroads crossroads = new Crossroads(hero.getHero());
                             crossroads.choosePath();
                         }
@@ -120,6 +144,7 @@ public class SnakeBattle {
                     break label;
                 default:
                     System.out.println("That is not a valid action. Let's try this again.");
+                    System.out.println("");
                     break;
             }
         }
@@ -127,7 +152,11 @@ public class SnakeBattle {
 
     public void winSnakeBattle() {
         System.out.println("You have defeated the giant snake!");
+        System.out.println("Press enter to continue.");
+        scanner.nextLine();
         System.out.println("You find a potion and 8 gold!");
+        System.out.println("Press enter to continue.");
+        scanner.nextLine();
         hero.changePotionCount(1);
         hero.changeGold(8);
         hero.changeDesertWins();
@@ -149,6 +178,7 @@ public class SnakeBattle {
                 break;
             } else {
                 System.out.println("That is not a valid action. Let's try this again.");
+                System.out.println("");
             }
         }
     }

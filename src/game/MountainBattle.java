@@ -4,11 +4,13 @@ import java.util.*;
 
 public class MountainBattle {
 
-    private int[] heroArray;
-    private int mountainWins;
+    private final int[] heroArray;
+    private final int mountainWins;
+    private final Scanner scanner;
 
 
     public MountainBattle(int[] heroArray) {
+        this.scanner = new Scanner(System.in);
         this.heroArray = heroArray;
         this.mountainWins = heroArray[4];
     }
@@ -22,6 +24,8 @@ public class MountainBattle {
             fightUruk();
         } else {
             System.out.println("Dude. You've already killed everything in the mountains. Go somewhere else.");
+            System.out.println("Press enter to continue.");
+            scanner.nextLine();
             Crossroads crossroads = new Crossroads(heroArray);
             crossroads.choosePath();
         }
