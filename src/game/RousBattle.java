@@ -47,7 +47,7 @@ public class RousBattle {
 
         System.out.println(ConsoleColors.GREEN + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
 
-        System.out.println("What's that? Sprinting towards you through the trees? It's a Rodent of Unusual Size! I thought they didn't exist!");
+        System.out.println(ConsoleColors.GREEN + "What's that? Sprinting towards you through the trees? It's a Rodent of Unusual Size! I thought they didn't exist!" + ConsoleColors.RESET);
         System.out.println("Press enter to continue.");
         System.out.println(ConsoleColors.GREEN + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
         scanner.nextLine();
