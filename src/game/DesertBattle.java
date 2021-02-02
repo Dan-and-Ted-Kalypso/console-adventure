@@ -24,9 +24,12 @@ public class DesertBattle {
         } else if (desertWins == 2) {
             fightMummy();
         } else {
-            System.out.println("Dude. You've already killed everything in the desert. Go somewhere else.");
+            System.out.println(ConsoleColors.RED + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
+            System.out.println(ConsoleColors.YELLOW + "Dude. You've already killed everything in the desert. Go somewhere else." + ConsoleColors.RESET);
             System.out.println("Press enter to continue.");
             scanner.nextLine();
+            System.out.println(ConsoleColors.RED + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
+            System.out.println(ConsoleColors.PURPLE + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
             Crossroads crossroads = new Crossroads(heroArray, name);
             crossroads.choosePath();
         }
