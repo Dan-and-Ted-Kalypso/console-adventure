@@ -130,7 +130,7 @@ public class BossBattle {
                         int enemyAttackValue = boss.generateAttackValue();
                         if (enemyAttackValue == 0) {
                             System.out.println(ConsoleColors.GREEN + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
-                            System.out.println("The boss' attack missed! Whew!");
+                            System.out.println(ConsoleColors.GREEN + "The boss' attack missed! Whew!" + ConsoleColors.RESET);
                             System.out.println("Press enter to continue.");
                             scanner.nextLine();
                             System.out.println(ConsoleColors.GREEN + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
@@ -272,16 +272,16 @@ public class BossBattle {
         System.out.println("    |\"\"\": |   /   \\|   .----+  ;      /#\\  :___..--\"\";                  ,'MM;");
         System.out.println("   _Y--:  |  ;     ;.-'      ;  \\______/#: /         ;                  ''MM;");
         System.out.println("  /    |  | ;_______;     ____!  |\"##\"\"\"MM!         ;                    ,'MM;");
-System.out.println(" !_____|  |  |\"#\"#\"|____.'\"\"##\"  |       :         ;                     ''MM");
-System.out.println("  | \"\"\"\"--!._|     |##\"\"         !       !         :____.....-------\"\"\"\"\"\" |'");
-System.out.println("  |          :     |______                        ___!_ \"#\"\"#\"\"#\"\"\"#\"\"\"#\"\"\"|");
+        System.out.println(" !_____|  |  |\"#\"#\"|____.'\"\"##\"  |       :         ;                     ''MM");
+        System.out.println("  | \"\"\"\"--!._|     |##\"\"         !       !         :____.....-------\"\"\"\"\"\" |'");
+        System.out.println("  |          :     |______                        ___!_ \"#\"\"#\"\"#\"\"\"#\"\"\"#\"\"\"|");
         System.out.println("__|          ;     |MM\"MM\"\"\"\"\"---..._______...--\"\"MM\"MM]                   |");
-System.out.println("  \"\\-.      :      |#                                  :                   |");
-System.out.println("    /#'.    |      /##,                                !                   |");
-System.out.println("   .',/'\\   |       #:#,                                ;       .==.       |");
-System.out.println("  /\"\\'#\"\\',.|       ##;#,                               !     ,'||||',     |");
-System.out.println("        /;/`:       ######,          ____             _ :     M||||||M     |");
-System.out.println("       ###          /;\"\\.__\"-._   \"\"\"                   |===..M!!!!!!M_____|");
+        System.out.println("  \"\\-.      :      |#                                  :                   |");
+        System.out.println("    /#'.    |      /##,                                !                   |");
+        System.out.println("   .',/'\\   |       #:#,                                ;       .==.       |");
+        System.out.println("  /\"\\'#\"\\',.|       ##;#,                               !     ,'||||',     |");
+        System.out.println("        /;/`:       ######,          ____             _ :     M||||||M     |");
+        System.out.println("       ###          /;\"\\.__\"-._   \"\"\"                   |===..M!!!!!!M_____|");
         System.out.println("                           `--..`--.._____             _!_");
         System.out.println("                                          `--...____,=\"_.'`-.____" + ConsoleColors.RESET);
 

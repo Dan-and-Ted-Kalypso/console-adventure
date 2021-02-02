@@ -25,9 +25,12 @@ public class MountainBattle {
         } else if (mountainWins == 2) {
             fightUruk();
         } else {
-            System.out.println("Dude. You've already killed everything in the mountains. Go somewhere else.");
+            System.out.println(ConsoleColors.RED + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
+            System.out.println(ConsoleColors.YELLOW + "Dude. You've already killed everything in the mountains. Go somewhere else." + ConsoleColors.RESET);
             System.out.println("Press enter to continue.");
             scanner.nextLine();
+            System.out.println(ConsoleColors.RED + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
+            System.out.println(ConsoleColors.PURPLE + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
             Crossroads crossroads = new Crossroads(heroArray, name);
             crossroads.choosePath();
         }

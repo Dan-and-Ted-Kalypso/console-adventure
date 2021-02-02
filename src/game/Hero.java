@@ -85,80 +85,196 @@ public class Hero {
 
     public void usePotion() {
         if (getPotionCount() == 0) {
-            System.out.println("You don't have any potions!");
+            System.out.println(ConsoleColors.RED + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
+            System.out.println(ConsoleColors.RED + "You don't have any potions!" + ConsoleColors.RESET);
             System.out.println("Press enter to continue.");
             scanner.nextLine();
+            System.out.println(ConsoleColors.RED + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
         } else if (getMaxHP() == getHealthPoints()) {
-            System.out.println("You are already at full health!");
+            System.out.println(ConsoleColors.GREEN + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
+            System.out.println(ConsoleColors.GREEN + "You are already at full health!" + ConsoleColors.RESET);
             System.out.println("Press enter to continue.");
             scanner.nextLine();
+            System.out.println(ConsoleColors.GREEN + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
         } else {
             if (getLevel() == 4) {
                 if (getMaxHP() - getHealthPoints() <= 20) {
                     setHPtoMax();
                     changePotionCount(-1);
-                    System.out.printf("You drink the potion. You now have full HP of %d points.%n", getHealthPoints());
+                    System.out.println(ConsoleColors.GREEN + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
+                    System.out.printf(ConsoleColors.GREEN + "You drink the potion. You now have full HP of %d points.%n" + ConsoleColors.RESET, getHealthPoints());
+
+                    if (getPotionCount() == 0) {
+                        System.out.printf(ConsoleColors.RED + "Your potion count: %d.%n" + ConsoleColors.RESET, getPotionCount());
+                    } else if (getPotionCount() < 3) {
+                        System.out.printf(ConsoleColors.YELLOW + "Your potion count: %d.%n" + ConsoleColors.RESET, getPotionCount());
+                    } else {
+                        System.out.printf(ConsoleColors.GREEN + "Your potion count: %d.%n" + ConsoleColors.RESET, getPotionCount());
+                    }
+
                     System.out.println("Press enter to continue.");
                     scanner.nextLine();
+                    System.out.println(ConsoleColors.GREEN + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
                 } else {
                     changeHealthPoints(20);
                     changePotionCount(-1);
-                    System.out.printf("You drink the potion. You now have %d health points.%n", getHealthPoints());
-                    System.out.println("Press enter to continue.");
-                    scanner.nextLine();
+                    System.out.println(ConsoleColors.GREEN + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
+                    System.out.println(ConsoleColors.GREEN + "You drink the potion." + ConsoleColors.RESET);
+
+                    if (getHealthPoints() > (getMaxHP() / 3) + (getMaxHP() / 3)) {
+                        System.out.printf(ConsoleColors.GREEN + "You now have %d health points.%n" + ConsoleColors.RESET, getHealthPoints());
+                    } else if (getHealthPoints() < (getMaxHP() / 3) + 1) {
+                        System.out.printf(ConsoleColors.RED + "You now have %d health points.%n" + ConsoleColors.RESET, getHealthPoints());
+                    } else {
+                        System.out.printf(ConsoleColors.YELLOW + "You now have %d health points.%n" + ConsoleColors.RESET, getHealthPoints());
+                    }
                 }
-                System.out.printf("Potions remaining: %d.%n", getPotionCount());
+
+                if (getPotionCount() == 0) {
+                    System.out.printf(ConsoleColors.RED + "Your potion count: %d.%n" + ConsoleColors.RESET, getPotionCount());
+                } else if (getPotionCount() < 3) {
+                    System.out.printf(ConsoleColors.YELLOW + "Your potion count: %d.%n" + ConsoleColors.RESET, getPotionCount());
+                } else {
+                    System.out.printf(ConsoleColors.GREEN + "Your potion count: %d.%n" + ConsoleColors.RESET, getPotionCount());
+                }
+                System.out.println("Press enter to continue.");
+                scanner.nextLine();
+
+                System.out.println(ConsoleColors.GREEN + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
             } else if (getLevel() == 3) {
                 if (getMaxHP() - getHealthPoints() <= 15) {
                     setHPtoMax();
                     changePotionCount(-1);
-                    System.out.printf("You drink the potion. You now have full HP of %d points.%n", getHealthPoints());
+                    System.out.println(ConsoleColors.GREEN + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
+                    System.out.printf(ConsoleColors.GREEN + "You drink the potion. You now have full HP of %d points.%n" + ConsoleColors.RESET, getHealthPoints());
+
+                    if (getPotionCount() == 0) {
+                        System.out.printf(ConsoleColors.RED + "Your potion count: %d.%n" + ConsoleColors.RESET, getPotionCount());
+                    } else if (getPotionCount() < 3) {
+                        System.out.printf(ConsoleColors.YELLOW + "Your potion count: %d.%n" + ConsoleColors.RESET, getPotionCount());
+                    } else {
+                        System.out.printf(ConsoleColors.GREEN + "Your potion count: %d.%n" + ConsoleColors.RESET, getPotionCount());
+                    }
+
                     System.out.println("Press enter to continue.");
                     scanner.nextLine();
+                    System.out.println(ConsoleColors.GREEN + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
                 } else {
                     changeHealthPoints(15);
                     changePotionCount(-1);
-                    System.out.printf("You drink the potion. You now have %d health points.%n", getHealthPoints());
-                    System.out.println("Press enter to continue.");
-                    scanner.nextLine();
+                    System.out.println(ConsoleColors.GREEN + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
+                    System.out.println(ConsoleColors.GREEN + "You drink the potion." + ConsoleColors.RESET);
+
+                    if (getHealthPoints() > (getMaxHP() / 3) + (getMaxHP() / 3)) {
+                        System.out.printf(ConsoleColors.GREEN + "You now have %d health points.%n" + ConsoleColors.RESET, getHealthPoints());
+                    } else if (getHealthPoints() < (getMaxHP() / 3) + 1) {
+                        System.out.printf(ConsoleColors.RED + "You now have %d health points.%n" + ConsoleColors.RESET, getHealthPoints());
+                    } else {
+                        System.out.printf(ConsoleColors.YELLOW + "You now have %d health points.%n" + ConsoleColors.RESET, getHealthPoints());
+                    }
                 }
-                System.out.printf("Potions remaining: %d.%n", getPotionCount());
+
+                if (getPotionCount() == 0) {
+                    System.out.printf(ConsoleColors.RED + "Your potion count: %d.%n" + ConsoleColors.RESET, getPotionCount());
+                } else if (getPotionCount() < 3) {
+                    System.out.printf(ConsoleColors.YELLOW + "Your potion count: %d.%n" + ConsoleColors.RESET, getPotionCount());
+                } else {
+                    System.out.printf(ConsoleColors.GREEN + "Your potion count: %d.%n" + ConsoleColors.RESET, getPotionCount());
+                }
+                System.out.println("Press enter to continue.");
+                scanner.nextLine();
+
+                System.out.println(ConsoleColors.GREEN + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
             } else if (getLevel() == 2) {
                 if (getMaxHP() - getHealthPoints() <= 10) {
                     setHPtoMax();
                     changePotionCount(-1);
-                    System.out.printf("You drink the potion. You now have full HP of %d points.%n", getHealthPoints());
+                    System.out.println(ConsoleColors.GREEN + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
+                    System.out.printf(ConsoleColors.GREEN + "You drink the potion. You now have full HP of %d points.%n" + ConsoleColors.RESET, getHealthPoints());
+
+                    if (getPotionCount() == 0) {
+                        System.out.printf(ConsoleColors.RED + "Your potion count: %d.%n" + ConsoleColors.RESET, getPotionCount());
+                    } else if (getPotionCount() < 3) {
+                        System.out.printf(ConsoleColors.YELLOW + "Your potion count: %d.%n" + ConsoleColors.RESET, getPotionCount());
+                    } else {
+                        System.out.printf(ConsoleColors.GREEN + "Your potion count: %d.%n" + ConsoleColors.RESET, getPotionCount());
+                    }
+
                     System.out.println("Press enter to continue.");
                     scanner.nextLine();
+                    System.out.println(ConsoleColors.GREEN + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
                 } else {
                     changeHealthPoints(10);
                     changePotionCount(-1);
-                    System.out.printf("You drink the potion. You now have %d health points.%n", getHealthPoints());
-                    System.out.println("Press enter to continue.");
-                    scanner.nextLine();
+                    System.out.println(ConsoleColors.GREEN + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
+                    System.out.println(ConsoleColors.GREEN + "You drink the potion." + ConsoleColors.RESET);
+
+                    if (getHealthPoints() > (getMaxHP() / 3) + (getMaxHP() / 3)) {
+                        System.out.printf(ConsoleColors.GREEN + "You now have %d health points.%n" + ConsoleColors.RESET, getHealthPoints());
+                    } else if (getHealthPoints() < (getMaxHP() / 3) + 1) {
+                        System.out.printf(ConsoleColors.RED + "You now have %d health points.%n" + ConsoleColors.RESET, getHealthPoints());
+                    } else {
+                        System.out.printf(ConsoleColors.YELLOW + "You now have %d health points.%n" + ConsoleColors.RESET, getHealthPoints());
+                    }
                 }
-                System.out.printf("Potions remaining: %d.%n", getPotionCount());
+
+                if (getPotionCount() == 0) {
+                    System.out.printf(ConsoleColors.RED + "Your potion count: %d.%n" + ConsoleColors.RESET, getPotionCount());
+                } else if (getPotionCount() < 3) {
+                    System.out.printf(ConsoleColors.YELLOW + "Your potion count: %d.%n" + ConsoleColors.RESET, getPotionCount());
+                } else {
+                    System.out.printf(ConsoleColors.GREEN + "Your potion count: %d.%n" + ConsoleColors.RESET, getPotionCount());
+                }
                 System.out.println("Press enter to continue.");
                 scanner.nextLine();
+
+                System.out.println(ConsoleColors.GREEN + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
             } else {
                 if (getMaxHP() - getHealthPoints() <= 5) {
                     setHPtoMax();
                     changePotionCount(-1);
-                    System.out.printf("You drink the potion. You now have full HP of %d points.%n", getHealthPoints());
+                    System.out.println(ConsoleColors.GREEN + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
+                    System.out.printf(ConsoleColors.GREEN + "You drink the potion. You now have full HP of %d points.%n" + ConsoleColors.RESET, getHealthPoints());
+
+                    if (getPotionCount() == 0) {
+                        System.out.printf(ConsoleColors.RED + "Your potion count: %d.%n" + ConsoleColors.RESET, getPotionCount());
+                    } else if (getPotionCount() < 3) {
+                        System.out.printf(ConsoleColors.YELLOW + "Your potion count: %d.%n" + ConsoleColors.RESET, getPotionCount());
+                    } else {
+                        System.out.printf(ConsoleColors.GREEN + "Your potion count: %d.%n" + ConsoleColors.RESET, getPotionCount());
+                    }
+
                     System.out.println("Press enter to continue.");
                     scanner.nextLine();
+                    System.out.println(ConsoleColors.GREEN + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
                 } else {
                     changeHealthPoints(5);
                     changePotionCount(-1);
-                    System.out.printf("You drink the potion. You now have %d health points.%n", getHealthPoints());
+                    System.out.println(ConsoleColors.GREEN + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
+                    System.out.println(ConsoleColors.GREEN + "You drink the potion." + ConsoleColors.RESET);
+
+                    if (getHealthPoints() > (getMaxHP() / 3) + (getMaxHP() / 3)) {
+                        System.out.printf(ConsoleColors.GREEN + "You now have %d health points.%n" + ConsoleColors.RESET, getHealthPoints());
+                    } else if (getHealthPoints() < (getMaxHP() / 3) + 1) {
+                        System.out.printf(ConsoleColors.RED + "You now have %d health points.%n" + ConsoleColors.RESET, getHealthPoints());
+                    } else {
+                        System.out.printf(ConsoleColors.YELLOW + "You now have %d health points.%n" + ConsoleColors.RESET, getHealthPoints());
+                    }
+
+                    if (getPotionCount() == 0) {
+                        System.out.printf(ConsoleColors.RED + "Your potion count: %d.%n" + ConsoleColors.RESET, getPotionCount());
+                    } else if (getPotionCount() < 3) {
+                        System.out.printf(ConsoleColors.YELLOW + "Your potion count: %d.%n" + ConsoleColors.RESET, getPotionCount());
+                    } else {
+                        System.out.printf(ConsoleColors.GREEN + "Your potion count: %d.%n" + ConsoleColors.RESET, getPotionCount());
+                    }
                     System.out.println("Press enter to continue.");
                     scanner.nextLine();
-                }
-                System.out.printf("Potions remaining: %d.%n", getPotionCount());
-                System.out.println("Press enter to continue.");
-                scanner.nextLine();
-            }
 
+                    System.out.println(ConsoleColors.GREEN + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
+                }
+
+            }
 
         }
     }
@@ -279,7 +395,7 @@ public class Hero {
     public int generateAttackValue() {
         Random random = new Random();
         int[] heroArray = getHero();
-        if(heroArray[8] == 1) {
+        if (heroArray[8] == 1) {
             int value = random.nextInt(41);
             if (value > 0) {
                 value += 5;
@@ -331,7 +447,7 @@ public class Hero {
 
         System.out.println("");
 
-        System.out.println(ConsoleColors.RED + "                                                               _");
+        System.out.println(ConsoleColors.RED + "                                                                _");
         System.out.println("                                                              _( (~\\");
         System.out.println("       _ _                        /                          ( \\> > \\");
         System.out.println("   -/~/ / ~\\                     :;                \\       _  > /(~\\/");
