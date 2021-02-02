@@ -125,7 +125,7 @@ public class TrollBattle {
                         } else {
                             hero.changeHealthPoints(enemyAttackValue * -1);
                             System.out.println(ConsoleColors.RED + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
-                            System.out.printf(ConsoleColors.YELLOW + "The troll hits you for %d points!%n" + ConsoleColors.RESET, enemyAttackValue);
+                            System.out.printf(ConsoleColors.RED + "The troll hits you for %d points!%n" + ConsoleColors.RESET, enemyAttackValue);
                             System.out.println("Press enter to continue.");
                             scanner.nextLine();
                             System.out.println(ConsoleColors.RED + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
@@ -165,7 +165,17 @@ public class TrollBattle {
                     break;
                 case "2":
 
-                    hero.usePotion();
+                    System.out.println(ConsoleColors.BLUE + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
+                    int checker = hero.checkPotion();
+                    if (checker == 0) {
+                        hero.usePotion();
+                        break;
+                    } else if (checker == 1) {
+                        hero.usePotion();
+                        break;
+                    } else {
+                        hero.usePotion();
+                    }
                     int enemyAttackValue = troll.generateAttackValue();
                     if (enemyAttackValue == 0) {
                         System.out.println(ConsoleColors.GREEN + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
