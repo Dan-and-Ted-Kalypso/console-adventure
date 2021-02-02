@@ -292,8 +292,8 @@ public class OrcBattle {
                 System.out.printf(ConsoleColors.GREEN + "Your potion count: %d.%n" + ConsoleColors.RESET, hero.getPotionCount());
             }
 
-            System.out.println("1: Stay in the mountains.");
-            System.out.println("2: Go back to the crossroads.");
+            System.out.println(ConsoleColors.CYAN + "1: Stay in the mountains." + ConsoleColors.RESET);
+            System.out.println(ConsoleColors.YELLOW + "2: Go back to the crossroads." + ConsoleColors.RESET);
             String action = scanner.nextLine();
             System.out.println(ConsoleColors.BLUE + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
             if (action.equals("1")) {
