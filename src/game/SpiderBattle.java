@@ -76,7 +76,7 @@ public class SpiderBattle {
                 case "1":
                     int attackValue = hero.generateAttackValue();
                     if (attackValue == 0) {
-                        System.out.println(ConsoleColors.YELLOW + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
+                        System.out.println(ConsoleColors.GREEN + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
                         System.out.println(ConsoleColors.RED + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
                         System.out.println(ConsoleColors.RED + "Your attack missed!" + ConsoleColors.RESET);
                         System.out.println("Press enter to continue.");
@@ -84,7 +84,7 @@ public class SpiderBattle {
                         System.out.println(ConsoleColors.RED + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
                     } else {
                         spider.changeEnemyHP(attackValue * -1);
-                        System.out.println(ConsoleColors.YELLOW + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
+                        System.out.println(ConsoleColors.GREEN + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
                         System.out.println(ConsoleColors.GREEN + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
                         System.out.printf(ConsoleColors.GREEN + "You hit the spider for %d points!%n" + ConsoleColors.RESET, attackValue);
                         System.out.println("Press enter to continue.");
@@ -155,7 +155,17 @@ public class SpiderBattle {
                     break;
                 case "2":
 
-                    hero.usePotion();
+                    System.out.println(ConsoleColors.GREEN + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
+                    int checker = hero.checkPotion();
+                    if (checker == 0) {
+                        hero.usePotion();
+                        break;
+                    } else if (checker == 1) {
+                        hero.usePotion();
+                        break;
+                    } else {
+                        hero.usePotion();
+                    }
                     int enemyAttackValue = spider.generateAttackValue();
                     if (enemyAttackValue == 0) {
                         System.out.println(ConsoleColors.GREEN + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);

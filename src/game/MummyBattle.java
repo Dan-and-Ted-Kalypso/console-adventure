@@ -135,7 +135,17 @@ public class MummyBattle {
                     break;
                 case "2":
 
-                    hero.usePotion();
+                    System.out.println(ConsoleColors.YELLOW + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
+                    int checker = hero.checkPotion();
+                    if (checker == 0) {
+                        hero.usePotion();
+                        break;
+                    } else if (checker == 1) {
+                        hero.usePotion();
+                        break;
+                    } else {
+                        hero.usePotion();
+                    }
                     int enemyAttackValue = mummy.generateAttackValue();
                     if (enemyAttackValue == 0) {
                         System.out.println(ConsoleColors.GREEN + "____________________________________________________________________________________________________________" + ConsoleColors.RESET);
