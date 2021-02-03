@@ -346,7 +346,7 @@ public class Hero {
     public int generateAttackValue() {
         Random random = new Random();
         int[] heroArray = getHero();
-        if (heroArray[8] == 1) {
+        if (getExcalibur() == 1) {
             int value = random.nextInt(41);
             if (value > 0) {
                 value += 5;
@@ -354,7 +354,7 @@ public class Hero {
             } else {
                 return 0;
             }
-        } else if (heroArray[7] == 1) {
+        } else if (getBattleAxe() == 1) {
             int value = random.nextInt(31);
             if (value > 0) {
                 value += 4;
@@ -362,7 +362,7 @@ public class Hero {
             } else {
                 return 0;
             }
-        } else if (heroArray[6] == 1) {
+        } else if (getScimitar() == 1) {
             int value = random.nextInt(16);
             if (value > 0) {
                 value += 4;
@@ -370,7 +370,7 @@ public class Hero {
             } else {
                 return 0;
             }
-        } else if (heroArray[5] == 1) {
+        } else if (getDagger() == 1) {
             int value = random.nextInt(8);
             if (value > 0) {
                 value += 3;
