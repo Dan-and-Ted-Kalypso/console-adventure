@@ -33,7 +33,7 @@ public class Game {
         System.out.println(ConsoleColors.GREEN + "|O   __/  | __   ||   |   __ |  \\__   O|");
         System.out.println("| ---     |/  -_/||   |\\_-  \\|     --- |");
         System.out.println("|O|            \\ ||   | /            |O|");
-        System.out.println("\\ '              ||   |        ^~DLF ' /");
+        System.out.println("\\ '              ||   |              ' /");
         System.out.println(" \\O\\    _-¯?.    ||   |    .?¯-_    /O/");
         System.out.println("  \\ \\  /  /¯¯¯?  ||   |  ?¯¯¯\\  \\  / /" + ConsoleColors.RESET);
         System.out.println(ConsoleColors.YELLOW + "   \\O\\/   |      ||   |      |   \\/O/");
